@@ -1,0 +1,160 @@
+WebRTC NV Use Cases
+Improvements
+
+Several NV use cases provide improvements to existing use cases described in RFC 7478.
+Multiparty online game with voice communications
+
+RFC 7478 Section 2.3.12 describes a use case involving a multiparty online game with voice communications. 
+
+In these scenarios, reducing join time is important. To minimize this, ICE enhancements are desirable, such as the ability to control candidate gathering and pruning.  Also, “parallel forking” minimizes conference establishment time by allowing a participant to broadcast an Offer to a “room” abstraction (maintained on a server), with other room participants responding back directly to the Offerer, avoiding a separate discovery step.  Finally, the ability to support early media enables media to be received from responders before they answer the call. Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can affect audio quality or perceived latency in the game.  
+
+Supporting this enhancement adds the following requirements: 
+
+----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+   N01             The user agent can control candidate gathering and pruning, limiting the networks on l 
+                       which candidates are gathered, the types of candidates, etc. 
+   N02             The user agent must be able to support parallel forking, including reuse of locaICE 
+                       candidates and local certificates with multiple Answerers.
+   N03             The user agent must be able to impose a bandwidth limit across mesh endpoints.
+   N04             Early media must be supported. 
+
+This use case has been implemented by a gaming service utilizing ORTC.
+
+References: https://github.com/w3c/ortc/issues/603 
+https://github.com/w3c/ortc/issues/54
+
+
+Mobility
+
+RFC 7478 Section 2.3.6 describes a simple communications service where the user changes access network during the session.  This use case is enhanced by being able to re-route media over an alternate path (potentially taking network cost into account) without need for signaling.
+----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+   N05             The ICE agent must be able to maintain multiple candidate pairs and move traffic between 
+                       them.
+   N06             The ICE agent must be able to take the network cost into account when considering 
+                       re-routing.
+
+Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html 
+https://github.com/w3c/ortc/issues/583 
+
+Video Conferencing with a Central Server
+
+RFC 7478 Section 2.4.3.1 describes a use case involving Multiparty Video Communications with a central conferencing server.  In such a use case, clients with disparate capabilities such as differing bandwidth availability, screen size and maximum displayable frame rate may participate in the same conference.  In such a situation it is advantageous to support Scalable Video Coding (SVC).  Encoding with temporal scalability is supported by several browsers today and is utilized by most centralized conferencing services.  It is expected that spatial scalability (supported by VP9 and AV1) will become more popular with time. In this use case, if the desired video codec is known beforehand and participants are muted by default (as in a very large meeting), it is desirable to allow new participants to start receiving immediately, without negotiation. 
+
+Supporting this enhancement adds the following requirements: 
+
+----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+   N07             The user agent must be able to encode and decode video utilizing temporal scalability and 
+                       (if supported by the chosen codec) spatial scalability.
+   N08             A user agent can receive audio/video without a corresponding sender. 
+   N09             It is possible to select the sending and/or receiving codec without negotiation.
+
+This use case has been implemented by conferencing services utilizing ORTC, as well as proprietary additions to WebRTC 1.0.
+
+
+New Use Cases
+
+It is also desirable for WebRTC NV to support use cases beyond those described in RFC 7478, such as the following: 
+File Ssharing
+
+Participants in a mesh exchange large files without disruption to audio/video sessions. It is also possible for a participant to send a large file to a user who is not currently online. 
+
+Supporting this use case adds the following requirements: 
+
+----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+   N10             It must be possible for the user agent to transfer large files as a single message without having to split
+                       them up into small chunks. 
+   N10.1          The application must be able to signal backpressure (flow control) when receiving data. It
+                       must also receive a backpressure signal when sending data.
+   N11             It must be possible for the user agent to transfer data utilizing a congestion control 
+                       algorithm that does not compete aggressively with audio/video communications.
+   N12             It must be possible for the file exchange to be supported by servers as well as user agents.
+   N13             It must be possible to support data exchange in a service worker.
+
+References:
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0082.html
+
+Internet of Things
+An IoT sensor maintains a  long-term connection and seeks to minimize power consumption. Some of the sensor’s data may need to be sent reliable and ordered where other sensors may provide data that can be sent unreliable and unordered or in a partially reliable manner.
+
+This use case adds the following requirements:
+   N14            The application must be able to minimize ICE connectivity checks or eliminate them
+                      entirely.
+   N15            The application must be able to control aspects of the data transport  (e.g. set the
+                      SCTP heartbeat interval or turn it off), RTO values, etc.
+   N15.1         It must be possible to send arbitrary data reliable, unreliable or partially reliable with a specific 
+                     maximum amount of retransmissions or a specific maximum timeout.
+   N15.2         It must be possible to send arbitrary data ordered or unordered.
+
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
+Funny Hats
+A communications service that manipulates captured media prior to encoding and after decoding to provide effects including: 
+Funny hats
+Background removal/blurring
+In-browser compositing
+Voice effects
+Stress detection
+
+This use case adds the following requirements: 
+
+   ----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+  N16             The application must be able to obtain raw media from the capture device and network 
+                       interface.
+   N17             The application must be able to insert processed frames into the outgoing media 
+                       path
+   N18             The application must be able to obtain decoded media from the remote party.
+   N19             Support for worker threads (e.g. data transfer, media encryption, encoder, etc.)
+   N20             The application must be able to process the raw media in JS.
+
+
+Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0037.html
+https://lists.w3.org/Archives/Public/public-webrtc/2018Jun/0006.html
+https://ai.googleblog.com/2016/11/enhance-raisr-sharp-images-with-machine.html 
+
+
+Virtual Reality Gaming
+A virtual reality gaming service utilizing a centralized conferencing server wants to synchronize data with media, using an SFU to distribute the data. 
+
+This use case adds the following requirements: 
+   N21             Ability to send data synchronized with audio.
+
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html 
+
+Secure Communications
+An service that supports end-to-end confidentiality of communications in mesh and centralized conferencing scenarios.  Since the service provides the Javascript application as well as the backend services, both the SFU and the Javascript application are considered untrusted.
+
+  ----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+   N22           The application needs to be able to enable end-to-end payload confidentiality and integrity 
+                     protection.
+   N23           The application must not be able to obtain access to e2e keying material.
+   N24           TBD: restrictions on the application so as to prevent unauthorized recording of the
+                     session and uploading to untrusted parties.  
+Low Delay Media transmission
+A sports broadcasting service enables users to view sporting events  (including 4K content) with low delay. So as to minimize storage, an advanced codec (such as AV1) is used that supports SVC with temporal and spatial scalability. Depending on network characteristics, custom approaches to reliability and robustness may be needed. 
+
+  ----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+   N25             The application needs to be able to control frame packetization.
+   N26             Bandwidth estimates derived from the transport need to be fed back to
+                       the encoder so as to enable adaptation of the sending rate.
+   N27             The user agent must have control over the level of reliability of the transport as well as the 
+                       jitter buffer. 
+   N28             The user agent must have control over the level of robustness applied to various
+                       SVC layers. 
+   N29             The user agent must be able to deploy custom concealment, retransmission, 
+                       redundancy and Forward error correction algorithms.
+
