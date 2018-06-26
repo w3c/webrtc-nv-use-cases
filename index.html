@@ -1,16 +1,52 @@
-WebRTC NV Use Cases
-Improvements
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux/x86 version 5.3.9">
+  <meta charset="utf-8">
+  <link href="webrtc.css" rel="stylesheet">
+  <title>WebRTC Next Version Use Cases</title>
+  <script class="remove" src="respec-w3c-common.js" type="text/javascript"></script>
+  <script src="respec-config.js" class="remove"></script>
+</head>
+<body>
+  <section id="abstract">
+    <p>This document describes a set of use cases motivating the development of
+    WebRTC Next Version (WebRTC-NV).  Unlike WebRTC 1.0 API, WebRTC-NV will not
+    utilize Session Description Protocol (SDP) in the API, nor will it mandate
+    support for the Offer/Answer state machine.</p>
+  </section>
+  <section id="sotd"></section>
+  <section id="overview*">
+    <h2>Overview</h2>
+    <p>To motivate the development of WebRTC 1.0, the IETF RTCWEB WG developed [[RFC7478]].
+    This document seeks to articulate use cases that will motivate the development of
+    WebRTC-NV. The use cases described in this document fall into one of two categories:
+    use cases already covered in [[RFC7478]] which could be enhanced within WebRTC-NV, and
+    new use cases implementable within WebRTC-NV that are not possible within WebRTC 1.0.</p>.
+    <section id="conformance">
+      <p>Stuff goes here.</p>
+    </section>
+    <section>
+    <h3>Terminology</h3>
+       <p>Stuff goes here.</p>
+    </section>
+   </section>
+   <section id="existingusecases*">
+    <h2>Existing Use Cases</h2>
+      <p>Several use cases provide improvements to existing use cases described in [[RFC7478]].</p>
+   <section id="multipartygame*">
+      <h3>Multiparty online game with voice communications</h3>
+      <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game with voice communications.
+      In these scenarios, reducing join time is important. To minimize this, ICE enhancements are desirable, such as
+      the ability to control candidate gathering and pruning.  Also, “parallel forking” minimizes conference
+      establishment time by allowing a participant to broadcast an Offer to a “room” abstraction (maintained on a
+      server), with other room participants responding back directly to the Offerer, avoiding a separate discovery step.
+      Finally, the ability to support early media enables media to be received from responders before they answer the call.
+      Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can
+      affect audio quality or perceived latency in the game.</p> 
+      <p>Supporting this enhancement adds the following requirements:</p> 
 
-Several NV use cases provide improvements to existing use cases described in RFC 7478.
-Multiparty online game with voice communications
-
-RFC 7478 Section 2.3.12 describes a use case involving a multiparty online game with voice communications. 
-
-In these scenarios, reducing join time is important. To minimize this, ICE enhancements are desirable, such as the ability to control candidate gathering and pruning.  Also, “parallel forking” minimizes conference establishment time by allowing a participant to broadcast an Offer to a “room” abstraction (maintained on a server), with other room participants responding back directly to the Offerer, avoiding a separate discovery step.  Finally, the ability to support early media enables media to be received from responders before they answer the call. Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can affect audio quality or perceived latency in the game.  
-
-Supporting this enhancement adds the following requirements: 
-
-----------------------------------------------------------------
+   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
    N01             The user agent can control candidate gathering and pruning, limiting the networks on l 
@@ -20,15 +56,19 @@ Supporting this enhancement adds the following requirements:
    N03             The user agent must be able to impose a bandwidth limit across mesh endpoints.
    N04             Early media must be supported. 
 
-This use case has been implemented by a gaming service utilizing ORTC.
+<p>Experience: This use case has been implemented by a gaming service utilizing ORTC.</p>
 
-References: https://github.com/w3c/ortc/issues/603 
+References:
+https://github.com/w3c/ortc/issues/603 
 https://github.com/w3c/ortc/issues/54
-
-
-Mobility
-
-RFC 7478 Section 2.3.6 describes a simple communications service where the user changes access network during the session.  This use case is enhanced by being able to re-route media over an alternate path (potentially taking network cost into account) without need for signaling.
+</section>
+<section id="mobility*">
+      <h3>Mobility</h3>
+      <p>[[RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
+      during the session.
+      This use case is enhanced by being able to re-route media over an alternate path (potentially taking network cost
+      into account) without need for signaling.</p>     
+ 
 ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
@@ -40,14 +80,22 @@ RFC 7478 Section 2.3.6 describes a simple communications service where the user 
 Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
 https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html 
 https://github.com/w3c/ortc/issues/583 
-
-Video Conferencing with a Central Server
-
-RFC 7478 Section 2.4.3.1 describes a use case involving Multiparty Video Communications with a central conferencing server.  In such a use case, clients with disparate capabilities such as differing bandwidth availability, screen size and maximum displayable frame rate may participate in the same conference.  In such a situation it is advantageous to support Scalable Video Coding (SVC).  Encoding with temporal scalability is supported by several browsers today and is utilized by most centralized conferencing services.  It is expected that spatial scalability (supported by VP9 and AV1) will become more popular with time. In this use case, if the desired video codec is known beforehand and participants are muted by default (as in a very large meeting), it is desirable to allow new participants to start receiving immediately, without negotiation. 
-
-Supporting this enhancement adds the following requirements: 
-
-----------------------------------------------------------------
+</section>
+section id="videoconferencing*">
+      <h3>Video Conferencing with a Central Server</h3>
+      <p>[[RFC7478]] Section 2.4.3.1 describes a use case involving Multiparty Video Communications with
+      a central conferencing server.
+      In such a use case, clients with disparate capabilities such as differing bandwidth availability,
+      screen size and maximum displayable frame rate may participate in the same conference.
+      In such a situation it is advantageous to support Scalable Video Coding (SVC).
+      Encoding with temporal scalability is supported by several browsers today and is utilized by most
+      centralized conferencing services.
+      It is expected that spatial scalability (supported by VP9 and AV1) will become more popular with time.
+      In this use case, if the desired video codec is known beforehand and participants are muted by default
+      (as in a very large meeting), it is desirable to allow new participants to start receiving immediately,
+      without negotiation. Supporting this enhancement adds the following requirements:</p>
+      
+   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
    N07             The user agent must be able to encode and decode video utilizing temporal scalability and 
@@ -55,17 +103,15 @@ Supporting this enhancement adds the following requirements:
    N08             A user agent can receive audio/video without a corresponding sender. 
    N09             It is possible to select the sending and/or receiving codec without negotiation.
 
-This use case has been implemented by conferencing services utilizing ORTC, as well as proprietary additions to WebRTC 1.0.
-
-
-New Use Cases
-
-It is also desirable for WebRTC NV to support use cases beyond those described in RFC 7478, such as the following: 
-File Ssharing
-
-Participants in a mesh exchange large files without disruption to audio/video sessions. It is also possible for a participant to send a large file to a user who is not currently online. 
-
-Supporting this use case adds the following requirements: 
+This use case has been implemented by conferencing services utilizing ORTC, as well as proprietary additions to WebRTC 1.0.        
+</section>
+<section id="newusecases*">
+    <h2>New Use Cases</h2>
+      <p>Several new uses cases relate to scenarios that cannot be supported in WebRTC 1.0.</p>
+   <section id="filesharing*">  
+<p>Participants in a mesh exchange large files without disruption to audio/video sessions.
+It is also possible for a participant to send a large file to a user who is not currently online.
+Supporting this use case adds the following requirements:</p> 
 
 ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
