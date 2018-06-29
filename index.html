@@ -212,7 +212,32 @@ References:
 </section>
 <section id="machinelearning*">
 <h3>Machine Learning</h3>
-<p>Goran's use case goes here.</p>
+<p>In a web game called “NameTheBird.com” participants use their devices to provide audio and video observations of
+birds to the service along with identifications for training purposes, allowing the service to identify birds from
+the provided audio and video and returning this information to the users in real-time.</p>  
+<p>The web application has a site specific federated learning-based classifier for contextual object detection,
+user intent prediction and media manipulation, allowing it to augment the streams it receives and inject identifying
+or other supplemental information into the streams sent or received.</p>
+<p>The shared classification models are trained on the birds found by the participants and are based on the feedback
+of the participants. Each device client updates of the model are up-streamed to a shared model server that pushes
+updates of the global model to the clients.</p>
+<p>Implementation outline:</p>
+<ol>
+  <li>Originating media (raw) streams are cloned for inference and training purposes, denoted “inference stream” and
+  “training stream”, with the inference stream also being the media stream shared with peer(s). The cloning can occur
+  any time during a session.</li>
+  <li>Inference stream: A web site specific classifier acts on the raw inference stream, with the result used to
+  guide a custom encoder in the sender device and send metadata to the server and peer devices outside the media stream.
+  The encoder adds proper augmentation, e.g. sign with “name this bird” hovering over the enlarged bird in case of video
+  enrichment, or enhanced bird song if audio.</li>
+  <li>Training stream: Model in training classifies the raw data and evaluate the classification using user feedback,
+  said feedback loop being web site specific. The evaluation may be  “online” or “offline”, offline meaning the training
+  is done at a later stage on the recorded encoded media set.</li>
+  <li>Both inference stream and training streams may use payload protection depending on trust model on compute
+  resources for optional intermedia server side of app.</li>
+  <li>Both inference stream and training streams use transport object for communicating with peers or servers,
+  the communication in some cases can be a site specific QUIC based transport solution, in others RTP based.</li>
+</ol>
 <p>This use case adds the following requirements:</p> 
 <pre class="example highlight">
    ----------------------------------------------------------------
