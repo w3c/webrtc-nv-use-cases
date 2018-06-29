@@ -232,20 +232,30 @@ requirements:</p>
                  untrusted parties.
 </pre>
 </section>
-  
-Low Delay Media transmission
-A sports broadcasting service enables users to view sporting events  (including 4K content) with low delay. So as to minimize storage, an advanced codec (such as AV1) is used that supports SVC with temporal and spatial scalability. Depending on network characteristics, custom approaches to reliability and robustness may be needed. 
-
+<section id="lowdelaycommunications*">
+<h3>Low Delay Media transmission</h3>  
+<p>A sports broadcasting service enables users to view sporting events
+(including 4K content) with low delay. So as to minimize storage, an
+advanced codec (such as AV1) is used that supports temporal and spatial scalability.
+Depending on network characteristics, custom approaches to reliability and robustness
+may be needed. This use cases adds the following requirements:</p>
+<pre class="example highlight">
   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N25             The application needs to be able to control frame packetization.
-   N26             Bandwidth estimates derived from the transport need to be fed back to
-                       the encoder so as to enable adaptation of the sending rate.
-   N27             The user agent must have control over the level of reliability of the transport as well as the 
-                       jitter buffer. 
-   N28             The user agent must have control over the level of robustness applied to various
-                       SVC layers. 
-   N29             The user agent must be able to deploy custom concealment, retransmission, 
-                       redundancy and Forward error correction algorithms.
-
+   N25             The application needs to be able to control
+                   frame packetization.
+   N26             Bandwidth estimates derived from the transport
+                   need to be fed back to the encoder so as to enable
+                   adaptation of the sending rate.
+   N27             The user agent must have control over the level of
+                   reliability of the transport as well as the jitter
+                   buffer. 
+   N28             The user agent must have control over the level of
+                   robustness applied to various simulcast and SVC
+                   layers.
+   N29             The user agent must be able to deploy custom
+                   concealment, retransmission, redundancy and
+                   Forward Error Correction (FEC) algorithms.
+</pre>
+</section>
