@@ -120,16 +120,20 @@ Supporting this use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N10             It must be possible for the user agent to transfer large files
-                   as a single message without having to split them up into small chunks. 
-   N11             The application must be able to signal backpressure (flow control) when
-                   receiving data. It must also receive a backpressure signal when sending data.
-   N12             It must be possible for the user agent to transfer data utilizing a
-                   congestion control algorithm that does not compete aggressively with
-                   audio/video communications.
-   N13             It must be possible for the file exchange to be supported by servers as well
-                   as user agents.
-   N14             It must be possible to support data exchange in a service worker.
+   N10             It must be possible for the user agent to transfer
+                   large files as a single message without having to
+                   split them up into small chunks. 
+   N11             The application must be able to signal backpressure
+                   (flow control) when receiving data. It must also
+                   receive a backpressure signal when sending data.
+   N12             It must be possible for the user agent to transfer
+                   data utilizing a congestion control algorithm that
+                   does not compete aggressively with audio/video
+                   communications.
+   N13             It must be possible for the file exchange to be
+                   supported by servers as well as user agents.
+   N14             It must be possible to support data exchange
+                   in a service worker.
 </pre>
 References:
 https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html
@@ -145,13 +149,17 @@ This use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------   
-   N14            The application must be able to minimize ICE connectivity checks or eliminate them
-                      entirely.
-   N15            The application must be able to control aspects of the data transport  (e.g. set the
-                      SCTP heartbeat interval or turn it off), RTO values, etc.
-   N15.1         It must be possible to send arbitrary data reliable, unreliable or partially reliable with a specific 
-                     maximum amount of retransmissions or a specific maximum timeout.
-   N15.2         It must be possible to send arbitrary data ordered or unordered.
+   N14            The application must be able to minimize ICE
+                  connectivity checks or eliminate them entirely.
+   N15            The application must be able to control aspects of
+                  the data transport  (e.g. set the SCTP heartbeat
+                  interval or turn it off), RTO values, etc.
+   N16            It must be possible to send arbitrary data reliable,
+                  unreliable or partially reliable with a specific 
+                  maximum number of retransmissions or a specific
+                  maximum timeout.
+   N17            It must be possible to send arbitrary data ordered
+                  or unordered.
 </pre>
 Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html
 </section>
