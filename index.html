@@ -41,17 +41,19 @@
       server), with other room participants responding back directly to the Offerer, avoiding a separate discovery step.
       Finally, the ability to support early media enables media to be received from responders before they answer the call.
       Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can
-      affect audio quality or perceived latency in the game.</p> 
-      <p>Supporting this enhancement adds the following requirements:</p> 
-      <pre class="requirement highlight">
+      affect audio quality or perceived latency in the game. Supporting this enhancement adds the following requirements:</p> 
+      <pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N01             The user agent can control candidate gathering and pruning, limiting the networks on 
-                   which candidates are gathered, the types of candidates, etc. 
-   N02             The user agent must be able to support parallel forking, including reuse of local ICE 
-                   candidates and local certificates with multiple Answerers.
-   N03             The user agent must be able to impose a bandwidth limit across mesh endpoints.
+   N01             The user agent can control candidate gathering and pruning,
+                   limiting the networks on which candidates are gathered, the
+                   types of candidates, etc. 
+   N02             The user agent must be able to support parallel forking, 
+                   including reuse of local ICE candidates and local certificates
+                   with multiple Answerers.
+   N03             The user agent must be able to impose a bandwidth limit across
+                   mesh endpoints.
    N04             Early media must be supported. 
       </pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing ORTC.</p>
@@ -63,17 +65,16 @@ https://github.com/w3c/ortc/issues/54
 <section id="mobility*">
       <h3>Mobility</h3>
       <p>[[RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
-      during the session.
-      This use case is enhanced by being able to re-route media over an alternate path (potentially taking network cost
+      during the session. This use case is enhanced by being able to re-route media over an alternate path (potentially taking network cost
       into account) without need for signaling.</p>     
 <pre class="example highlight"> 
-----------------------------------------------------------------
+   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N05             The ICE agent must be able to maintain multiple candidate pairs and
-                   move traffic between them.
-   N06             The ICE agent must be able to take the network cost into account when
-                   considering re-routing.
+   N05             The ICE agent must be able to maintain multiple
+                   candidate pairs and move traffic between them.
+   N06             The ICE agent must be able to take the network cost
+                   into account when considering re-routing.
 </pre>
 Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
 https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html 
@@ -95,12 +96,13 @@ section id="videoconferencing*">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N07             The user agent must be able to encode and decode video utilizing
-                   temporal scalability and (if supported by the chosen codec)
-                   spatial scalability.
-   N08             A user agent can receive audio/video without a corresponding sender. 
-   N09             It is possible to select the sending and/or receiving codec without
-                   negotiation.
+   N07             The user agent must be able to encode and decode
+                   video utilizing temporal scalability and (if
+                   supported by the chosen codec) spatial scalability.
+   N08             A user agent can receive audio/video without a
+                   corresponding sender. 
+   N09             It is possible to select the sending and/or receiving
+                   codec without negotiation.
 </pre>
 <p>This use case has been implemented by conferencing services utilizing ORTC,
 as well as proprietary additions to WebRTC 1.0.</p>        
