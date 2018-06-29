@@ -42,7 +42,7 @@
       Finally, the ability to support early media enables media to be received from responders before they answer the call.
       Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can
       affect audio quality or perceived latency in the game. Supporting this enhancement adds the following requirements:</p> 
-      <pre class="example highlight">
+<pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
@@ -55,7 +55,7 @@
    N03             The user agent must be able to impose a bandwidth limit across
                    mesh endpoints.
    N04             Early media must be supported. 
-      </pre>
+</pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing ORTC.</p>
 
 References:
@@ -76,11 +76,12 @@ https://github.com/w3c/ortc/issues/54
    N06             The ICE agent must be able to take the network cost
                    into account when considering re-routing.
 </pre>
-Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
+References: 
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
 https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html 
 https://github.com/w3c/ortc/issues/583 
 </section>
-section id="videoconferencing*">
+<section id="videoconferencing*">
       <h3>Video Conferencing with a Central Server</h3>
       <p>[[RFC7478]] Section 2.4.3.1 describes a use case involving Multiparty Video Communications with
       a central conferencing server. In such a use case, clients with disparate capabilities such as differing bandwidth availability,
@@ -92,7 +93,7 @@ section id="videoconferencing*">
       In this use case, if the desired video codec is known beforehand and participants are muted by default
       (as in a very large meeting), it is desirable to allow new participants to start receiving immediately,
       without negotiation. Supporting this enhancement adds the following requirements:</p>
- <pre class="example highlight">
+<pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
@@ -109,13 +110,13 @@ as well as proprietary additions to WebRTC 1.0.</p>
 </section>
 <section id="newusecases*">
     <h2>New Use Cases</h2>
-      <p>Several new uses cases relate to scenarios that cannot be supported in WebRTC 1.0.</p>
+<p>Several new uses cases relate to scenarios that cannot be supported in WebRTC 1.0.</p>
 <section id="filesharing*">
 <h3>File sharing</h3>
 <p>Participants in a mesh exchange large files without disruption to audio/video sessions.
 It is also possible for a participant to send a large file to a user who is not currently online.
 Supporting this use case adds the following requirements:</p> 
- <pre class="example highlight">
+<pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
@@ -140,7 +141,7 @@ https://lists.w3.org/Archives/Public/public-webrtc/2018May/0082.html
 Some of the sensor’s data may need to be sent reliable and ordered where other sensors may
 provide data that can be sent unreliable and unordered or in a partially reliable manner.
 This use case adds the following requirements:</p>
- <pre class="example highlight">
+<pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------   
@@ -166,21 +167,24 @@ decoding to provide effects including:</p>
   <li>Stress detection</li>
 </ol>
 <p>This use case adds the following requirements:</p> 
-
-  <pre class="example highlight">
+<pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-  N16             The application must be able to obtain raw media from the capture device and network 
-                       interface.
-   N17             The application must be able to insert processed frames into the outgoing media 
-                       path
-   N18             The application must be able to obtain decoded media from the remote party.
-   N19             Support for worker threads (e.g. data transfer, media encryption, encoder, etc.)
-   N20             The application must be able to process the raw media in JS.
+   N16             The application must be able to obtain raw media
+                   from the capture device and network interface.
+   N17             The application must be able to insert processed
+                   frames into the outgoing media path.
+   N18             The application must be able to obtain decoded
+                   media from the remote party.
+   N19             Support for worker threads (e.g. data transfer,
+                   media encryption, encoder, etc.)
+   N20             The application must be able to process the raw
+                   media in JS.
 </pre>
   
-Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0037.html
+References:
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0037.html
 https://lists.w3.org/Archives/Public/public-webrtc/2018Jun/0006.html
 https://ai.googleblog.com/2016/11/enhance-raisr-sharp-images-with-machine.html 
 </section>
@@ -189,28 +193,38 @@ https://ai.googleblog.com/2016/11/enhance-raisr-sharp-images-with-machine.html
 <p>A virtual reality gaming service utilizing a centralized conferencing server wants
 to synchronize data with media, using an existing Selective Forwarding Unit (SFU)
 to distribute the data. This use case adds the following requirements:</p>
-
-  <pre class="example highlight">
+<pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-  
+   ---------------------------------------------------------------- 
    N21             Ability to send data synchronized with audio.
 </pre>
 
-Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html 
-
-Secure Communications
-An service that supports end-to-end confidentiality of communications in mesh and centralized conferencing scenarios.  Since the service provides the Javascript application as well as the backend services, both the SFU and the Javascript application are considered untrusted.
-
+References:
+https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html 
+</section>
+<section id="securecommunications*">
+<h3>Secure Communications</h3>
+<p>A service that supports end-to-end confidentiality of communications in mesh and
+centralized conferencing scenarios. Since the service provides the Javascript 
+application as well as the backend services, both the SFU and the Javascript 
+application are considered untrusted. This use cases adds the following
+requirements:</p>
+<pre class="example highlight">
   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N22           The application needs to be able to enable end-to-end payload confidentiality and integrity 
-                     protection.
-   N23           The application must not be able to obtain access to e2e keying material.
-   N24           TBD: restrictions on the application so as to prevent unauthorized recording of the
-                     session and uploading to untrusted parties.  
+   N22           The application needs to be able to enable
+                 end-to-end payload confidentiality and integrity 
+                 protection.
+   N23           The application must not be able to obtain access
+                 to e2e keying material.
+   N24           TBD: restrictions on the application so as to prevent
+                 unauthorized recording of the session and uploading to
+                 untrusted parties.
+</pre>
+</section>
+  
 Low Delay Media transmission
 A sports broadcasting service enables users to view sporting events  (including 4K content) with low delay. So as to minimize storage, an advanced codec (such as AV1) is used that supports SVC with temporal and spatial scalability. Depending on network characteristics, custom approaches to reliability and robustness may be needed. 
 
