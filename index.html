@@ -149,16 +149,16 @@ This use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------   
-   N14            The application must be able to minimize ICE
+   N15            The application must be able to minimize ICE
                   connectivity checks or eliminate them entirely.
-   N15            The application must be able to control aspects of
+   N16            The application must be able to control aspects of
                   the data transport  (e.g. set the SCTP heartbeat
                   interval or turn it off), RTO values, etc.
-   N16            It must be possible to send arbitrary data reliable,
+   N17            It must be possible to send arbitrary data reliable,
                   unreliable or partially reliable with a specific 
                   maximum number of retransmissions or a specific
                   maximum timeout.
-   N17            It must be possible to send arbitrary data ordered
+   N18            It must be possible to send arbitrary data ordered
                   or unordered.
 </pre>
 Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html
@@ -179,15 +179,15 @@ decoding to provide effects including:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N16             The application must be able to obtain raw media
+   N19             The application must be able to obtain raw media
                    from the capture device and network interface.
-   N17             The application must be able to insert processed
+   N20             The application must be able to insert processed
                    frames into the outgoing media path.
-   N18             The application must be able to obtain decoded
+   N21             The application must be able to obtain decoded
                    media from the remote party.
-   N19             Support for worker threads (e.g. data transfer,
+   N22             Support for worker threads (e.g. data transfer,
                    media encryption, encoder, etc.)
-   N20             The application must be able to process the raw
+   N23             The application must be able to process the raw
                    media in JS.
 </pre>
   
@@ -205,7 +205,7 @@ to distribute the data. This use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ---------------------------------------------------------------- 
-   N21             Ability to send data synchronized with audio.
+   N24             Ability to send data synchronized with audio.
 </pre>
 
 References:
@@ -222,12 +222,12 @@ requirements:</p>
   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N22           The application needs to be able to enable
+   N25           The application needs to be able to enable
                  end-to-end payload confidentiality and integrity 
                  protection.
-   N23           The application must not be able to obtain access
+   N26           The application must not be able to obtain access
                  to e2e keying material.
-   N24           TBD: restrictions on the application so as to prevent
+   N27           TBD: restrictions on the application so as to prevent
                  unauthorized recording of the session and uploading to
                  untrusted parties.
 </pre>
@@ -243,18 +243,18 @@ may be needed. This use cases adds the following requirements:</p>
   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N25             The application needs to be able to control
+   N28             The application needs to be able to control
                    frame packetization.
-   N26             Bandwidth estimates derived from the transport
+   N29             Bandwidth estimates derived from the transport
                    need to be fed back to the encoder so as to enable
                    adaptation of the sending rate.
-   N27             The user agent must have control over the level of
+   N30             The user agent must have control over the level of
                    reliability of the transport as well as the jitter
                    buffer. 
-   N28             The user agent must have control over the level of
+   N31             The user agent must have control over the level of
                    robustness applied to various simulcast and SVC
                    layers.
-   N29             The user agent must be able to deploy custom
+   N32             The user agent must be able to deploy custom
                    concealment, retransmission, redundancy and
                    Forward Error Correction (FEC) algorithms.
 </pre>
