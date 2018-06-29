@@ -46,14 +46,15 @@
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N01             The user agent can control candidate gathering and pruning,
-                   limiting the networks on which candidates are gathered, the
-                   types of candidates, etc. 
-   N02             The user agent must be able to support parallel forking, 
-                   including reuse of local ICE candidates and local certificates
-                   with multiple Answerers.
-   N03             The user agent must be able to impose a bandwidth limit across
-                   mesh endpoints.
+   N01             The user agent can control candidate gathering
+                   and pruning, limiting the networks on which
+                   candidates are gathered, the types of candidates,
+                   etc. 
+   N02             The user agent must be able to support parallel
+                   forking, including reuse of local ICE candidates
+                   and local certificates with multiple Answerers.
+   N03             The user agent must be able to impose a bandwidth
+                   limit across mesh endpoints.
    N04             Early media must be supported. 
 </pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing ORTC.</p>
@@ -73,8 +74,8 @@ https://github.com/w3c/ortc/issues/54
    ----------------------------------------------------------------
    N05             The ICE agent must be able to maintain multiple
                    candidate pairs and move traffic between them.
-   N06             The ICE agent must be able to take the network cost
-                   into account when considering re-routing.
+   N06             The ICE agent must be able to take the network
+                   cost into account when considering re-routing.
 </pre>
 References: 
 https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
@@ -102,8 +103,8 @@ https://github.com/w3c/ortc/issues/583
                    supported by the chosen codec) spatial scalability.
    N08             A user agent can receive audio/video without a
                    corresponding sender. 
-   N09             It is possible to select the sending and/or receiving
-                   codec without negotiation.
+   N09             It is possible to select the sending and/or
+                   receiving codec without negotiation.
 </pre>
 <p>This use case has been implemented by conferencing services utilizing ORTC,
 as well as proprietary additions to WebRTC 1.0.</p>        
@@ -120,18 +121,18 @@ Supporting this use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N10             It must be possible for the user agent to transfer
-                   large files as a single message without having to
-                   split them up into small chunks. 
+   N10             It must be possible for the user agent to
+                   transfer large files as a single message without
+                   having to split them up into small chunks. 
    N11             The application must be able to signal backpressure
                    (flow control) when receiving data. It must also
                    receive a backpressure signal when sending data.
    N12             It must be possible for the user agent to transfer
-                   data utilizing a congestion control algorithm that
-                   does not compete aggressively with audio/video
-                   communications.
-   N13             It must be possible for the file exchange to be
-                   supported by servers as well as user agents.
+                   data utilizing a congestion control algorithm
+                   that does not compete aggressively with
+                   audio/video communications.
+   N13             It must be possible for the file exchange to
+                   be supported by servers as well as user agents.
    N14             It must be possible to support data exchange
                    in a service worker.
 </pre>
@@ -151,15 +152,16 @@ This use case adds the following requirements:</p>
    ----------------------------------------------------------------   
    N15            The application must be able to minimize ICE
                   connectivity checks or eliminate them entirely.
-   N16            The application must be able to control aspects of
-                  the data transport  (e.g. set the SCTP heartbeat
-                  interval or turn it off), RTO values, etc.
-   N17            It must be possible to send arbitrary data reliable,
-                  unreliable or partially reliable with a specific 
-                  maximum number of retransmissions or a specific
-                  maximum timeout.
-   N18            It must be possible to send arbitrary data ordered
-                  or unordered.
+   N16            The application must be able to control aspects
+                  of the data transport  (e.g. set the SCTP
+                  heartbeat interval or turn it off), RTO values,
+                  etc.
+   N17            It must be possible to send arbitrary data
+                  reliable, unreliable or partially reliable with
+                  a specific maximum number of retransmissions
+                  or a specific maximum timeout.
+   N18            It must be possible to send arbitrary data
+                  ordered or unordered.
 </pre>
 Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html
 </section>
@@ -227,9 +229,9 @@ requirements:</p>
                  protection.
    N26           The application must not be able to obtain access
                  to e2e keying material.
-   N27           TBD: restrictions on the application so as to prevent
-                 unauthorized recording of the session and uploading to
-                 untrusted parties.
+   N27           TBD: restrictions on the application so as to
+                 prevent unauthorized recording of the session and
+                 uploading to untrusted parties.
 </pre>
 </section>
 <section id="lowdelaycommunications*">
@@ -246,14 +248,14 @@ may be needed. This use cases adds the following requirements:</p>
    N28             The application needs to be able to control
                    frame packetization.
    N29             Bandwidth estimates derived from the transport
-                   need to be fed back to the encoder so as to enable
-                   adaptation of the sending rate.
-   N30             The user agent must have control over the level of
-                   reliability of the transport as well as the jitter
-                   buffer. 
-   N31             The user agent must have control over the level of
-                   robustness applied to various simulcast and SVC
-                   layers.
+                   need to be fed back to the encoder so as to
+                   enable adaptation of the sending rate.
+   N30             The user agent must have control over the level
+                   of reliability of the transport as well as the
+                   jitter buffer. 
+   N31             The user agent must have control over the level
+                   of robustness applied to various simulcast
+                   and SVC layers.
    N32             The user agent must be able to deploy custom
                    concealment, retransmission, redundancy and
                    Forward Error Correction (FEC) algorithms.
