@@ -109,6 +109,9 @@ References:
                    corresponding sender. 
    N09             It is possible to select the sending and/or
                    receiving codec without negotiation.
+   N10             The user agent must have control over the level
+                   of robustness (RTX, RED, FEC) applied to simulcast
+                   and SVC layers.
 </pre>
 <p>This use case has been implemented by conferencing services utilizing [[ORTC]],
 as well as proprietary additions to [[WEBRTC10]].</p>        
@@ -118,7 +121,7 @@ as well as proprietary additions to [[WEBRTC10]].</p>
     <h2>New Use Cases</h2>
 <p>Several new uses cases relate to scenarios that cannot be supported in [[WEBRTC10]].</p>
 <section id="filesharing*">
-<h3>File sharing</h3>
+<h3>File Sharing</h3>
 <p>Participants in a mesh exchange large files without disruption to audio/video sessions.
 It is also possible for a participant to send a large file to a user who is not currently online.
 Supporting this use case adds the following requirements:</p> 
@@ -127,8 +130,7 @@ Supporting this use case adds the following requirements:</p>
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
    N10             It must be possible for the user agent to
-                   transfer large files as a single message without
-                   having to split them up into small chunks. 
+                   transfer large files as a single message. 
    N11             The application must be able to signal backpressure
                    (flow control) when receiving data. It must also
                    receive a backpressure signal when sending data.
@@ -150,7 +152,7 @@ References:
 <section id="iot*">
 <h3>Internet of Things</h3>
 <p>An IoT sensor maintains a  long-term connection and seeks to minimize power consumption.
-Some of the sensor’s data may need to be sent reliable and ordered where other sensors may
+Some of the sensor’s data may need to be sent reliable and ordered while other sensors may
 provide data that can be sent unreliable and unordered or in a partially reliable manner.
 This use case adds the following requirements:</p>
 <pre class="example highlight">
@@ -196,8 +198,8 @@ decoding to provide effects including:</p>
    N21             The application must be able to obtain decoded
                    media from the remote party.
    N22             Support for worker threads (e.g. data transfer,
-                   media encryption, encoder, etc.)
-   N23             The application must be able to process the raw
+                   media manipulation, etc.)
+   N23             The application must be able to process raw
                    media in JS.
 </pre>
   
@@ -207,6 +209,17 @@ References:
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018Jun/0006.html">Mailing list discussion</a></li>
   <li><a href="https://ai.googleblog.com/2016/11/enhance-raisr-sharp-images-with-machine.html">Sharper Image Research</a></li>
 </ol>
+</section>
+<section id="machinelearning*">
+<h3>Machine Learning</h3>
+<p>Goran's use case goes here.</p>
+<p>This use case adds the following requirements:</p> 
+<pre class="example highlight">
+   ----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+  
+</pre>
 </section>
 <section id="vr*">
 <h3>Virtual Reality Gaming</h3>
@@ -226,10 +239,9 @@ References:
 <section id="securecommunications*">
 <h3>Secure Communications</h3>
 <p>A service that supports end-to-end confidentiality of communications in mesh and
-centralized conferencing scenarios. Since the service provides the Javascript 
-application as well as the backend services, both the SFU and the Javascript 
-application are considered untrusted. This use cases adds the following
-requirements:</p>
+centralized conferencing scenarios. While the service provides the Javascript
+application which is considered trusted, backend services such as the SFU are considered
+untrusted. This use cases adds the following requirements:</p>
 <pre class="example highlight">
   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
@@ -237,38 +249,11 @@ requirements:</p>
    N25           The application needs to be able to enable
                  end-to-end payload confidentiality and integrity 
                  protection.
-   N26           The application must not be able to obtain access
-                 to e2e keying material.
+   N26           The browser must be able to obtain e2e keying
+                 keying material so as to enable content to be
+                 rendered.
    N27           TBD: restrictions on the application so as to
-                 prevent unauthorized recording of the session and
-                 uploading to untrusted parties.
-</pre>
-</section>
-<section id="lowdelaycommunications*">
-<h3>Low Delay Media transmission</h3>  
-<p>A sports broadcasting service enables users to view sporting events
-(including 4K content) with low delay. So as to minimize storage, an
-advanced codec (such as AV1) is used that supports temporal and spatial scalability.
-Depending on network characteristics, custom approaches to reliability and robustness
-may be needed. This use cases adds the following requirements:</p>
-<pre class="example highlight">
-  ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N28             The application needs to be able to control
-                   frame packetization.
-   N29             Bandwidth estimates derived from the transport
-                   need to be fed back to the encoder so as to
-                   enable adaptation of the sending rate.
-   N30             The user agent must have control over the level
-                   of reliability of the transport as well as the
-                   jitter buffer. 
-   N31             The user agent must have control over the level
-                   of robustness applied to various simulcast
-                   and SVC layers.
-   N32             The user agent must be able to deploy custom
-                   concealment, retransmission, redundancy and
-                   Forward Error Correction (FEC) algorithms.
+                 prevent unauthorized recording of the session.
 </pre>
 </section>
 </section>
