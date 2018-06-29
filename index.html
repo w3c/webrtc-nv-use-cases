@@ -47,10 +47,10 @@
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N01             The user agent can control candidate gathering and pruning, limiting the networks on l 
-                       which candidates are gathered, the types of candidates, etc. 
-   N02             The user agent must be able to support parallel forking, including reuse of locaICE 
-                       candidates and local certificates with multiple Answerers.
+   N01             The user agent can control candidate gathering and pruning, limiting the networks on 
+                   which candidates are gathered, the types of candidates, etc. 
+   N02             The user agent must be able to support parallel forking, including reuse of local ICE 
+                   candidates and local certificates with multiple Answerers.
    N03             The user agent must be able to impose a bandwidth limit across mesh endpoints.
    N04             Early media must be supported. 
       </pre>
@@ -70,10 +70,10 @@ https://github.com/w3c/ortc/issues/54
 ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N05             The ICE agent must be able to maintain multiple candidate pairs and move traffic between 
-                       them.
-   N06             The ICE agent must be able to take the network cost into account when considering 
-                       re-routing.
+   N05             The ICE agent must be able to maintain multiple candidate pairs and
+                   move traffic between them.
+   N06             The ICE agent must be able to take the network cost into account when
+                   considering re-routing.
 </pre>
 Reference: https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html 
 https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html 
@@ -95,10 +95,12 @@ section id="videoconferencing*">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N07             The user agent must be able to encode and decode video utilizing temporal scalability and 
-                       (if supported by the chosen codec) spatial scalability.
+   N07             The user agent must be able to encode and decode video utilizing
+                   temporal scalability and (if supported by the chosen codec)
+                   spatial scalability.
    N08             A user agent can receive audio/video without a corresponding sender. 
-   N09             It is possible to select the sending and/or receiving codec without negotiation.
+   N09             It is possible to select the sending and/or receiving codec without
+                   negotiation.
 </pre>
 <p>This use case has been implemented by conferencing services utilizing ORTC,
 as well as proprietary additions to WebRTC 1.0.</p>        
@@ -115,14 +117,16 @@ Supporting this use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N10             It must be possible for the user agent to transfer large files as a single message without having to split
-                       them up into small chunks. 
-   N10.1          The application must be able to signal backpressure (flow control) when receiving data. It
-                       must also receive a backpressure signal when sending data.
-   N11             It must be possible for the user agent to transfer data utilizing a congestion control 
-                       algorithm that does not compete aggressively with audio/video communications.
-   N12             It must be possible for the file exchange to be supported by servers as well as user agents.
-   N13             It must be possible to support data exchange in a service worker.
+   N10             It must be possible for the user agent to transfer large files
+                   as a single message without having to split them up into small chunks. 
+   N11             The application must be able to signal backpressure (flow control) when
+                   receiving data. It must also receive a backpressure signal when sending data.
+   N12             It must be possible for the user agent to transfer data utilizing a
+                   congestion control algorithm that does not compete aggressively with
+                   audio/video communications.
+   N13             It must be possible for the file exchange to be supported by servers as well
+                   as user agents.
+   N14             It must be possible to support data exchange in a service worker.
 </pre>
 References:
 https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html
