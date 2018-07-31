@@ -11,18 +11,18 @@
 <body>
   <section id="abstract">
     <p>This document describes a set of use cases motivating the development of
-    WebRTC Next Version (WebRTC-NV).  Unlike WebRTC 1.0 API, WebRTC-NV will not
-    utilize Session Description Protocol (SDP) in the API, nor will it mandate
-    support for the Offer/Answer state machine.</p>
+    WebRTC Next Version (WebRTC-NV), as well as the requirements derived from
+    those use cases.</p>
   </section>
   <section id="sotd"></section>
   <section id="overview*">
-    <h2>Overview</h2>
+    <h2>Scope and Motivation</h2>
     <p>To motivate the development of WebRTC 1.0, the IETF RTCWEB WG developed [[RFC7478]].
-    This document seeks to articulate use cases that will motivate the development of
-    WebRTC-NV. The use cases described in this document fall into one of two categories:
-    use cases already covered in [[RFC7478]] which could be enhanced within WebRTC-NV, and
-    new use cases implementable within WebRTC-NV that are not possible within WebRTC 1.0.</p>.
+    This document describes use cases motivating the development of
+    "WebRTC Next Version" (WebRTC-NV), and the requirements deriving from those use cases.
+    The use cases fall into one of two categories:
+    enhancements to use cases already covered in [[RFC7478]], and
+    new use cases currently not implementable in WebRTC 1.0.</p>.
     <section id="conformance">
     </section>
     <section>
@@ -31,7 +31,7 @@
    </section>
    <section id="existingusecases*">
     <h2>Existing Use Cases</h2>
-      <p>Several use cases provide improvements to existing use cases described in [[RFC7478]].</p>
+      <p>The uses cases in this section improve upon use cases described in [[RFC7478]].</p>
    <section id="multipartygame*">
       <h3>Multiparty online game with voice communications</h3>
       <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game with voice communications.
@@ -41,7 +41,7 @@
       server), with other room participants responding back directly to the Offerer, avoiding a separate discovery step.
       Finally, the ability to support early media enables media to be received from responders before they answer the call.
       Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can
-      affect audio quality or perceived latency in the game. Supporting this enhancement adds the following requirements:</p> 
+      affect audio quality or perceived latency in the game. Supporting this enhancement adds the following requirements:</p>
 <pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
@@ -49,13 +49,13 @@
    N01             The user agent can control candidate gathering
                    and pruning, limiting the networks on which
                    candidates are gathered, the types of candidates,
-                   etc. 
+                   etc.
    N02             The user agent must be able to support parallel
                    forking, including reuse of local ICE candidates
                    and local certificates with multiple Answerers.
    N03             The user agent must be able to impose a bandwidth
                    limit across mesh endpoints.
-   N04             Early media must be supported. 
+   N04             Early media must be supported.
 </pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing [[ORTC]].</p>
 
@@ -69,8 +69,8 @@ References:
       <h3>Mobility</h3>
       <p>[[RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
       during the session. This use case is enhanced by being able to re-route media over an alternate path (potentially taking network cost
-      into account) without need for signaling.</p>     
-<pre class="example highlight"> 
+      into account) without need for signaling.</p>
+<pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
@@ -106,7 +106,7 @@ References:
                    video utilizing temporal scalability and (if
                    supported by the chosen codec) spatial scalability.
    N08             A user agent can receive audio/video without a
-                   corresponding sender. 
+                   corresponding sender.
    N09             It is possible to select the sending and/or
                    receiving codec without negotiation.
    N10             The user agent must have control over the level
@@ -114,7 +114,7 @@ References:
                    and SVC layers.
 </pre>
 <p>This use case has been implemented by conferencing services utilizing [[ORTC]],
-as well as proprietary additions to [[WEBRTC10]].</p>        
+as well as proprietary additions to [[WEBRTC10]].</p>
 </section>
 </section>
 <section id="newusecases*">
@@ -124,23 +124,23 @@ as well as proprietary additions to [[WEBRTC10]].</p>
 <h3>File Sharing</h3>
 <p>Participants in a mesh exchange large files without disruption to audio/video sessions.
 It is also possible for a participant to send a large file to a user who is not currently online.
-Supporting this use case adds the following requirements:</p> 
+Supporting this use case adds the following requirements:</p>
 <pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N10             It must be possible for the user agent to
-                   transfer large files as a single message. 
-   N11             The application must be able to signal backpressure
+   N11             It must be possible for the user agent to
+                   transfer large files as a single message.
+   N12             The application must be able to signal backpressure
                    (flow control) when receiving data. It must also
                    receive a backpressure signal when sending data.
-   N12             It must be possible for the user agent to transfer
+   N13             It must be possible for the user agent to transfer
                    data utilizing a congestion control algorithm
                    that does not compete aggressively with
                    audio/video communications.
-   N13             It must be possible for the file exchange to
+   N14             It must be possible for the file exchange to
                    be supported by servers as well as user agents.
-   N14             It must be possible to support data exchange
+   N15             It must be possible to support data exchange
                    in a service worker.
 </pre>
 References:
@@ -158,18 +158,18 @@ This use case adds the following requirements:</p>
 <pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------   
-   N15            The application must be able to minimize ICE
+   ----------------------------------------------------------------
+   N16            The application must be able to minimize ICE
                   connectivity checks or eliminate them entirely.
-   N16            The application must be able to control aspects
+   N17            The application must be able to control aspects
                   of the data transport  (e.g. set the SCTP
                   heartbeat interval or turn it off), RTO values,
                   etc.
-   N17            It must be possible to send arbitrary data
+   N18            It must be possible to send arbitrary data
                   reliable, unreliable or partially reliable with
                   a specific maximum number of retransmissions
                   or a specific maximum timeout.
-   N18            It must be possible to send arbitrary data
+   N19            It must be possible to send arbitrary data
                   ordered or unordered.
 </pre>
 Reference:
@@ -186,23 +186,23 @@ decoding to provide effects including:</p>
   <li>Voice effects</li>
   <li>Stress detection</li>
 </ol>
-<p>This use case adds the following requirements:</p> 
+<p>This use case adds the following requirements:</p>
 <pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N19             The application must be able to obtain raw media
+   N20             The application must be able to obtain raw media
                    from the capture device and network interface.
-   N20             The application must be able to insert processed
+   N21             The application must be able to insert processed
                    frames into the outgoing media path.
-   N21             The application must be able to obtain decoded
+   N22             The application must be able to obtain decoded
                    media from the remote party.
-   N22             Support for worker threads (e.g. data transfer,
+   N23             Support for worker threads (e.g. data transfer,
                    media manipulation, etc.)
-   N23             The application must be able to process raw
+   N24             The application must be able to process raw
                    media in JS.
 </pre>
-  
+
 References:
 <ol>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0037.html">Mailing list discussion</a></li>
@@ -214,7 +214,7 @@ References:
 <h3>Machine Learning</h3>
 <p>In a web game called “NameTheBird.com” participants use their devices to provide audio and video observations of
 birds to the service along with identifications for training purposes, allowing the service to identify birds from
-the provided audio and video and returning this information to the users in real-time.</p>  
+the provided audio and video and returning this information to the users in real-time.</p>
 <p>The web application has a site specific federated learning-based classifier for contextual object detection,
 user intent prediction and media manipulation, allowing it to augment the streams it receives and inject identifying
 or other supplemental information into the streams sent or received.</p>
@@ -238,12 +238,12 @@ updates of the global model to the clients.</p>
   <li>Both inference stream and training streams use transport object for communicating with peers or servers,
   the communication in some cases can be a site specific QUIC based transport solution, in others RTP based.</li>
 </ol>
-<p>This use case adds the following requirements:</p> 
+<p>This use case adds the following requirements:</p>
 <pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-  
+
 </pre>
 </section>
 <section id="vr*">
@@ -254,12 +254,12 @@ to distribute the data. This use case adds the following requirements:</p>
 <pre class="example highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
-   ---------------------------------------------------------------- 
-   N24             Ability to send data synchronized with audio.
+   ----------------------------------------------------------------
+   N25             Ability to send data synchronized with audio.
 </pre>
 
 References:
-<a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a> 
+<a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a>
 </section>
 <section id="securecommunications*">
 <h3>Secure Communications</h3>
@@ -271,14 +271,107 @@ untrusted. This use cases adds the following requirements:</p>
   ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N25           The application needs to be able to enable
-                 end-to-end payload confidentiality and integrity 
+   N26           The application needs to be able to enable
+                 end-to-end payload confidentiality and integrity
                  protection.
-   N26           The browser must be able to obtain e2e keying
+   N27           The browser must be able to obtain e2e keying
                  keying material so as to enable content to be
                  rendered.
-   N27           TBD: restrictions on the application so as to
+   N28           TBD: restrictions on the application so as to
+                 prevent unauthorized recording of the session.
+</pre>
+</section>
+<section id="requirements*">
+<h3>Requirements</h3>
+<p>This section lists the functional and non-functional requirements arising from
+the use-cases catalogued in this document. Specific requirements that have been
+de-prioritized or rejected have been left in the document for completeness,
+but are shown as struck out.</p>
+<section id="functional*">
+<h3>Functional requirements</h3>
+<dl>
+<dt><dfn data-dfn-type="dfn" id="dfn-f1-1">F1.1</dfn>:</dt>
+     <dd>The user agent can control candidate gathering and pruning, limiting the networks on
+     which candidates are gathered, the types of candidates, etc.
+     from <a href="#multipartygame*" class="internalDFN" data-link-type="dfn">UC1</a>.
+     </dd>
+</dl>
+
+
+<pre class="example highlight">
+  ----------------------------------------------------------------
+   REQ-ID        DESCRIPTION
+   ---------------------------------------------------------------
+   N01           The user agent can control candidate gathering
+                 and pruning, limiting the networks on which
+                 candidates are gathered, the types of candidates,
+                 etc.
+   N02           The user agent must be able to support parallel
+                 forking, including reuse of local ICE candidates
+                 and local certificates with multiple Answerers.
+   N03           The user agent must be able to impose a bandwidth
+                 limit across mesh endpoints.
+   N04           Early media must be supported.
+   N05           The ICE agent must be able to maintain multiple
+                 candidate pairs and move traffic between them.
+   N06           The ICE agent must be able to take the network
+                 cost into account when considering re-routing.
+   N07           The user agent must be able to encode and decode
+                 video utilizing temporal scalability and (if
+                 supported by the chosen codec) spatial scalability.
+   N08           A user agent can receive audio/video without a
+                 corresponding sender.
+   N09           It is possible to select the sending and/or
+                 receiving codec without negotiation.
+   N10           The user agent must have control over the level
+                 of robustness (RTX, RED, FEC) applied to simulcast
+                 and SVC layers.
+   N11           It must be possible for the user agent to
+                 transfer large files as a single message.
+   N12           The application must be able to signal backpressure
+                 (flow control) when receiving data. It must also
+                 receive a backpressure signal when sending data.
+   N13           It must be possible for the user agent to transfer
+                 data utilizing a congestion control algorithm
+                 that does not compete aggressively with
+                 audio/video communications.
+   N14           It must be possible for the file exchange to
+                 be supported by servers as well as user agents.
+   N15           It must be possible to support data exchange
+                 in a service worker.
+   N16           The application must be able to minimize ICE
+                 connectivity checks or eliminate them entirely.
+   N17           The application must be able to control aspects
+                 of the data transport  (e.g. set the SCTP
+                 heartbeat interval or turn it off), RTO values,
+                 etc.
+   N18           It must be possible to send arbitrary data
+                 reliable, unreliable or partially reliable with
+                 a specific maximum number of retransmissions
+                 or a specific maximum timeout.
+   N19           It must be possible to send arbitrary data
+                 ordered or unordered.
+   N20           The application must be able to obtain raw media
+                 from the capture device and network interface.
+   N21           The application must be able to insert processed
+                 frames into the outgoing media path.
+   N22           The application must be able to obtain decoded
+                 media from the remote party.
+   N23           Support for worker threads (e.g. data transfer,
+                 media manipulation, etc.)
+   N24           The application must be able to process raw
+                 media in JS.
+   N25           Ability to send data synchronized with audio.
+   N26           The application needs to be able to enable
+                 end-to-end payload confidentiality and integrity
+                 protection.
+   N27           The browser must be able to obtain e2e keying
+                 keying material so as to enable content to be
+                 rendered.
+   N28           TBD: restrictions on the application so as to
                  prevent unauthorized recording of the session.
 </pre>
 </section>
 </section>
+</section>
+
