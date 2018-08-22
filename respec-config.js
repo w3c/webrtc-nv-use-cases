@@ -2,7 +2,7 @@ var respecConfig = {
   specStatus: "ED",
   // if there a publicly available Editor's Draft, this is the link
   edDraftURI: "https://cdn.rawgit.com/w3c/webrtc-nv-use-cases/6643c1b4/index.html",
-  shortName: "webrtc-nv-usecases",
+  shortName: "webrtc-nv-use-cases",
   editors: [
     { name: "Bernard Aboba", company: "Microsoft Corporation", w3cid: "65611" }
   ],
@@ -12,7 +12,7 @@ var respecConfig = {
   wgURI: "https://www.w3.org/2011/04/webrtc/",
   wgPublicList: "public-webrtc",
   wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/47318/status",
-  issueBase: "https://github.com/w3c/webrtc-nv-usecases/issues",
+  issueBase: "https://github.com/w3c/webrtc-nv-use-cases/issues",
   otherLinks: [
     {
       key: "Participate",
@@ -23,7 +23,7 @@ var respecConfig = {
         },
         {
           value: "Browse open issues",
-          href: "https://github.com/w3c/webrtc-nv-usecases/issues"
+          href: "https://github.com/w3c/webrtc-nv-use-cases/issues"
         }
       ]
     }
