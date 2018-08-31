@@ -1,7 +1,7 @@
 var respecConfig = {
   specStatus: "ED",
   // if there a publicly available Editor's Draft, this is the link
-  edDraftURI: "https://cdn.rawgit.com/w3c/webrtc-nv-use-cases/6643c1b4/index.html",
+  edDraftURI: "https://w3c.github.io/webrtc-nv-use-cases/",
   shortName: "webrtc-nv-use-cases",
   editors: [
     { name: "Bernard Aboba", company: "Microsoft Corporation", w3cid: "65611" }
