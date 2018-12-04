@@ -270,25 +270,6 @@ to distribute the data. This use case adds the following requirements:</p>
 References:
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a>
 </section>
-<section id="securecommunications*">
-<h3>Secure Communications</h3>
-<p>A service that supports end-to-end confidentiality of communications in mesh and
-centralized conferencing scenarios. While the service provides the Javascript
-application which is considered trusted, backend services such as the SFU are considered
-untrusted. This use cases adds the following requirements:</p>
-<pre class="highlight">
-  ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N26           The application must be able to enable end-to-end
-                 payload confidentiality and integrity protection.
-   N27           The browser must be able to obtain e2e keying
-                 keying material so as to enable content to be
-                 rendered.
-   N28           TBD: restrictions on the application so as to
-                 prevent unauthorized recording of the session.
-</pre>
-</section>
 <section id="requirements*">
 <h3>Requirements</h3>
 <p>This section lists the requirements arising from
@@ -360,13 +341,6 @@ the use-cases catalogued in this document.</p>
                  manipulation in worker threads.
    N25           The user agent must be able to send data synchronized
                  with audio.
-   N26           The application must be able to enable end-to-end
-                 payload confidentiality and integrity protection.
-   N27           The browser must be able to obtain e2e keying
-                 keying material so as to enable content to be
-                 rendered.
-   N28           TBD: restrictions on the application so as to
-                 prevent unauthorized recording of the session.
 </pre>
 </section>
 </section>
