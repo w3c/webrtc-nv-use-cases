@@ -270,6 +270,81 @@ to distribute the data. This use case adds the following requirements:</p>
 References:
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a>
 </section>
+<section id="no-trust-webex">
+<h3>Don't Pown My Video Conferenciong </h3>
+<p>
+  Cloud video conferencing system such as WebEx, Hangouts, and Zoom,
+  have no need to be able to see all the content of the media flowing
+  over there servers. Some of them explicitly desire to to be able to
+  promote trust by explicitly showing they do not have access to the
+  audio and video contents of the their users calls. They are trused
+  to connect the right peoiple to the confernce and route the packets
+  but they are not trusted to see the contents of the audio and vidoe
+  media in the call.
+</p>
+<p>
+  Solutions to problenm fall into two major catagores: ones where the
+  JS it trusted, one ones where it is not:
+</p>
+<h4>Untrusted JS Cloud Conferncing</h4>
+<p>
+  There are many cases wehere a system such as WebEx is trusted to
+  connect the members of a confernce but has no need to acces the
+  audio or video contents of the conferece. This is truye of the
+  majorit of audio vidoe ocnferncing sytems on the web today. Juzt so
+  you understand the scope of this requiment, there are more mintues
+  of WebRTC that are usined in confernces wher the the media server
+  has no need of access to the media than any other use of WebRTC my
+  orders of magnitude. This is the pramry use case for WebRTC at this
+  point in time and accounts for billions of minute per month of use
+  of WebRTC. There is no other use case that comes remotely close to
+  this use case. </p>
+<p>
+  In this use case, the JS comes from the operater of the confernce
+  brige. The WebRTC use the isolated media features of WebRTC to keep
+  the JS from accessing the meqdia and the identity featuers to
+  provide a user interface that allows the user to know it connected
+  to the correct confernces. The goal is for the end users to be able
+  see the audio and video media contetns, but the web serverice that
+  provides the JS and the media switching bridges and SFUs can not see
+  the media. Some meta data about the conferce, such as the power
+  levels of the audio media, are encrypt to the SFU. 
+</p>
+<p> A possible solution this probelm is the the browser to negotiatte
+  end to end encrytpions keys using aproach such as the IETF PERC
+  work. The end to end keys are not reveleared to the JS.
+</p>
+<h4>Trusted JS</h4>
+<p>
+  In some highly controlled situtaiton such as department of defence,
+  the JS can come from a trusted source while the SFU the distributes
+  the packets is not trusted to see the contents of the confernce. the
+  SFU is trusted to forward packets aproeropare and not DOS the the
+  conferences. </p>
+<p>
+  In this case the JS runing the WebRTC applicaitons comes from a
+  trusted soruce and is allowed to access to the contents of the
+  media. These use cases tend to be relativelyu small deplyments as
+  they require the JS to come from a trusted source but still tyring
+  to use a media server from an untrused soruce. The media needs to be
+  ecnrypted with keys that are not known to the opeerator of media
+  server, then sent to the media server which deal with
+  conferencing. It is accpetaed able for the power levels of the audio
+  content to be revealed to the media server even though this reveals
+  some information about the content.
+</p>
+
+
+<pre class="highlight">
+   ----------------------------------------------------------------
+   REQ-ID          DESCRIPTION
+   ----------------------------------------------------------------
+   N??             TBD           
+</pre>
+
+References:
+<a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a>
+</section>
 <section id="requirements*">
 <h3>Requirements</h3>
 <p>This section lists the requirements arising from
