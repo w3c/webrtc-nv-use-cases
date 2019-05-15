@@ -33,11 +33,10 @@
       <h3>Multiparty online game with voice communications</h3>
       <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game with voice communications.
       In these scenarios, reducing time to join the game and receive media is important. To minimize this,
-      ICE enhancements are desirable, such as
-      the ability to control candidate gathering and pruning.  Also, “parallel forking” minimizes conference
-      establishment time by allowing a participant to broadcast an Offer to a “room” abstraction (maintained on a
-      server), with other room participants responding back directly to the Offerer, avoiding a separate discovery step.
-      It is desirable to allow media to be received from responders before the initiator receives an answer.
+      ICE enhancements are desirable, such as the ability to control candidate gathering and pruning.  Also,
+      allowing a participant to broadcast an Offer to a “room” abstraction (maintained on a server), with
+      other room participants responding back directly, avoiding a separate discovery step, minimizes conference
+      establishment time.
       Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can
       affect audio quality or perceived latency in the game. Supporting this enhancement adds the following requirements:</p>
 <pre class="highlight">
@@ -48,12 +47,12 @@
                    and pruning, limiting the networks on which
                    candidates are gathered, the types of candidates,
                    etc.
-   N02             The user agent must be able to support parallel
-                   forking, including reuse of local ICE candidates
-                   and local certificates with multiple Answerers.
+   N02             The user agent must be capable of establishing multiple
+                   connections to peers without generating a separate
+                   configuration ("offer") for each connection prior to
+                   establishment.
    N03             The user agent must be able to impose a bandwidth
                    limit across mesh endpoints.
-   N04             Early media must be supported.
 </pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing [[ORTC]].</p>
 
@@ -72,9 +71,9 @@ References:
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N05             The ICE agent must be able to maintain multiple
+   N04             The ICE agent must be able to maintain multiple
                    candidate pairs and move traffic between them.
-   N06             The ICE agent must be able to take the network
+   N05             The ICE agent must be able to take the network
                    cost into account when considering re-routing.
 </pre>
 References:
@@ -101,14 +100,14 @@ References:
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N07             The user agent must be able to encode and decode
+   N06             The user agent must be able to encode and decode
                    video utilizing temporal scalability and (if
                    supported by the chosen codec) spatial scalability.
-   N08             A user agent can receive audio/video without a
+   N07             A user agent can receive audio/video without a
                    corresponding sender.
-   N09             It is possible to select the sending and/or
+   N08             It is possible to select the sending and/or
                    receiving codec without negotiation.
-   N10             The user agent must be able to control
+   N09             The user agent must be able to control
                    robustness (RTX, RED, FEC) applied to individual 
                    simulcast and SVC layers.
 </pre>
@@ -128,18 +127,18 @@ Supporting this use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N11             It must be possible for the user agent to
+   N10             It must be possible for the user agent to
                    transfer large files as a single message.
-   N12             The application must be able to signal backpressure
+   N11             The application must be able to signal backpressure
                    (flow control) when receiving data. It must also
                    receive a backpressure signal when sending data.
-   N13             It must be possible for the user agent to transfer
+   N12             It must be possible for the user agent to transfer
                    data utilizing a congestion control algorithm
                    that does not compete aggressively with
                    audio/video communications.
-   N14             It must be possible for the file exchange to
+   N13             It must be possible for the file exchange to
                    be supported by servers as well as user agents.
-   N15             It must be possible to support data exchange
+   N14             It must be possible to support data exchange
                    in a worker.
 </pre>
 References:
@@ -158,17 +157,17 @@ This use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N16            The application must be able to minimize ICE
+   N15            The application must be able to minimize ICE
                   connectivity checks.
-   N17            The application must be able to control aspects
+   N16            The application must be able to control aspects
                   of the data transport  (e.g. set the SCTP
                   heartbeat interval or turn it off), RTO values,
                   etc.
-   N18            It must be possible to send arbitrary data
+   N17            It must be possible to send arbitrary data
                   reliable, unreliable or partially reliable with
                   a specific maximum number of retransmissions
                   or a specific maximum timeout.
-   N19            It must be possible to send arbitrary data
+   N18            It must be possible to send arbitrary data
                   ordered or unordered.
 </pre>
 Reference:
@@ -190,15 +189,15 @@ decoding to provide effects including:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N20             The application must be able to obtain raw media
+   N19             The application must be able to obtain raw media
                    from the capture device.
-   N21             The application must be able to insert processed
+   N20             The application must be able to insert processed
                    frames into the outgoing media path.
-   N22             The application must be able to obtain decoded
+   N21             The application must be able to obtain decoded
                    media from the remote party.
-   N23             It must be possible to efficiently share media
+   N22             It must be possible to efficiently share media
                    between the main thread and worker threads.
-   N24             It must be possible to do efficient media
+   N23             It must be possible to do efficient media
                    manipulation in worker threads.
 </pre>
 
@@ -242,15 +241,15 @@ updates of the global model to the clients.</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N20             The application must be able to obtain raw media
+   N19             The application must be able to obtain raw media
                    from the capture device.
-   N21             The application must be able to insert processed
+   N20             The application must be able to insert processed
                    frames into the outgoing media path.
-   N22             The application must be able to obtain decoded
+   N21             The application must be able to obtain decoded
                    media from the remote party.
-   N23             It must be possible to efficiently share media
+   N22             It must be possible to efficiently share media
                    between the main thread and worker threads.
-   N24             It must be possible to do efficient media
+   N23             It must be possible to do efficient media
                    manipulation in worker threads.
 </pre>
 </section>
@@ -263,7 +262,7 @@ to distribute the data. This use case adds the following requirements:</p>
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
    ----------------------------------------------------------------
-   N25             The user agent must be able to send data synchronized
+   N24             The user agent must be able to send data synchronized
                    with audio and video.
 </pre>
 
@@ -289,57 +288,56 @@ the use-cases catalogued in this document.</p>
                  and local certificates with multiple Answerers.
    N03           The user agent must be able to impose a bandwidth
                  limit across mesh endpoints.
-   N04           Early media must be supported.
-   N05           The ICE agent must be able to maintain multiple
+   N04           The ICE agent must be able to maintain multiple
                  candidate pairs and move traffic between them.
-   N06           The ICE agent must be able to take the network
+   N05           The ICE agent must be able to take the network
                  cost into account when considering re-routing.
-   N07           The user agent must be able to encode and decode
+   N06           The user agent must be able to encode and decode
                  video utilizing temporal scalability and (if
                  supported by the chosen codec) spatial scalability.
-   N08           A user agent can receive audio/video without a
+   N07           A user agent can receive audio/video without a
                  corresponding sender.
-   N09           It is possible to select the sending and/or
+   N08           It is possible to select the sending and/or
                  receiving codec without negotiation.
-   N10           The user agent must be able to control
+   N09           The user agent must be able to control
                  robustness (RTX, RED, FEC) applied to individual
                  simulcast and SVC layers.
-   N11           It must be possible for the user agent to
+   N10           It must be possible for the user agent to
                  transfer large files as a single message.
-   N12           The application must be able to signal backpressure
+   N11           The application must be able to signal backpressure
                  (flow control) when receiving data. It must also
                  receive a backpressure signal when sending data.
-   N13           It must be possible for the user agent to transfer
+   N12           It must be possible for the user agent to transfer
                  data utilizing a congestion control algorithm
                  that does not compete aggressively with
                  audio/video communications.
-   N14           It must be possible for the file exchange to
+   N13           It must be possible for the file exchange to
                  be supported by servers as well as user agents.
-   N15           It must be possible to support data exchange
+   N14           It must be possible to support data exchange
                  in a worker.
-   N16           The application must be able to minimize ICE
+   N15           The application must be able to minimize ICE
                  connectivity checks.
-   N17           The application must be able to control aspects
+   N16           The application must be able to control aspects
                  of the data transport  (e.g. set the SCTP
                  heartbeat interval or turn it off), RTO values,
                  etc.
-   N18           It must be possible to send arbitrary data
+   N17           It must be possible to send arbitrary data
                  reliable, unreliable or partially reliable with
                  a specific maximum number of retransmissions
                  or a specific maximum timeout.
-   N19           It must be possible to send arbitrary data
+   N18           It must be possible to send arbitrary data
                  ordered or unordered.
-   N20           The application must be able to obtain raw media
+   N19           The application must be able to obtain raw media
                  from the capture device.
-   N21           The application must be able to insert processed
+   N20           The application must be able to insert processed
                  frames into the outgoing media path.
-   N22           The application must be able to obtain decoded
+   N21           The application must be able to obtain decoded
                  media from the remote party.
-   N23           It must be possible to efficiently share media
+   N22           It must be possible to efficiently share media
                  between the main thread and worker threads.
-   N24           It must be possible to do efficient media
+   N23           It must be possible to do efficient media
                  manipulation in worker threads.
-   N25           The user agent must be able to send data synchronized
+   N24           The user agent must be able to send data synchronized
                  with audio.
 </pre>
 </section>
