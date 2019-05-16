@@ -182,7 +182,10 @@ decoding to provide effects including:</p>
   <li>Voice effects</li>
   <li>Stress detection</li>
 </ol>
-<p>This use case adds the following requirements:</p>
+<p>This use case requires manipulation of raw media from both local and remote sources. Since
+media processing can be CPU intensive, enabling it to occur off the main thread is important,
+as is enabling the processing to take advantage of the GPU. This use case adds the following
+requirements:</p>
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
@@ -196,7 +199,7 @@ decoding to provide effects including:</p>
    N21             It must be possible to efficiently share media
                    between the main thread and worker threads.
    N22             It must be possible to do efficient media
-                   manipulation in worker threads.
+                   manipulation in worker threads by utilizing the GPU.
 </pre>
 
 References:
