@@ -31,13 +31,15 @@
       <p>The uses cases in this section improve upon use cases described in [[RFC7478]].</p>
    <section id="multipartygame*">
       <h3>Multiparty online game with voice communications</h3>
-      <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game with voice communications.
-      In these scenarios, reducing time to join the game and receive media is important. To minimize this,
-      ICE enhancements are desirable, such as the ability to control candidate gathering and pruning.  Also,
-      allowing a participant to broadcast a configuration to a “room” abstraction (maintained on a server), with
-      other room participants responding back directly, avoiding a separate discovery step, minimizes conference
-      establishment time. Also, managing audio quality and latency in a fair manner between multiple connections
-      prevents queue buildup. Supporting this enhancement adds the following requirements:</p>
+      <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game
+        with voice communications. In these scenarios, reducing time to join the game and
+        receive media is important. To minimize this, ICE enhancements are desirable, such as
+        the ability to control candidate gathering and pruning.  Also, allowing a participant
+        to broadcast a configuration to a “room” abstraction (maintained on a server), with
+        other room participants responding back directly, avoiding a separate discovery step,
+        minimizes conference establishment time. Also, managing audio quality and latency in
+        a fair manner between multiple connections prevents queue buildup. Supporting this
+        enhancement adds the following requirements:</p>
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
