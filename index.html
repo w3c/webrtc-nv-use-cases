@@ -31,14 +31,15 @@
       <p>The uses cases in this section improve upon use cases described in [[RFC7478]].</p>
    <section id="multipartygame*">
       <h3>Multiparty online game with voice communications</h3>
-      <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game with voice communications.
-      In these scenarios, reducing time to join the game and receive media is important. To minimize this,
-      ICE enhancements are desirable, such as the ability to control candidate gathering and pruning.  Also,
-      allowing a participant to broadcast a configuration to a “room” abstraction (maintained on a server), with
-      other room participants responding back directly, avoiding a separate discovery step, minimizes conference
-      establishment time.
-      Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can
-      affect audio quality or perceived latency in the game. Supporting this enhancement adds the following requirements:</p>
+      <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game
+        with voice communications. In these scenarios, reducing time to join the game and
+        receive media is important. To minimize this, ICE enhancements are desirable, such as
+        the ability to control candidate gathering and pruning.  Also, allowing a participant
+        to broadcast a configuration to a “room” abstraction (maintained on a server), with
+        other room participants responding back directly, avoiding a separate discovery step,
+        minimizes conference establishment time. Also, managing audio quality and latency in
+        a fair manner between multiple connections prevents queue buildup. Supporting this
+        enhancement adds the following requirements:</p>
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
@@ -51,8 +52,9 @@
                    connections to peers without generating a separate
                    configuration ("offer") for each connection prior to
                    establishment.
-   N03             The user agent must be able to impose a bandwidth
-                   limit across mesh endpoints.
+   N03             Congestion control must be able to manage audio
+                   quality and latency in a fair manner between multiple
+                   connections.
 </pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing [[ORTC]].</p>
 
@@ -274,7 +276,7 @@ References:
 <h3>Requirements</h3>
 <p>This section lists the requirements arising from
 the use-cases catalogued in this document.</p>
-<section id="requirements*">
+<section id="requirements2*">
 <h3>Requirements</h3>
 <pre class="highlight">
   ----------------------------------------------------------------
@@ -288,8 +290,9 @@ the use-cases catalogued in this document.</p>
                  connections to peers without generating a separate
                  configuration ("offer") for each connection prior to
                  establishment.
-   N03           The user agent must be able to impose a bandwidth
-                 limit across mesh endpoints.
+   N03           Congestion control must be able to manage audio
+                 quality and latency in a fair manner between multiple
+                 connections.
    N04           The ICE agent must be able to maintain multiple
                  candidate pairs and move traffic between them.
    N05           The ICE agent must be able to take the network
