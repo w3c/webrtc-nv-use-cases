@@ -36,9 +36,8 @@
       ICE enhancements are desirable, such as the ability to control candidate gathering and pruning.  Also,
       allowing a participant to broadcast a configuration to a “room” abstraction (maintained on a server), with
       other room participants responding back directly, avoiding a separate discovery step, minimizes conference
-      establishment time.
-      Also, the ability to impose a bandwidth limit across all mesh endpoints limits the build up of queues that can
-      affect audio quality or perceived latency in the game. Supporting this enhancement adds the following requirements:</p>
+      establishment time. Also, managing audio quality and latency in a fair manner between multiple connections
+      prevents queue buildup. Supporting this enhancement adds the following requirements:</p>
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
@@ -51,8 +50,9 @@
                    connections to peers without generating a separate
                    configuration ("offer") for each connection prior to
                    establishment.
-   N03             Congestion control must be able to manage audio quality
-                   and latency in a fair manner between multiple connections.
+   N03             Congestion control must be able to manage audio
+                   quality and latency in a fair manner between multiple
+                   connections.
 </pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing [[ORTC]].</p>
 
@@ -288,8 +288,9 @@ the use-cases catalogued in this document.</p>
                  connections to peers without generating a separate
                  configuration ("offer") for each connection prior to
                  establishment.
-   N03           The user agent must be able to impose a bandwidth
-                 limit across mesh endpoints.
+   N03           Congestion control must be able to manage audio
+                 quality and latency in a fair manner between multiple
+                 connections.
    N04           The ICE agent must be able to maintain multiple
                  candidate pairs and move traffic between them.
    N05           The ICE agent must be able to take the network
