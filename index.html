@@ -310,9 +310,9 @@ References:
   users to be able to see the contents, but the web service that
   provides the JS and the media switching bridges and Selective
   Forwarding Units (SFUs) cannot access the contents (audio, video,
-  text). Some metadata about the audio, such as the power
-  levels of the audio media, are encrypted end-to-end and are 
-  therefore not accessible to the media server.
+  text). The browser may choose to reveal some metadata, such as
+  the audio power level, to the media server, in order to support
+  functions like speaker switching.
 </p>
 <p>
   A possible solution this problem is the browser to negotiate end to
@@ -341,9 +341,9 @@ References:
   as they require the JavaScript come from a trusted source, but they
   use a media server from an untrusted source. The contents need to be
   encrypted with keys that are not known to the operator of the servers,
-  servers, then sent to the conference server. It is acceptable for
-  the power levels of the audio content to be revealed to the server
-  even though this provides some information about the content.
+  servers, then sent to the conference server. The browser may choose
+  to reveal some metadata, such as the audio power level, to the
+  media server, in order to support functions like speaker switching.
 </p>
 
 <pre class="highlight">
