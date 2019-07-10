@@ -274,21 +274,21 @@ References:
 </section>
 <section id="no-trust-webex">
 <h3>Don't Pown My Video Conferencing </h3>
-
-<p>Cloud video conferencing systems have no need to be able to access
+<p>
+  Cloud video conferencing systems have no need to be able to access
   the cleartext media and text flowing through their servers.
   Some of these conferencing services desire to be able to promote trust
   by explicitly showing they do not have access to contents of their
   users' calls. They are trusted to connect the right people to the
   conference and to route the packets but they are not trusted to access
-  the audio and video media or text in the call.</p>
-
+  the audio and video media or text in the call.
+</p>
 <p>Solutions to this problem fall into two major categories: one where
   the JavaScript comes from a source trusted to see the media contents,
-  and one where it does not:</p>
-
+  and one where it does not.
+</p>
+<section id="untrusted*">
 <h4>Untrusted JavaScript Cloud Conferencing</h4>
-
 <p>
   There are many cases where a system such as WebEx is trusted to
   connect the members of a conference but has no need to access the
@@ -325,7 +325,9 @@ References:
    ----------------------------------------------------------------
    N24             CSP support for WebRTC
 </pre>
-<h4>Trusted JS</h4>
+</section>
+<section id="trusted*">
+<h4>Trusted Javascript</h4>
 
 <p>In some highly controlled situations such as military uses,
   the JavaScript can come from a trusted source while the servers
@@ -352,6 +354,7 @@ References:
    ----------------------------------------------------------------
    N24             CSP support for WebRTC
 </pre>
+</section>
 </section>  
 <section id="requirements*">
 <h3>Requirements</h3>
