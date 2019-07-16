@@ -26,10 +26,10 @@
     <section id="conformance">
     </section>
    </section>
-  <section id="existingusecases*">
+   <section id="existingusecases*">
     <h2>Existing Use Cases</h2>
       <p>The uses cases in this section improve upon use cases described in [[RFC7478]].</p>
-    <section id="multipartygame*">
+   <section id="multipartygame*">
       <h3>Multiparty online game with voice communications</h3>
       <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game
         with voice communications. In these scenarios, reducing time to join the game and
@@ -63,8 +63,8 @@ References:
   <li><a href="https://github.com/w3c/ortc/issues/54">ORTC Issue 54</a></li>
   <li><a href="https://github.com/w3c/ortc/issues/603">ORTC Issue 603</a></li>
 </ol>
-    </section>
-    <section id="mobility*">
+</section>
+<section id="mobility*">
       <h3>Mobility</h3>
       <p>[[RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
       during the session. This use case is enhanced by being able to re-route media over an alternate path
@@ -84,8 +84,8 @@ References:
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html">Mailing list proposal</a></li>
   <li><a href="https://github.com/w3c/ortc/issues/583">ORTC Issue 583</a></li>
 </ol>
-    </section>
-    <section id="videoconferencing*">
+</section>
+<section id="videoconferencing*">
       <h3>Video Conferencing with a Central Server</h3>
       <p>[[RFC7478]] Section 2.4.3.1 describes a use case involving Multiparty Video Communications with
       a central conferencing server. In such a use case, clients with disparate capabilities such as
@@ -115,14 +115,14 @@ References:
 </pre>
 <p>This use case has been implemented by conferencing services utilizing [[ORTC]],
 as well as proprietary additions to [[WEBRTC]].</p>
-    </section>
+</section>
 </section>
 <section id="newusecases*">
     <h2>New Use Cases</h2>
 <p>Several new uses cases relate to scenarios that cannot be supported in [[WEBRTC]] without extensions.</p>
-    <section id="filesharing*">
-    <h3>File Sharing</h3>
-    <p>Participants in a mesh exchange large files without disruption to audio/video sessions.
+<section id="filesharing*">
+<h3>File Sharing</h3>
+<p>Participants in a mesh exchange large files without disruption to audio/video sessions.
 It is also possible for a participant to send a large file to a user who is not currently online.
 Supporting this use case adds the following requirements:</p>
 <pre class="highlight">
@@ -146,8 +146,8 @@ References:
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a></li>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0082.html">Mailing list discussion</a></li>
 </ol>
-    </section>
-    <section id="iot*">
+</section>
+<section id="iot*">
 <h3>Internet of Things</h3>
 <p>An IoT sensor maintains a  long-term connection and seeks to minimize power consumption.
 Some of the sensor’s data may need to be sent reliable and ordered while other sensors may
@@ -172,8 +172,8 @@ This use case adds the following requirements:</p>
 </pre>
 Reference:
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a>
-    </section>
-    <section id="funnyhats*">
+</section>
+<section id="funnyhats*">
 <h3>Funny Hats</h3>
 <p>A communications service that manipulates captured media prior to encoding and after
 decoding to provide effects including:</p>
@@ -210,8 +210,8 @@ References:
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018Jun/0006.html">Mailing list discussion</a></li>
   <li><a href="https://ai.googleblog.com/2016/11/enhance-raisr-sharp-images-with-machine.html">Sharper Image Research</a></li>
 </ol>
-    </section>
-    <section id="machinelearning*">
+</section>
+<section id="machinelearning*">
 <h3>Machine Learning</h3>
 <p>In a web game called “NameTheBird.com” participants use their devices to provide audio and video observations of
 birds to the service along with identifications for training purposes, allowing the service to identify birds from
@@ -255,8 +255,8 @@ updates of the global model to the clients.</p>
    N22             It must be possible to do efficient media
                    manipulation in worker threads.
 </pre>
-    </section>
-    <section id="vr*">
+</section>
+<section id="vr*">
 <h3>Virtual Reality Gaming</h3>
 <p>A virtual reality gaming service utilizing a centralized conferencing server wants
 to synchronize data with media, using an existing Selective Forwarding Unit (SFU)
