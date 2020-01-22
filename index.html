@@ -103,8 +103,7 @@ References:
         </tr>
     </tbody>
 </table>
-  
-References:
+<p>References:</p>
 <ol>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list proposal</a></li>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html">Mailing list proposal</a></li>
@@ -212,9 +211,8 @@ Supporting this use case adds the following requirements:</p>
            <td>CSP support for WebRTC.</td>
         </tr>
     </tbody>
-</table>
-  
-References:
+</table> 
+<p>References:</p>
 <ol>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a></li>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0082.html">Mailing list discussion</a></li>
@@ -265,27 +263,7 @@ This use case adds the following requirements:</p>
         </tr>
     </tbody>
 </table>
-  
-  
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N14            The application must be able to minimize ICE
-                  connectivity checks.
-   N15            The application must be able to control aspects
-                  of the data transport  (e.g. set the SCTP
-                  heartbeat interval or turn it off), RTO values,
-                  etc.
-   N16            It must be possible to send arbitrary data
-                  reliable, unreliable or partially reliable with
-                  a specific maximum number of retransmissions
-                  or a specific maximum timeout.
-   N17            It must be possible to send arbitrary data
-                  ordered or unordered.
-   N24            CSP support for WebRTC               
-</pre>
-Reference:
+<p>Reference</p>
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a>
 </section>
 <section id="funnyhats*">
@@ -306,6 +284,46 @@ decoding to provide effects including:</p>
 media processing can be CPU intensive, enabling it to occur off the main thread is important,
 as is enabling the processing to take advantage of the GPU. This use case adds the following
 requirements:</p>
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N18">
+           <td>N18</td>
+           <td>The application must be able to obtain raw media
+           from the capture device in desired formats.</td>
+        </tr>
+        <tr id="N19">
+           <td>N19</td>
+           <td>The application must be able to insert processed
+           frames into the outgoing media path.</td>
+        </tr>
+        <tr id="N20">
+           <td>N20</td>
+           <td>The application must be able to obtain decoded
+           media from the remote party.</td>
+        </tr>
+        <tr id="N21">
+           <td>N21</td>
+           <td>It must be possible to efficiently share media
+           between the main thread and worker threads.</td>
+        </tr>
+        <tr id="N22">
+           <td>N22</td>
+           <td> It must be possible to do efficient media
+           manipulation in worker threads by utilizing the GPU.</td>
+        </tr>
+        <tr id="N24">
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+    </tbody>
+</table>
+  
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
