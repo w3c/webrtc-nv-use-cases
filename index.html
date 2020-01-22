@@ -314,7 +314,7 @@ requirements:</p>
         </tr>
         <tr id="N22">
            <td>N22</td>
-           <td> It must be possible to do efficient media
+           <td>It must be possible to do efficient media
            manipulation in worker threads by utilizing the GPU.</td>
         </tr>
         <tr id="N24">
@@ -323,25 +323,7 @@ requirements:</p>
         </tr>
     </tbody>
 </table>
-  
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N18             The application must be able to obtain raw media
-                   from the capture device in desired formats.
-   N19             The application must be able to insert processed
-                   frames into the outgoing media path.
-   N20             The application must be able to obtain decoded
-                   media from the remote party.
-   N21             It must be possible to efficiently share media
-                   between the main thread and worker threads.
-   N22             It must be possible to do efficient media
-                   manipulation in worker threads by utilizing the GPU.
-   N24             CSP support for WebRTC
-</pre>
-
-References:
+<p>References:</p>
 <ol>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0037.html">Mailing list discussion</a></li>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018Jun/0006.html">Mailing list discussion</a></li>
@@ -377,38 +359,71 @@ updates of the global model to the clients.</p>
   the communication in some cases can be a site specific QUIC based transport solution, in others RTP based.</li>
 </ol>
 <p>This use case adds the following requirements:</p>
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N18             The application must be able to obtain raw media
-                   from the capture device.
-   N19             The application must be able to insert processed
-                   frames into the outgoing media path.
-   N20             The application must be able to obtain decoded
-                   media from the remote party.
-   N21             It must be possible to efficiently share media
-                   between the main thread and worker threads.
-   N22             It must be possible to do efficient media
-                   manipulation in worker threads.
-   N24             CSP support for WebRTC
-</pre>
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N18">
+           <td>N18</td>
+           <td>The application must be able to obtain raw media
+           from the capture device in desired formats.</td>
+        </tr>
+        <tr id="N19">
+           <td>N19</td>
+           <td>The application must be able to insert processed
+           frames into the outgoing media path.</td>
+        </tr>
+        <tr id="N20">
+           <td>N20</td>
+           <td>The application must be able to obtain decoded
+           media from the remote party.</td>
+        </tr>
+        <tr id="N21">
+           <td>N21</td>
+           <td>It must be possible to efficiently share media
+           between the main thread and worker threads.</td>
+        </tr>
+        <tr id="N22">
+           <td>N22</td>
+           <td>It must be possible to do efficient media
+           manipulation in worker threads by utilizing the GPU.</td>
+        </tr>
+        <tr id="N24">
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+    </tbody>
+</table>
 </section>
 <section id="vr*">
 <h3>Virtual Reality Gaming</h3>
 <p>A virtual reality gaming service utilizing a centralized conferencing server wants
 to synchronize data with media, using an existing Selective Forwarding Unit (SFU)
 to distribute the data. This use case adds the following requirements:</p>
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N23             The user agent must be able to send data synchronized
-                   with audio and video.
-   N24             CSP support for WebRTC
-</pre>
-
-References:
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N23">
+           <td>N23</td>
+           <td>The user agent must be able to send data synchronized
+           with audio and video.</td>
+        </tr>
+        <tr id="N24">
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+    </tbody>
+</table>  
+<p>References:</p>
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a>
 </section>
 <section id="no-trust-webex">
