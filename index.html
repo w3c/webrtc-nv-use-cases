@@ -477,6 +477,45 @@ to distribute the data. This use case adds the following requirements:</p>
   Security requirements relating to this use case are discussed
   in [[MLS-ARCH]], and include the following:
 </p>
+  
+  <table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N25">
+           <td>N25</td>
+           <td>Only current group members can receive media or
+           text sent to the group.</td>
+        </tr>
+        <tr id="N26">
+           <td>N26</td>
+           <td>A group member cannot send media or text that
+           appears to be from another group member.</td>
+        </tr>
+        <tr id="N27">
+           <td>N27</td>
+           <td>The conference server must not have access to
+           cleartext media or text or to the identity of
+           group members.</td>
+        </tr>
+        <tr id="N28">
+           <td>N28</td>
+           <td>Perfect Forward Secrecy (FCS): access to encrypted
+           traffic as well as all current keying material does
+           not compromise the secrecy of media or text older
+           than the oldest key of a compromised client.</td>
+        </tr>
+        <tr id="N29">
+           <td>N29</td>
+           <td>Post Compromise Security (PCS). Protection against
+           past or future device compromise.</td>
+        </tr>
+    </tbody>
+</table>
 
 <pre class="highlight">
    ----------------------------------------------------------------
