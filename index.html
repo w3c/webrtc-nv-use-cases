@@ -516,25 +516,6 @@ to distribute the data. This use case adds the following requirements:</p>
         </tr>
     </tbody>
 </table>
-
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N25             Only current group members can receive media or
-                   text sent to the group.
-   N26             A group member cannot send media or text that
-                   appears to be from another group member.
-   N27             The conference server must not have access to
-                   cleartext media or text or to the identity of
-                   group members.
-   N28             Perfect Forward Secrecy (FCS): access to encrypted
-                   traffic as well as all current keying material does
-                   not compromise the secrecy of media or text older
-                   than the oldest key of a compromised client.
-   N29             Post Compromise Security (PCS). Protection against
-                   past or future device compromise.
-</pre>
 </section>
 </section>
 </section>
@@ -542,86 +523,177 @@ to distribute the data. This use case adds the following requirements:</p>
 <h3>Requirements Summary</h3>
 <p>This section summarizes the requirements arising from
 the use-cases included in this document.</p>
-<pre class="highlight">
-  ----------------------------------------------------------------
-   REQ-ID        DESCRIPTION
-   ---------------------------------------------------------------
-   N01           The user agent can control candidate gathering
-                 and pruning, limiting the networks on which
-                 candidates are gathered, the types of candidates,
-                 etc.
-   N02           The user agent must be capable of establishing multiple
-                 connections to peers without generating a separate
-                 configuration ("offer") for each connection prior to
-                 establishment.
-   N03           Congestion control must be able to manage audio
-                 quality and latency in a fair manner between multiple
-                 connections.
-   N04           The ICE agent must be able to maintain multiple
-                 candidate pairs and move traffic between them.
-   N05           The ICE agent must be able to take the network
-                 cost into account when considering re-routing.
-   N06           The user agent must be able to encode and decode
-                 video utilizing temporal scalability and (if
-                 supported by the chosen codec) spatial scalability.
-   N07           A user agent can receive audio/video without requiring
-                 construction of a corresponding sender object.
-   N08           It is possible to select the sending and/or
-                 receiving codec as well as rtcp parameters and
-                 header extensions without negotiation.
-   N09           The user agent must be able to control
-                 robustness (RTX, RED, FEC) applied to individual
-                 simulcast and SVC layers.
-   N10           It must be possible for the user agent to initiate
-                 transfer of a large files with a single API operation.
-   N11           The application must be able to signal backpressure
-                 (flow control) when receiving data. It must also
-                 receive a backpressure signal when sending data.
-   N12           It must be possible for the user agent to transfer
-                 data utilizing a congestion control algorithm
-                 that does not compete aggressively with
-                 audio/video communications.
-   N13           It must be possible to support data exchange
-                 in a worker.
-   N14           The application must be able to minimize ICE
-                 connectivity checks.
-   N15           The application must be able to control aspects
-                 of the data transport  (e.g. set the SCTP
-                 heartbeat interval or turn it off), RTO values,
-                 etc.
-   N16           It must be possible to send arbitrary data
-                 reliable, unreliable or partially reliable with
-                 a specific maximum number of retransmissions
-                 or a specific maximum timeout.
-   N17           It must be possible to send arbitrary data
-                 ordered or unordered.
-   N18           The application must be able to obtain raw media
-                 from the capture device in desired formats.
-   N19           The application must be able to insert processed
-                 frames into the outgoing media path.
-   N20           The application must be able to obtain decoded
-                 media from the remote party.
-   N21           It must be possible to efficiently share media
-                 between the main thread and worker threads.
-   N22           It must be possible to do efficient media
-                 manipulation in worker threads by utilizing the GPU.
-   N23           The user agent must be able to send data synchronized
-                 with audio.
-   N24           CSP support for WebRTC
-   N25           Only current group members can receive media or
-                 text sent to the group.
-   N26           A group member cannot send media or text that
-                 appears to be from another group member.
-   N27           The conference server must not have access to
-                 cleartext media or text or to the identity of
-                 group members.
-   N28           Perfect Forward Secrecy (FCS): access to encrypted
-                 traffic as well as all current keying material does
-                 not compromise the secrecy of media or text older
-                 than the oldest key of a compromised client.
-   N29           Post Compromise Security (PCS). Protection against
-                 past or future device compromise.
-</pre>
-  </section>
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N01">
+           <td>N01</td>
+           <td>The user agent can control candidate gathering
+           and pruning, limiting the networks on which candidates
+           are gathered, the types of candidates, etc.</td>
+        </tr>
+        <tr id="N02">
+           <td>N02</td>
+           <td>The user agent must be capable of establishing multiple
+           connections to peers without generating a separate
+           configuration ("offer") for each connection prior to
+           establishment.</td>
+        </tr>
+        <tr id="N03">
+           <td>N03</td>
+           <td>Congestion control must be able to manage audio
+           quality and latency in a fair manner between multiple
+           connections.</td>
+        </tr>
+              <tr id="N04">
+           <td>N04</td>
+           <td>The ICE agent must be able to maintain multiple
+             candidate pairs and move traffic between them.</td>
+        </tr>
+        <tr id="N05">
+           <td>N05</td>
+           <td>The ICE agent must be able to take the network
+           cost into account when considering re-routing.</td>
+        </tr>
+        <tr id="N06">
+           <td>N06</td>
+           <td>The user agent must be able to encode and decode
+           video utilizing temporal scalability and (if supported
+           by the chosen codec) spatial scalability.</td>
+        </tr>
+        <tr id="N07">
+           <td>N07</td>
+           <td>A user agent can receive audio/video without requiring
+           construction of a corresponding sender object.</td>
+        </tr>
+        <tr id="N08">
+           <td>N08</td>
+           <td>It is possible to select the sending and/or
+           receiving codec as well as rtcp parameters and
+           header extensions without negotiation.</td>
+        </tr>
+        <tr id="N09">
+           <td>N09</td>
+           <td>The user agent must be able to control
+           robustness (RTX, RED, FEC) applied to individual 
+           simulcast and SVC layers.</td>
+        </tr>
+        <tr id="N10">
+           <td>N10</td>
+           <td>It must be possible for the user agent to initiate
+           transfer of a large file with a single API operation.</td>
+        </tr>
+        <tr id="N11">
+           <td>N11</td>
+           <td>The application must be able to signal backpressure
+           (flow control) when receiving data. It must also
+           receive a backpressure signal when sending data.</td>
+        </tr>
+        <tr id="N12">
+           <td>N12</td>
+           <td>It must be possible for the user agent to transfer
+           data utilizing a congestion control algorithm
+           that does not compete aggressively with
+           audio/video communications.</td>
+        </tr>
+        <tr id="N13">
+           <td>N13</td>
+           <td>It must be possible to support data exchange
+           in a worker.</td>
+        </tr>
+        <tr id="N14">
+           <td>N14</td>
+           <td>The application must be able to minimize ICE
+           connectivity checks.</td>
+        </tr>
+        <tr id="N15">
+           <td>N15</td>
+           <td>The application must be able to control aspects
+           of the data transport  (e.g. set the SCTP
+           heartbeat interval or turn it off), RTO values,
+           etc.</td>
+        </tr>
+        <tr id="N16">
+           <td>N16</td>
+           <td>It must be possible to send arbitrary data
+           reliable, unreliable or partially reliable with
+           a specific maximum number of retransmissions
+           or a specific maximum timeout.</td>
+        </tr>
+        <tr id="N17">
+           <td>N17</td>
+           <td>It must be possible to send arbitrary data
+           ordered or unordered.</td>
+        </tr>
+        <tr id="N18">
+           <td>N18</td>
+           <td>The application must be able to obtain raw media
+           from the capture device in desired formats.</td>
+        </tr>
+        <tr id="N19">
+           <td>N19</td>
+           <td>The application must be able to insert processed
+           frames into the outgoing media path.</td>
+        </tr>
+        <tr id="N20">
+           <td>N20</td>
+           <td>The application must be able to obtain decoded
+           media from the remote party.</td>
+        </tr>
+        <tr id="N21">
+           <td>N21</td>
+           <td>It must be possible to efficiently share media
+           between the main thread and worker threads.</td>
+        </tr>
+        <tr id="N22">
+           <td>N22</td>
+           <td>It must be possible to do efficient media
+           manipulation in worker threads by utilizing the GPU.</td>
+        </tr>
+        <tr id="N23">
+           <td>N23</td>
+           <td>The user agent must be able to send data synchronized
+           with audio and video.</td>
+        </tr>
+        <tr id="N24">
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+        <tr id="N25">
+           <td>N25</td>
+           <td>Only current group members can receive media or
+           text sent to the group.</td>
+        </tr>
+        <tr id="N26">
+           <td>N26</td>
+           <td>A group member cannot send media or text that
+           appears to be from another group member.</td>
+        </tr>
+        <tr id="N27">
+           <td>N27</td>
+           <td>The conference server must not have access to
+           cleartext media or text or to the identity of
+           group members.</td>
+        </tr>
+        <tr id="N28">
+           <td>N28</td>
+           <td>Perfect Forward Secrecy (FCS): access to encrypted
+           traffic as well as all current keying material does
+           not compromise the secrecy of media or text older
+           than the oldest key of a compromised client.</td>
+        </tr>
+        <tr id="N29">
+           <td>N29</td>
+           <td>Post Compromise Security (PCS). Protection against
+           past or future device compromise.</td>
+        </tr>
+    </tbody>
+</table>  
+</section>
 </body>
 </html>
