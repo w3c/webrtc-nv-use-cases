@@ -163,23 +163,6 @@ References:
     </tbody>
 </table>
   
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N06             The user agent must be able to encode and decode
-                   video utilizing temporal scalability and (if
-                   supported by the chosen codec) spatial scalability.
-   N07             A user agent can receive audio/video without requiring
-                   construction of a corresponding sender object.
-   N08             It is possible to select the sending and/or
-                   receiving codec as well as rtcp parameters and
-                   header extensions without negotiation.
-   N09             The user agent must be able to control
-                   robustness (RTX, RED, FEC) applied to individual 
-                   simulcast and SVC layers.
-   N24             CSP support for WebRTC
-</pre>
 <p>This use case has been implemented by conferencing services utilizing [[ORTC]],
 as well as proprietary additions to [[WEBRTC]].</p>
 </section>
@@ -192,6 +175,45 @@ as well as proprietary additions to [[WEBRTC]].</p>
 <p>Participants in a mesh exchange large files without disruption to audio/video sessions.
 It is also possible for a participant to send a large file to a user who is not currently online.
 Supporting this use case adds the following requirements:</p>
+  
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N10">
+           <td>N10</td>
+           <td>It must be possible for the user agent to initiate
+           transfer of a large file with a single API operation.</td>
+        </tr>
+        <tr id="N11">
+           <td>N11</td>
+           <td>The application must be able to signal backpressure
+           (flow control) when receiving data. It must also
+           receive a backpressure signal when sending data.</td>
+        </tr>
+        <tr id="N12">
+           <td>N12</td>
+           <td>It must be possible for the user agent to transfer
+           data utilizing a congestion control algorithm
+           that does not compete aggressively with
+           audio/video communications.</td>
+        </tr>
+        <tr id="N13">
+           <td>N13</td>
+           <td>It must be possible to support data exchange
+           in a worker.</td>
+        </tr>
+        <tr id="N24">
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+    </tbody>
+</table>
+  
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
