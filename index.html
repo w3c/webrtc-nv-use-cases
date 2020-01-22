@@ -40,6 +40,36 @@
         minimizes conference establishment time. Also, managing audio quality and latency in
         a fair manner between multiple connections prevents queue buildup. Supporting this
         enhancement adds the following requirements:</p>
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N01">
+           <td>N01</td>
+           <td>The user agent can control candidate gathering
+           and pruning, limiting the networks on which candidates
+           are gathered, the types of candidates, etc.</td>
+        </tr>
+        <tr id="N02">
+           <td>N02</td>
+           <td>The user agent must be capable of establishing multiple
+           connections to peers without generating a separate
+           configuration ("offer") for each connection prior to
+           establishment.</td>
+        </tr>
+        <tr id="N03">
+           <td>N03</td>
+           <td>Congestion control must be able to manage audio
+           quality and latency in a fair manner between multiple
+           connections.</td>
+        </tr>
+    </tbody>
+</table>
+     
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
@@ -89,16 +119,6 @@ References:
         </tr>
     </tbody>
 </table>
-  
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N04             The ICE agent must be able to maintain multiple
-                   candidate pairs and move traffic between them.
-   N05             The ICE agent must be able to take the network
-                   cost into account when considering re-routing.
-</pre>
 References:
 <ol>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list proposal</a></li>
