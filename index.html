@@ -214,23 +214,6 @@ Supporting this use case adds the following requirements:</p>
     </tbody>
 </table>
   
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N10             It must be possible for the user agent to initiate
-                   transfer of a large file with a single API operation.
-   N11             The application must be able to signal backpressure
-                   (flow control) when receiving data. It must also
-                   receive a backpressure signal when sending data.
-   N12             It must be possible for the user agent to transfer
-                   data utilizing a congestion control algorithm
-                   that does not compete aggressively with
-                   audio/video communications.
-   N13             It must be possible to support data exchange
-                   in a worker.
-   N24             CSP support for WebRTC
-</pre>
 References:
 <ol>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a></li>
@@ -243,6 +226,47 @@ References:
 Some of the sensor’s data may need to be sent reliable and ordered while other sensors may
 provide data that can be sent unreliable and unordered or in a partially reliable manner.
 This use case adds the following requirements:</p>
+  
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N14">
+           <td>N14</td>
+           <td>The application must be able to minimize ICE
+           connectivity checks.</td>
+        </tr>
+        <tr id="N15">
+           <td>N15</td>
+           <td>The application must be able to control aspects
+           of the data transport  (e.g. set the SCTP
+           heartbeat interval or turn it off), RTO values,
+           etc.</td>
+        </tr>
+        <tr id="N16">
+           <td>N16</td>
+           <td>It must be possible to send arbitrary data
+           reliable, unreliable or partially reliable with
+           a specific maximum number of retransmissions
+           or a specific maximum timeout.</td>
+        </tr>
+        <tr id="N17">
+           <td>N17</td>
+           <td>It must be possible to send arbitrary data
+           ordered or unordered.</td>
+        </tr>
+        <tr id="N24">
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+    </tbody>
+</table>
+  
+  
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
