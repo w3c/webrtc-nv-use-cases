@@ -70,22 +70,6 @@
     </tbody>
 </table>
      
-<pre class="highlight">
-   ----------------------------------------------------------------
-   REQ-ID          DESCRIPTION
-   ----------------------------------------------------------------
-   N01             The user agent can control candidate gathering
-                   and pruning, limiting the networks on which
-                   candidates are gathered, the types of candidates,
-                   etc.
-   N02             The user agent must be capable of establishing multiple
-                   connections to peers without generating a separate
-                   configuration ("offer") for each connection prior to
-                   establishment.
-   N03             Congestion control must be able to manage audio
-                   quality and latency in a fair manner between multiple
-                   connections.
-</pre>
 <p>Experience: This use case has been implemented by a gaming service utilizing [[ORTC]].</p>
 
 References:
@@ -119,6 +103,7 @@ References:
         </tr>
     </tbody>
 </table>
+  
 References:
 <ol>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list proposal</a></li>
@@ -139,6 +124,45 @@ References:
       In this use case, if the desired video codec is known beforehand and participants are muted by default
       (as in a very large meeting), it is desirable to allow new participants to start receiving immediately,
       without negotiation. Supporting this enhancement adds the following requirements:</p>
+  
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr id="N06">
+           <td>N06</td>
+           <td>The user agent must be able to encode and decode
+           video utilizing temporal scalability and (if supported
+           by the chosen codec) spatial scalability.</td>
+        </tr>
+        <tr id="N07">
+           <td>N07</td>
+           <td>A user agent can receive audio/video without requiring
+           construction of a corresponding sender object.</td>
+        </tr>
+        <tr id="N08">
+           <td>N08</td>
+           <td>It is possible to select the sending and/or
+           receiving codec as well as rtcp parameters and
+           header extensions without negotiation.</td>
+        </tr>
+        <tr id="N09">
+           <td>N09</td>
+           <td>The user agent must be able to control
+           robustness (RTX, RED, FEC) applied to individual 
+           simulcast and SVC layers.</td>
+        </tr>
+        <tr id="N24">
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+    </tbody>
+</table>
+  
 <pre class="highlight">
    ----------------------------------------------------------------
    REQ-ID          DESCRIPTION
