@@ -77,10 +77,10 @@ References:
 </ol>
 </section>
 <section id="mobility*">
-      <h3>Mobility</h3>
+      <h3>Mobile calling service</h3>
       <p>[[?RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
-      during the session. This use case is enhanced by being able to re-route media over an alternate path
-      (potentially taking network cost into account) without need for signaling.</p> 
+      during the session. This use case is enhanced by being able to ring multiple endpoints simultaneously, as
+      well as to re-route media over an alternate path (potentially taking network cost into account) without need for signaling.</p> 
 <table class="simple">
     <thead>
        <tr>
@@ -89,6 +89,13 @@ References:
        </tr>
     </thead>
     <tbody>
+        <tr>
+           <td>N02</td>
+           <td>The user agent must be capable of establishing multiple
+           connections to peers without generating a separate
+           configuration ("offer") for each connection prior to
+           establishment.</td>
+        </tr>
         <tr>
            <td>N04</td>
            <td>The ICE agent must be able to maintain multiple
