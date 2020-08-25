@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link href="webrtc.css" rel="stylesheet">
   <title>WebRTC Next Version Use Cases</title>
-  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common" type="text/javascript"></script>
+  <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
   <script src="respec-config.js" class="remove"></script>
 </head>
 <body>
@@ -17,21 +17,19 @@
   <section id="sotd"></section>
   <section id="overview*">
     <h2>Scope and Motivation</h2>
-    <p>To motivate the development of WebRTC 1.0, the IETF RTCWEB WG developed [[RFC7478]].
+    <p>To motivate the development of WebRTC 1.0, the IETF RTCWEB WG developed [[?RFC7478]].
     This document describes use cases motivating the development of
     "WebRTC Next Version" (WebRTC-NV), and the requirements deriving from those use cases.
     The use cases fall into one of two categories:
-    enhancements to use cases already covered in [[RFC7478]], and
-    new use cases which are not supported in WebRTC 1.0 [[WEBRTC]] without extensions.</p>
-    <section id="conformance">
-    </section>
+    enhancements to use cases already covered in [[?RFC7478]], and
+    new use cases which are not supported in WebRTC 1.0 [[?WEBRTC]] without extensions.</p>
    </section>
    <section id="existingusecases*">
     <h2>Existing Use Cases</h2>
-      <p>The uses cases in this section improve upon use cases described in [[RFC7478]].</p>
+      <p>The uses cases in this section improve upon use cases described in [[?RFC7478]].</p>
    <section id="multipartygame*">
       <h3>Multiparty online game with voice communications</h3>
-      <p>[[RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game
+      <p>[[?RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game
         with voice communications. In these scenarios, reducing time to join the game and
         receive media is important. To minimize this, ICE enhancements are desirable, such as
         the ability to control candidate gathering and pruning.  Also, allowing a participant
@@ -48,20 +46,20 @@
        </tr>
     </thead>
     <tbody>
-        <tr id="N01">
+        <tr>
            <td>N01</td>
            <td>The user agent can control candidate gathering
            and pruning, limiting the networks on which candidates
            are gathered, the types of candidates, etc.</td>
         </tr>
-        <tr id="N02">
+        <tr>
            <td>N02</td>
            <td>The user agent must be capable of establishing multiple
            connections to peers without generating a separate
            configuration ("offer") for each connection prior to
            establishment.</td>
         </tr>
-        <tr id="N03">
+        <tr>
            <td>N03</td>
            <td>Congestion control must be able to manage audio
            quality and latency in a fair manner between multiple
@@ -70,7 +68,7 @@
     </tbody>
 </table>
      
-<p>Experience: This use case has been implemented by a gaming service utilizing [[ORTC]].</p>
+<p>Experience: This use case has been implemented by a gaming service utilizing [[?ORTC]].</p>
 
 References:
 <ol>
@@ -80,7 +78,7 @@ References:
 </section>
 <section id="mobility*">
       <h3>Mobility</h3>
-      <p>[[RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
+      <p>[[?RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
       during the session. This use case is enhanced by being able to re-route media over an alternate path
       (potentially taking network cost into account) without need for signaling.</p> 
 <table class="simple">
@@ -91,12 +89,12 @@ References:
        </tr>
     </thead>
     <tbody>
-        <tr id="N04">
+        <tr>
            <td>N04</td>
            <td>The ICE agent must be able to maintain multiple
              candidate pairs and move traffic between them.</td>
         </tr>
-        <tr id="N05">
+        <tr>
            <td>N05</td>
            <td>The ICE agent must be able to take the network
            cost into account when considering re-routing.</td>
@@ -112,7 +110,7 @@ References:
 </section>
 <section id="videoconferencing*">
       <h3>Video Conferencing with a Central Server</h3>
-      <p>[[RFC7478]] Section 2.4.3.1 describes a use case involving Multiparty Video Communications with
+      <p>[[?RFC7478]] Section 2.4.3.1 describes a use case involving Multiparty Video Communications with
       a central conferencing server. In such a use case, clients with disparate capabilities such as
       differing bandwidth availability,
       screen size and maximum displayable frame rate may participate in the same conference.
@@ -132,43 +130,43 @@ References:
        </tr>
     </thead>
     <tbody>
-        <tr id="N06">
+        <tr>
            <td>N06</td>
            <td>The user agent must be able to encode and decode
            video utilizing temporal scalability and (if supported
            by the chosen codec) spatial scalability.</td>
         </tr>
-        <tr id="N07">
+        <tr>
            <td>N07</td>
            <td>A user agent can receive audio/video without requiring
            construction of a corresponding sender object.</td>
         </tr>
-        <tr id="N08">
+        <tr>
            <td>N08</td>
            <td>It is possible to select the sending and/or
            receiving codec as well as rtcp parameters and
            header extensions without negotiation.</td>
         </tr>
-        <tr id="N09">
+        <tr>
            <td>N09</td>
            <td>The user agent must be able to control
            robustness (RTX, RED, FEC) applied to individual 
            simulcast and SVC layers.</td>
         </tr>
-        <tr id="N24">
+        <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
         </tr>
     </tbody>
 </table>
   
-<p>This use case has been implemented by conferencing services utilizing [[ORTC]],
-as well as proprietary additions to [[WEBRTC]].</p>
+<p>This use case has been implemented by conferencing services utilizing [[?ORTC]],
+as well as proprietary additions to [[?WEBRTC]].</p>
 </section>
 </section>
 <section id="newusecases*">
     <h2>New Use Cases</h2>
-<p>Several new uses cases relate to scenarios that cannot be supported in [[WEBRTC]] without extensions.</p>
+<p>Several new uses cases relate to scenarios that cannot be supported in [[?WEBRTC]] without extensions.</p>
 <section id="filesharing*">
 <h3>File Sharing</h3>
 <p>Participants in a mesh exchange large files without disruption to audio/video sessions.
@@ -183,30 +181,30 @@ Supporting this use case adds the following requirements:</p>
        </tr>
     </thead>
     <tbody>
-        <tr id="N10">
+        <tr>
            <td>N10</td>
            <td>It must be possible for the user agent to initiate
            transfer of a large file with a single API operation.</td>
         </tr>
-        <tr id="N11">
+        <tr>
            <td>N11</td>
            <td>The application must be able to signal backpressure
            (flow control) when receiving data. It must also
            receive a backpressure signal when sending data.</td>
         </tr>
-        <tr id="N12">
+        <tr>
            <td>N12</td>
            <td>It must be possible for the user agent to transfer
            data utilizing a congestion control algorithm
            that does not compete aggressively with
            audio/video communications.</td>
         </tr>
-        <tr id="N13">
+        <tr>
            <td>N13</td>
            <td>It must be possible to support data exchange
            in a worker.</td>
         </tr>
-        <tr id="N24">
+        <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
         </tr>
@@ -233,31 +231,31 @@ This use case adds the following requirements:</p>
        </tr>
     </thead>
     <tbody>
-        <tr id="N14">
+        <tr>
            <td>N14</td>
            <td>The application must be able to minimize ICE
            connectivity checks.</td>
         </tr>
-        <tr id="N15">
+        <tr>
            <td>N15</td>
            <td>The application must be able to control aspects
            of the data transport  (e.g. set the SCTP
            heartbeat interval or turn it off), RTO values,
            etc.</td>
         </tr>
-        <tr id="N16">
+        <tr>
            <td>N16</td>
            <td>It must be possible to send arbitrary data
            reliable, unreliable or partially reliable with
            a specific maximum number of retransmissions
            or a specific maximum timeout.</td>
         </tr>
-        <tr id="N17">
+        <tr>
            <td>N17</td>
            <td>It must be possible to send arbitrary data
            ordered or unordered.</td>
         </tr>
-        <tr id="N24">
+        <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
         </tr>
@@ -292,32 +290,32 @@ requirements:</p>
        </tr>
     </thead>
     <tbody>
-        <tr id="N18">
+        <tr>
            <td>N18</td>
            <td>The application must be able to obtain raw media
            from the capture device in desired formats.</td>
         </tr>
-        <tr id="N19">
+        <tr>
            <td>N19</td>
            <td>The application must be able to insert processed
            frames into the outgoing media path.</td>
         </tr>
-        <tr id="N20">
+        <tr>
            <td>N20</td>
            <td>The application must be able to obtain decoded
            media from the remote party.</td>
         </tr>
-        <tr id="N21">
+        <tr>
            <td>N21</td>
            <td>It must be possible to efficiently share media
            between the main thread and worker threads.</td>
         </tr>
-        <tr id="N22">
+        <tr>
            <td>N22</td>
            <td>It must be possible to do efficient media
            manipulation in worker threads by utilizing the GPU.</td>
         </tr>
-        <tr id="N24">
+        <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
         </tr>
@@ -367,32 +365,32 @@ updates of the global model to the clients.</p>
        </tr>
     </thead>
     <tbody>
-        <tr id="N18">
+        <tr>
            <td>N18</td>
            <td>The application must be able to obtain raw media
            from the capture device in desired formats.</td>
         </tr>
-        <tr id="N19">
+        <tr>
            <td>N19</td>
            <td>The application must be able to insert processed
            frames into the outgoing media path.</td>
         </tr>
-        <tr id="N20">
+        <tr>
            <td>N20</td>
            <td>The application must be able to obtain decoded
            media from the remote party.</td>
         </tr>
-        <tr id="N21">
+        <tr>
            <td>N21</td>
            <td>It must be possible to efficiently share media
            between the main thread and worker threads.</td>
         </tr>
-        <tr id="N22">
+        <tr>
            <td>N22</td>
            <td>It must be possible to do efficient media
            manipulation in worker threads by utilizing the GPU.</td>
         </tr>
-        <tr id="N24">
+        <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
         </tr>
@@ -412,12 +410,12 @@ to distribute the data. This use case adds the following requirements:</p>
        </tr>
     </thead>
     <tbody>
-        <tr id="N23">
+        <tr>
            <td>N23</td>
            <td>The user agent must be able to send data synchronized
            with audio and video.</td>
         </tr>
-        <tr id="N24">
+        <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
         </tr>
@@ -475,7 +473,7 @@ to distribute the data. This use case adds the following requirements:</p>
 </p>
 <p>
   Security requirements relating to this use case are discussed
-  in [[MLS-ARCH]], and include the following:
+  in [[?MLS-ARCH]], and include the following:
 </p>
   
   <table class="simple">
@@ -486,30 +484,30 @@ to distribute the data. This use case adds the following requirements:</p>
        </tr>
     </thead>
     <tbody>
-        <tr id="N25">
+        <tr>
            <td>N25</td>
            <td>Only current group members can receive media or
            text sent to the group.</td>
         </tr>
-        <tr id="N26">
+        <tr>
            <td>N26</td>
            <td>A group member cannot send media or text that
            appears to be from another group member.</td>
         </tr>
-        <tr id="N27">
+        <tr>
            <td>N27</td>
            <td>The conference server must not have access to
            cleartext media or text or to the identity of
            group members.</td>
         </tr>
-        <tr id="N28">
+        <tr>
            <td>N28</td>
            <td>Perfect Forward Secrecy (FCS): access to encrypted
            traffic as well as all current keying material does
            not compromise the secrecy of media or text older
            than the oldest key of a compromised client.</td>
         </tr>
-        <tr id="N29">
+        <tr>
            <td>N29</td>
            <td>Post Compromise Security (PCS). Protection against
            past or future device compromise.</td>
