@@ -39,12 +39,12 @@ var respecConfig = {
         "Bernard Aboba",
         "Justin Uberti"
       ],
-      "status": "03 October 2018 (work in progress)",
+      "status": "15 March 2021 (work in progress)",
       "publisher": "W3C"
     },
       "MLS-ARCH": {
       "title": "The Messaging Layer Security (MLS) Architecture",
-      "href": "https://tools.ietf.org/html/draft-ietf-mls-architecture",
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-mls-architecture",
       "authors": [
         "E. Omara",
         "B. Beurdouche",
@@ -53,7 +53,7 @@ var respecConfig = {
         "A. Kwon",
         "A. Duric"
       ],
-      "status": "11 March 2019. Internet Draft (work in progress)",
+      "status": "08 March 2021. Internet Draft (work in progress)",
       "publisher": "IETF"
     },
   }
