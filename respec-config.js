@@ -44,7 +44,7 @@ var respecConfig = {
     },
       "MLS-ARCH": {
       "title": "The Messaging Layer Security (MLS) Architecture",
-      "href": "https://tools.ietf.org/html/draft-ietf-mls-architecture",
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-mls-architecture",
       "authors": [
         "E. Omara",
         "B. Beurdouche",
