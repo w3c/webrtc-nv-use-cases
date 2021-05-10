@@ -81,6 +81,8 @@ References:
       <p>[[?RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
       during the session. This use case is enhanced by being able to ring multiple endpoints simultaneously, as
       well as to re-route media over an alternate path (potentially taking network cost into account) without need for signaling.</p> 
+      <p>An additional enhancement is to provide management of the user experience at both ends of a call during interuptions to the media flow
+         caused by other activities taking higer priority on the smartphone. </p>
 <table class="simple">
     <thead>
        <tr>
@@ -106,6 +108,23 @@ References:
            <td>The ICE agent must be able to take the network
            cost into account when considering re-routing.</td>
         </tr>
+        <tr>
+         <td>Nxx</td>
+         <td>The user agent must provide the ability to reestablish media after
+           an interuption</td>
+        </tr>
+        <tr>
+         <td>Nxx</td>
+         <td>The user agent must provide the ability to play selected media to the remote party during
+            an interuption (c.f. on hold music)
+         </td>
+        </tr>
+        <tr>
+         <td>Nxx</td>
+         <td>The user agent must provide the ability to 'park' a connection such that it can be retrived and
+            continued by a newly loaded page to prevent accidental 'browsing away' from dropping a call irretreivably
+         </td>
+        </tr>
     </tbody>
 </table>
 <p>References:</p>
@@ -114,6 +133,8 @@ References:
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0019.html">Mailing list proposal</a></li>
   <li><a href="https://github.com/w3c/ortc/issues/583">ORTC Issue 583</a></li>
 </ol>
+<p>Experience: This use case has been implemented by multiple native smartphone apps with call-kit integration.</p>
+
 </section>
 <section id="videoconferencing*">
       <h3>Video Conferencing with a Central Server</h3>
@@ -228,6 +249,8 @@ Supporting this use case adds the following requirements:</p>
 <p>An IoT sensor maintains a  long-term connection and seeks to minimize power consumption.
 Some of the sensor’s data may need to be sent reliable and ordered while other sensors may
 provide data that can be sent unreliable and unordered or in a partially reliable manner.
+Such IoT sensors may also produce realtime video or audio data for remote users which are privacy sensitive
+and may only be accessed by selected devices.
 This use case adds the following requirements:</p>
   
 <table class="simple">
@@ -266,10 +289,19 @@ This use case adds the following requirements:</p>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
         </tr>
+        <tr>
+           <td>Nxx</td>
+           <td>A 'long-term connection' must be able to be re-established without access to external
+            services in the event of the local network becoming isolated from the wider network without
+            compromising e2e security.
+           </td>
+        </tr>
     </tbody>
 </table>
 <p>Reference</p>
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a>
+<p>Experience: Building a respiration monitor that works locally during an internet outage but is also available remotely when the internet connection returns .</p>
+
 </section>
 <section id="funnyhats*">
 <h3>Funny Hats</h3>
@@ -322,6 +354,12 @@ requirements:</p>
            <td>It must be possible to do efficient media
            manipulation in worker threads by utilizing the GPU.</td>
         </tr>
+        <tr>
+         <td>Nxx</td>
+         <td>The user agent must provide Non discriminatory implementations 
+            of facetracking and body tracking algorithms that can be efficiently used by the application.
+         </td>
+      </tr>
         <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
@@ -474,6 +512,12 @@ to distribute the data. This use case adds the following requirements:</p>
   in order to support functions like speaker switching.
 </p>
 <p>
+   For small groups (fewer than 20 participants) the SFU could also
+   run within the browser, futher reducing the dependency on costly
+   centralized servers with management functions running within a 
+   web or service worker.
+</p>
+<p>
   A possible solution this problem is the browser to negotiate
   end-to-end encryption keys which are not revealed to the
   JavaScript.
@@ -519,10 +563,101 @@ to distribute the data. This use case adds the following requirements:</p>
            <td>Post Compromise Security (PCS). Protection against
            past or future device compromise.</td>
         </tr>
+        <tr>
+           <td>Nxx</td>
+           <td>Data channels in service workers. - This would allow the page
+            to issue a fetch() which could be resolved in the service worker using P2P 
+            datachannels
+           </td>
+        </tr>
+        <tr>
+         <td>Nxx</td>
+         <td>A group member can encrypt and send copies of the encoded media directly to multiple group members
+            without the intervention of the media server.
+         </td>
+      </tr>
+        <tr><td>note that the requirements from Machine Learning usecase are also required here.</td></tr>
     </tbody>
 </table>
 </section>
 </section>
+</section>
+<section id="decent">
+   <h3>Decentralized internet</h3>
+   <p>New decentralized applications provide P2P services and client-server services for consumption in a browser.</p>
+   <p>The differences in transport layer semantics make it difficult to share code between the 2 modes.</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+           <tr>
+              <td>NXX</td>
+              <td>Ability to intercept the fetch API and service it over a P2P link. (one way to do this would be to
+                 support Datachannels in Service Workers - which can already intercept fetch)
+              </td>
+           </tr>
+       </tbody>
+   </table>  
+   <p>Experience: Both |pipe| and [Matrix] have implemented systems of this sort.</p>
+</section>
+<section id="auction">
+   <h3>Low latency P2P broadcast</h3>
+   <p>There are 'broadcast' applications that require low latency realtime media - Distributed auctions or betting for example.</p>
+   <p>The same live video and audio (+data) should be sent to hundreds of recipients</p>
+   <p>WebRTC 1.0 can do this, but it lacks some features that those industries require and have in higher latency streaming technologies.
+   </p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+           <tr>
+              <td>NXX</td>
+              <td>Predictable auto-play for media elements that works for first time users and is testable.
+              </td>
+           </tr>
+           <tr>
+            <td>NXX</td>
+            <td>Ability to reuse DRM assets streamed over the data channels
+            </td>
+         </tr>
+         <tr>
+            <td>NXX</td>
+            <td>Ability to reuse subtitle assets streamed over the data channels
+            </td>
+         </tr>
+       </tbody>
+   </table>  
+   <p>Experience: Both |pipe| and millicast have built systems of this sort.</p>
+</section>
+<section id="urisig">
+   <h3>Reduced complexity signalling</h3>
+   <p>Some (simpler) media/data sources/sinks do not require the full array of webRTC's optionalities.
+   </p>
+   <p>In such cases the full SDP O/A could be replaced with offline static configuration and a simple URI at runtime</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+           <tr>
+              <td>NXX</td>
+              <td>A URI format that defines the remaining transport related fields eg service address/port, ICE credentials, DTLS fingerprint   
+              </td>
+           </tr>
+       </tbody>
+   </table>  
+   <p>Experience: Both |pipe| and pion have built systems of this sort.</p>
 </section>
 <section id="requirements*">
 <h3>Requirements Summary</h3>
