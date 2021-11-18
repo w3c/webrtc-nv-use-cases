@@ -23,4 +23,4 @@ jobs:
           VALIDATE_LINKS: false
           W3C_BUILD_OVERRIDE: |
             shortName: webrtc-nv-use-cases
-            specStatus: WD
+            specStatus: DNOTE
