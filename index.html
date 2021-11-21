@@ -244,6 +244,37 @@ Supporting this use case adds the following requirements:</p>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0082.html">Mailing list discussion</a></li>
 </ol>
 </section>
+<section id="auction">
+   <h3>Low latency P2P broadcast</h3>
+   <p>There are 'broadcast' applications that require low latency realtime media - distributed
+   auctions or betting for example.  The same live video and audio (+data) can be sent to hundreds
+   of recipients.</p>
+   <p>WebRTC 1.0 can do this, but it lacks some features that those industries require and have in
+   higher latency streaming technologies.</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+           <tr>
+              <td>N36</td>
+              <td>Predictable auto-play for media elements that works for first time users and is testable.</td>
+           </tr>
+           <tr>
+              <td>N37</td>
+              <td>Ability to reuse DRM assets streamed over data channels.</td>
+           </tr>
+           <tr>
+              <td>N38</td>
+              <td>Ability to reuse subtitle assets streamed over data channels.</td>
+           </tr>
+       </tbody>
+   </table>  
+   <p>Experience: |pipe|, Peer5 and millicast have built systems of this sort.</p>
+</section>
 <section id="iot*">
 <h3>Internet of Things</h3>
 <p>An IoT sensor maintains a  long-term connection and seeks to minimize power consumption.
@@ -578,7 +609,6 @@ to distribute the data. This use case adds the following requirements:</p>
 </table>
 </section>
 </section>
-</section>
 <section id="decent">
    <h3>Decentralized internet</h3>
    <p>New decentralized applications provide P2P services and client-server services for consumption in a browser.</p>
@@ -601,37 +631,6 @@ to distribute the data. This use case adds the following requirements:</p>
    </table>  
    <p>Experience: Both |pipe| and [Matrix] have implemented systems of this sort.</p>
 </section>
-<section id="auction">
-   <h3>Low latency P2P broadcast</h3>
-   <p>There are 'broadcast' applications that require low latency realtime media - distributed
-   auctions or betting for example.  The same live video and audio (+data) can be sent to hundreds
-   of recipients.</p>
-   <p>WebRTC 1.0 can do this, but it lacks some features that those industries require and have in
-   higher latency streaming technologies.</p>
-   <table class="simple">
-       <thead>
-          <tr>
-             <th>Requirement ID</th>
-             <th>Description</th>
-          </tr>
-       </thead>
-       <tbody>
-           <tr>
-              <td>N36</td>
-              <td>Predictable auto-play for media elements that works for first time users and is testable.</td>
-           </tr>
-           <tr>
-              <td>N37</td>
-              <td>Ability to reuse DRM assets streamed over data channels.</td>
-           </tr>
-           <tr>
-              <td>N38</td>
-              <td>Ability to reuse subtitle assets streamed over data channels.</td>
-           </tr>
-       </tbody>
-   </table>  
-   <p>Experience: |pipe|, Peer5 and millicast have built systems of this sort.</p>
-</section>
 <section id="urisig">
    <h3>Reduced complexity signalling</h3>
    <p>Some (simpler) media/data sources/sinks do not require the full array of webRTC's optionalities.
@@ -653,6 +652,7 @@ to distribute the data. This use case adds the following requirements:</p>
        </tbody>
    </table>  
    <p>Experience: Both |pipe| and pion have built systems of this sort.</p>
+</section>
 </section>
 <section id="requirements*">
 <h3>Requirements Summary</h3>
