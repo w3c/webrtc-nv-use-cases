@@ -101,7 +101,7 @@ References:
         <tr>
            <td>N04</td>
            <td>The ICE agent must be able to maintain multiple
-             candidate pairs and move traffic between them.</td>
+           candidate pairs and move traffic between them.</td>
         </tr>
         <tr>
            <td>N05</td>
@@ -109,21 +109,21 @@ References:
            cost into account when considering re-routing.</td>
         </tr>
         <tr>
-         <td>Nxx</td>
-         <td>The user agent must provide the ability to reestablish media after
+           <td>N30</td>
+           <td>The user agent must provide the ability to reestablish media after
            an interuption</td>
         </tr>
         <tr>
-         <td>Nxx</td>
-         <td>The user agent must provide the ability to play selected media to the remote party during
-            an interuption (c.f. on hold music)
-         </td>
+           <td>N31</td>
+           <td>The user agent must provide the ability to play selected media to the remote party during
+           an interuption (c.f. on hold music).
+           </td>
         </tr>
         <tr>
-         <td>Nxx</td>
-         <td>The user agent must provide the ability to 'park' a connection such that it can be retrived and
-            continued by a newly loaded page to prevent accidental 'browsing away' from dropping a call irretreivably
-         </td>
+           <td>N32</td>
+           <td>The user agent must provide the ability to 'park' a connection such that it can be retrieved and
+           continued by a newly loaded page to prevent accidental 'browsing away' from dropping a call irretrievably
+           </td>
         </tr>
     </tbody>
 </table>
@@ -290,10 +290,10 @@ This use case adds the following requirements:</p>
            <td>CSP support for WebRTC.</td>
         </tr>
         <tr>
-           <td>Nxx</td>
+           <td>N33</td>
            <td>A 'long-term connection' must be able to be re-established without access to external
-            services in the event of the local network becoming isolated from the wider network without
-            compromising e2e security.
+           services in the event of the local network becoming isolated from the wider network without
+           compromising e2e security.
            </td>
         </tr>
     </tbody>
@@ -355,14 +355,14 @@ requirements:</p>
            manipulation in worker threads by utilizing the GPU.</td>
         </tr>
         <tr>
-         <td>Nxx</td>
-         <td>The user agent must provide Non discriminatory implementations 
-            of facetracking and body tracking algorithms that can be efficiently used by the application.
-         </td>
-      </tr>
-        <tr>
            <td>N24</td>
            <td>CSP support for WebRTC.</td>
+        </tr>
+        <tr>
+           <td>N34</td>
+           <td>The user agent must provide non-discriminatory implementations of
+           facetracking and body tracking algorithms that can be efficiently used
+           by the application.</td>
         </tr>
     </tbody>
 </table>
@@ -564,18 +564,16 @@ to distribute the data. This use case adds the following requirements:</p>
            past or future device compromise.</td>
         </tr>
         <tr>
-           <td>Nxx</td>
+           <td>N34</td>
            <td>Data channels in service workers. - This would allow the page
-            to issue a fetch() which could be resolved in the service worker using P2P 
-            datachannels
-           </td>
+           to issue a fetch() which could be resolved in the service worker using P2P 
+           datachannels.</td>
         </tr>
         <tr>
-         <td>Nxx</td>
-         <td>A group member can encrypt and send copies of the encoded media directly to multiple group members
-            without the intervention of the media server.
-         </td>
-      </tr>
+           <td>N35</td>
+           <td>A group member can encrypt and send copies of the encoded media directly
+           to multiple group members without the intervention of the media server.</td>
+        </tr>
         <tr><td>note that the requirements from Machine Learning usecase are also required here.</td></tr>
     </tbody>
 </table>
@@ -606,10 +604,11 @@ to distribute the data. This use case adds the following requirements:</p>
 </section>
 <section id="auction">
    <h3>Low latency P2P broadcast</h3>
-   <p>There are 'broadcast' applications that require low latency realtime media - Distributed auctions or betting for example.</p>
-   <p>The same live video and audio (+data) should be sent to hundreds of recipients</p>
-   <p>WebRTC 1.0 can do this, but it lacks some features that those industries require and have in higher latency streaming technologies.
-   </p>
+   <p>There are 'broadcast' applications that require low latency realtime media - distributed
+   auctions or betting for example.  The same live video and audio (+data) can be sent to hundreds
+   of recipients.</p>
+   <p>WebRTC 1.0 can do this, but it lacks some features that those industries require and have in
+   higher latency streaming technologies.</p>
    <table class="simple">
        <thead>
           <tr>
@@ -619,23 +618,20 @@ to distribute the data. This use case adds the following requirements:</p>
        </thead>
        <tbody>
            <tr>
-              <td>NXX</td>
-              <td>Predictable auto-play for media elements that works for first time users and is testable.
-              </td>
+              <td>N36</td>
+              <td>Predictable auto-play for media elements that works for first time users and is testable.</td>
            </tr>
            <tr>
-            <td>NXX</td>
-            <td>Ability to reuse DRM assets streamed over the data channels
-            </td>
+            <td>N37</td>
+            <td>Ability to reuse DRM assets streamed over data channels.</td>
          </tr>
          <tr>
-            <td>NXX</td>
-            <td>Ability to reuse subtitle assets streamed over the data channels
-            </td>
+            <td>N38</td>
+            <td>Ability to reuse subtitle assets streamed over data channels.</td>
          </tr>
        </tbody>
    </table>  
-   <p>Experience: Both |pipe| and millicast have built systems of this sort.</p>
+   <p>Experience: |pipe|, Peer5 and millicast have built systems of this sort.</p>
 </section>
 <section id="urisig">
    <h3>Reduced complexity signalling</h3>
@@ -651,7 +647,7 @@ to distribute the data. This use case adds the following requirements:</p>
        </thead>
        <tbody>
            <tr>
-              <td>NXX</td>
+              <td>N39</td>
               <td>A URI format that defines the remaining transport related fields eg service address/port, ICE credentials, DTLS fingerprint   
               </td>
            </tr>
@@ -831,6 +827,50 @@ the use-cases included in this document.</p>
            <td>N29</td>
            <td>Post Compromise Security (PCS). Protection against
            past or future device compromise.</td>
+        </tr>
+        </tr id="N30">
+           <td>N30</td>
+           <td>The user agent must provide the ability to reestablish media after
+           an interuption.</td>
+        </tr>
+        </tr id="N31">
+           <td>N31</td>
+           <td>The user agent must provide the ability to play selected media to the remote party during
+            an interuption (c.f. on hold music).</td>
+        </tr>
+        </tr id="N32">
+           <td>N32</td>
+           <td>The user agent must provide the ability to 'park' a connection such that it can be retrieved and
+            continued by a newly loaded page to prevent accidental 'browsing away' from dropping a call irretrievably.</td>
+        </tr id="N33">
+           <td>N33</td>
+           <td>A 'long-term connection' must be able to be re-established without access to external
+           services in the event of the local network becoming isolated from the wider network without
+           compromising e2e security.</td>
+        </tr>
+        </tr id="N34">
+           <td>N34</td>
+           <td>Data channels in service workers. - This would allow the page
+           to issue a fetch() which could be resolved in the service worker using P2P 
+           datachannels.</td>
+        </tr>
+        </tr id="N35">
+           <td>N35</td>
+           <td>A group member can encrypt and send copies of the encoded media directly
+           to multiple group members without the intervention of the media server.</td>
+        </tr> 
+        </tr id="N36">
+           <td>N36</td>
+           <td>Predictable auto-play for media elements that works for first time users
+           and is testable.</td>
+        </tr>
+        </tr id="N37">
+           <td>N37</td>
+           <td>Ability to reuse DRM assets streamed over data channels.</td>
+        </tr>
+        </tr id="N38">
+           <td>N38</td>
+           <td>Ability to reuse subtitle assets streamed over data channels.</td>
         </tr>
     </tbody>
 </table>  
