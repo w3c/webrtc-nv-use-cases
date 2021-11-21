@@ -110,20 +110,20 @@ References:
         </tr>
         <tr>
            <td>N30</td>
-           <td>The user agent must provide the ability to reestablish media after
-           an interuption</td>
+           <td>The user agent must provide the ability to re-establish media
+           after an interruption.</td>
         </tr>
         <tr>
            <td>N31</td>
-           <td>The user agent must provide the ability to play selected media to the remote party during
-           an interuption (c.f. on hold music).
+           <td>The user agent must provide the ability to play selected media to
+           the remote party during an interuption (c.f. on hold music).</td>
            </td>
         </tr>
         <tr>
            <td>N32</td>
-           <td>The user agent must provide the ability to 'park' a connection such that it can be retrieved and
-           continued by a newly loaded page to prevent accidental 'browsing away' from dropping a call irretrievably
-           </td>
+           <td>The user agent must provide the ability to 'park' a connection such
+           that it can be retrieved and continued by a newly loaded page to prevent
+           accidental 'browsing away' from dropping a call irretrievably.</td>
         </tr>
     </tbody>
 </table>
@@ -592,10 +592,10 @@ to distribute the data. This use case adds the following requirements:</p>
        </thead>
        <tbody>
            <tr>
-              <td>NXX</td>
-              <td>Ability to intercept the fetch API and service it over a P2P link. (one way to do this would be to
-                 support Datachannels in Service Workers - which can already intercept fetch)
-              </td>
+              <td>N40</td>
+              <td>Ability to intercept the fetch API and service it over a P2P link.
+              One way to do this would be to support data channels in Service Workers 
+              which can already intercept fetch).</td>
            </tr>
        </tbody>
    </table>  
@@ -621,13 +621,13 @@ to distribute the data. This use case adds the following requirements:</p>
               <td>Predictable auto-play for media elements that works for first time users and is testable.</td>
            </tr>
            <tr>
-            <td>N37</td>
-            <td>Ability to reuse DRM assets streamed over data channels.</td>
-         </tr>
-         <tr>
-            <td>N38</td>
-            <td>Ability to reuse subtitle assets streamed over data channels.</td>
-         </tr>
+              <td>N37</td>
+              <td>Ability to reuse DRM assets streamed over data channels.</td>
+           </tr>
+           <tr>
+              <td>N38</td>
+              <td>Ability to reuse subtitle assets streamed over data channels.</td>
+           </tr>
        </tbody>
    </table>  
    <p>Experience: |pipe|, Peer5 and millicast have built systems of this sort.</p>
@@ -829,23 +829,24 @@ the use-cases included in this document.</p>
         </tr>
         </tr id="N30">
            <td>N30</td>
-           <td>The user agent must provide the ability to reestablish media after
-           an interuption.</td>
+           <td>The user agent must provide the ability to re-establish media
+           after an interruption.</td>
         </tr>
         </tr id="N31">
            <td>N31</td>
-           <td>The user agent must provide the ability to play selected media to the remote party during
-            an interuption (c.f. on hold music).</td>
+           <td>The user agent must provide the ability to play selected media to
+           the remote party during an interuption (c.f. on hold music).</td>
         </tr>
         </tr id="N32">
            <td>N32</td>
-           <td>The user agent must provide the ability to 'park' a connection such that it can be retrieved and
-            continued by a newly loaded page to prevent accidental 'browsing away' from dropping a call irretrievably.</td>
+           <td>The user agent must provide the ability to 'park' a connection such
+           that it can be retrieved and continued by a newly loaded page to prevent
+           accidental 'browsing away' from dropping a call irretrievably.</td>
         </tr id="N33">
            <td>N33</td>
-           <td>A 'long-term connection' must be able to be re-established without access to external
-           services in the event of the local network becoming isolated from the wider network without
-           compromising e2e security.</td>
+           <td>A 'long-term connection' must be able to be re-established without
+           access to external services in the event of the local network becoming
+           isolated from the wider network without compromising e2e security.</td>
         </tr>
         </tr id="N34">
            <td>N34</td>
@@ -875,6 +876,12 @@ the use-cases included in this document.</p>
            <td>N39</td>
            <td>A URI format that defines the remaining transport related fields
            (e.g. service address/port, ICE credentials, DTLS fingerprint).</td>
+        </tr>
+        </tr id="N40">
+           <td>N40</td>
+           <td>Ability to intercept the fetch API and service it over a P2P link.
+           One way to do this would be to support data channels in Service Workers 
+           which can already intercept fetch).</td>
         </tr>
     </tbody>
 </table>  
