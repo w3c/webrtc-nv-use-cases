@@ -249,10 +249,11 @@ Supporting this use case adds the following requirements:</p>
 <section id="auction">
    <h3>Low latency P2P broadcast</h3>
    <p>There are 'broadcast' applications that require low latency realtime media - distributed
-   auctions or betting for example.  The same live video and audio (+data) can be sent to hundreds
+   auctions or betting for example. The same live video and audio (+data) can be sent to hundreds
    of recipients.</p>
    <p>WebRTC 1.0 can do this, but it lacks some features that those industries require and have in
    higher latency streaming technologies.</p>
+   <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
    <table class="simple">
        <thead>
           <tr>
@@ -618,6 +619,7 @@ to distribute the data. This use case adds the following requirements:</p>
    <h3>Decentralized internet</h3>
    <p>New decentralized applications provide P2P services and client-server services for consumption in a browser.</p>
    <p>The differences in transport layer semantics make it difficult to share code between the two modes.</p>
+   <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
    <table class="simple">
        <thead>
           <tr>
@@ -638,9 +640,9 @@ to distribute the data. This use case adds the following requirements:</p>
 </section>
 <section id="urisig">
    <h3>Reduced complexity signalling</h3>
-   <p>Some (simpler) media/data sources/sinks do not require the full array of webRTC's optionalities.
-   </p>
-   <p>In such cases the full SDP O/A could be replaced with offline static configuration and a simple URI at runtime</p>
+   <p>Some (simpler) media/data sources/sinks do not require the full array of webRTC's optionalities.</p>
+   <p>In such cases the full SDP O/A could be replaced with offline static configuration and a simple URI at runtime.</p>
+   <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
    <table class="simple">
        <thead>
           <tr>
@@ -885,7 +887,8 @@ the use-cases included in this document.</p>
            (e.g. service address/port, ICE credentials, DTLS fingerprint).</td>
         </tr>
     </tbody>
-</table>  
+</table>
+<p class="note">Requirements N30-N39 have not completed a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
