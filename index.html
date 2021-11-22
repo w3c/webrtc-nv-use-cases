@@ -230,7 +230,9 @@ Supporting this use case adds the following requirements:</p>
         <tr>
            <td>N13</td>
            <td>It must be possible to support data exchange
-           in a web, service, or shared worker.</td>
+           in a web, service, or shared worker. Support for 
+           service workers allows the page to issue a fetch()
+           which can be resolved in the service worker.</td>
         </tr>
         <tr>
            <td>N24</td>
@@ -265,11 +267,11 @@ Supporting this use case adds the following requirements:</p>
            </tr>
            <tr>
               <td>N37</td>
-              <td>Ability to reuse DRM assets streamed over data channels.</td>
+              <td>Ability to reuse DRM assets streamed over data exchange.</td>
            </tr>
            <tr>
               <td>N38</td>
-              <td>Ability to reuse subtitle assets streamed over data channels.</td>
+              <td>Ability to reuse subtitle assets streamed over data exchnage.</td>
            </tr>
        </tbody>
    </table>  
@@ -277,12 +279,12 @@ Supporting this use case adds the following requirements:</p>
 </section>
 <section id="iot*">
 <h3>Internet of Things</h3>
-<p>An IoT sensor maintains a  long-term connection and seeks to minimize power consumption.
+<p>An IoT sensor maintains a long-term connection and seeks to minimize power consumption.
 Some of the sensor’s data may need to be sent reliable and ordered while other sensors may
 provide data that can be sent unreliable and unordered or in a partially reliable manner.
-Such IoT sensors may also produce realtime video or audio data for remote users which are privacy sensitive
-and may only be accessed by selected devices.
-This use case adds the following requirements:</p>
+Such IoT sensors may also produce realtime video or audio data for remote users which are
+privacy sensitive and may only be accessed by selected devices. This use case adds the
+following requirements:</p>
   
 <table class="simple">
     <thead>
@@ -322,15 +324,17 @@ This use case adds the following requirements:</p>
         </tr>
         <tr>
            <td>N33</td>
-           <td>A 'long-term connection' must be able to be re-established without access to external
-           services in the event of the local network becoming isolated from the wider network without
+           <td>A 'long-term connection' must be able to be re-established
+           without access to external services in the event of the local
+           network becoming isolated from the wider network without
            compromising e2e security.</td>
         </tr>
     </tbody>
 </table>
 <p>Reference</p>
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a>
-<p>Experience: Building a respiration monitor that works locally during an internet outage but is also available remotely when the internet connection returns .</p>
+<p>Experience: Building a respiration monitor that works locally during an internet outage
+but is also available remotely when the internet connection returns.</p>
 
 </section>
 <section id="funnyhats*">
@@ -566,6 +570,13 @@ to distribute the data. This use case adds the following requirements:</p>
     </thead>
     <tbody>
         <tr>
+          <td>N13</td>
+          <td>It must be possible to support data exchange
+           in a web, service, or shared worker. Support for 
+           service workers allows the page to issue a fetch()
+           which can be resolved in the service worker.</td>
+        </tr>
+        <tr>
            <td>N25</td>
            <td>Only current group members can receive media or
            text sent to the group.</td>
@@ -594,12 +605,6 @@ to distribute the data. This use case adds the following requirements:</p>
            past or future device compromise.</td>
         </tr>
         <tr>
-           <td>N34</td>
-           <td>Data channels in service workers. This allows the page
-           to issue a fetch() which can be resolved in the service
-           worker using P2P data channels.</td>
-        </tr>
-        <tr>
            <td>N35</td>
            <td>A group member can encrypt and send copies of the encoded media directly
            to multiple group members without the intervention of the media server.</td>
@@ -622,10 +627,10 @@ to distribute the data. This use case adds the following requirements:</p>
        </thead>
        <tbody>
            <tr>
-              <td>N40</td>
+              <td>N34</td>
               <td>Ability to intercept the fetch API and service it over a P2P link.
-              One way to do this would be to support data channels in Service Workers 
-              which can already intercept fetch).</td>
+              One way to do this would be to support data exchange in service workers 
+              which can already intercept fetch.</td>
            </tr>
        </tbody>
    </table>  
@@ -685,7 +690,7 @@ the use-cases included in this document.</p>
            quality and latency in a fair manner between multiple
            connections.</td>
         </tr>
-              <tr id="N04">
+           <tr id="N04">
            <td>N04</td>
            <td>The ICE agent must be able to maintain multiple
              candidate pairs and move traffic between them.</td>
@@ -739,7 +744,9 @@ the use-cases included in this document.</p>
         <tr id="N13">
            <td>N13</td>
            <td>It must be possible to support data exchange
-           in a web, service, or shared worker.</td>
+           in a web, service, or shared worker. Support for 
+           service workers allows the page to issue a fetch()
+           which can be resolved in the service worker.</td>
         </tr>
         <tr id="N14">
            <td>N14</td>
@@ -850,9 +857,9 @@ the use-cases included in this document.</p>
         </tr>
         </tr id="N34">
            <td>N34</td>
-           <td>Data channels in service workers. This allows the page
-           to issue a fetch() which can be resolved in the service
-           worker using P2P data channels.</td>
+           <td>Ability to intercept the fetch API and service it over a P2P link.
+           One way to do this would be to support data channels in Service Workers 
+           which can already intercept fetch.</td>
         </tr>
         </tr id="N35">
            <td>N35</td>
@@ -876,12 +883,6 @@ the use-cases included in this document.</p>
            <td>N39</td>
            <td>A URI format that defines the remaining transport related fields
            (e.g. service address/port, ICE credentials, DTLS fingerprint).</td>
-        </tr>
-        </tr id="N40">
-           <td>N40</td>
-           <td>Ability to intercept the fetch API and service it over a P2P link.
-           One way to do this would be to support data channels in Service Workers 
-           which can already intercept fetch).</td>
         </tr>
     </tbody>
 </table>  
