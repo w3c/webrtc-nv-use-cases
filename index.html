@@ -336,7 +336,56 @@ following requirements:</p>
 <a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0079.html">Mailing list discussion</a>
 <p>Experience: Building a respiration monitor that works locally during an internet outage
 but is also available remotely when the internet connection returns.</p>
-
+</section>
+<section id="decent">
+   <h3>Decentralized internet</h3>
+   <p>New decentralized applications provide P2P services and client-server services for consumption in a browser.</p>
+   <p>The differences in transport layer semantics make it difficult to share code between the two modes.</p>
+   <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+           <tr>
+              <td>N34</td>
+              <td>Ability to intercept the fetch API and service it over a P2P link.
+              One way to do this would be to support data exchange in service workers 
+              which can already intercept fetch.</td>
+           </tr>
+       </tbody>
+   </table>  
+   <p>Experience: Both |pipe| and [Matrix] have implemented systems of this sort.</p>
+</section>
+<section id="vr*">
+<h3>Virtual Reality Gaming</h3>
+<p>A virtual reality gaming service utilizing a centralized conferencing server wants
+to synchronize data with media, using an existing Selective Forwarding Unit (SFU)
+to distribute the data. This use case adds the following requirements:</p>
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr>
+           <td>N23</td>
+           <td>The user agent must be able to send data synchronized
+           with audio and video.</td>
+        </tr>
+        <tr>
+           <td>N24</td>
+           <td>CSP support for WebRTC.</td>
+        </tr>
+    </tbody>
+</table>  
+<p>References:</p>
+<a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a>
 </section>
 <section id="funnyhats*">
 <h3>Funny Hats</h3>
@@ -477,33 +526,6 @@ updates of the global model to the clients.</p>
     </tbody>
 </table>
 </section>
-<section id="vr*">
-<h3>Virtual Reality Gaming</h3>
-<p>A virtual reality gaming service utilizing a centralized conferencing server wants
-to synchronize data with media, using an existing Selective Forwarding Unit (SFU)
-to distribute the data. This use case adds the following requirements:</p>
-<table class="simple">
-    <thead>
-       <tr>
-          <th>Requirement ID</th>
-          <th>Description</th>
-       </tr>
-    </thead>
-    <tbody>
-        <tr>
-           <td>N23</td>
-           <td>The user agent must be able to send data synchronized
-           with audio and video.</td>
-        </tr>
-        <tr>
-           <td>N24</td>
-           <td>CSP support for WebRTC.</td>
-        </tr>
-    </tbody>
-</table>  
-<p>References:</p>
-<a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0063.html">Mailing list discussion</a>
-</section>
 <section id="no-trust-webex">
 <h3>Don't Pown My Video Conferencing </h3>
 <p>
@@ -614,29 +636,6 @@ to distribute the data. This use case adds the following requirements:</p>
     </tbody>
 </table>
 </section>
-</section>
-<section id="decent">
-   <h3>Decentralized internet</h3>
-   <p>New decentralized applications provide P2P services and client-server services for consumption in a browser.</p>
-   <p>The differences in transport layer semantics make it difficult to share code between the two modes.</p>
-   <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
-   <table class="simple">
-       <thead>
-          <tr>
-             <th>Requirement ID</th>
-             <th>Description</th>
-          </tr>
-       </thead>
-       <tbody>
-           <tr>
-              <td>N34</td>
-              <td>Ability to intercept the fetch API and service it over a P2P link.
-              One way to do this would be to support data exchange in service workers 
-              which can already intercept fetch.</td>
-           </tr>
-       </tbody>
-   </table>  
-   <p>Experience: Both |pipe| and [Matrix] have implemented systems of this sort.</p>
 </section>
 <section id="urisig">
    <h3>Reduced complexity signalling</h3>
