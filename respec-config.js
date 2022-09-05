@@ -53,7 +53,7 @@ var respecConfig = {
         "A. Kwon",
         "A. Duric"
       ],
-      "status": "08 March 2021. Internet Draft (work in progress)",
+      "status": "13 August 2022. Internet Draft (work in progress)",
       "publisher": "IETF"
     },
   }
