@@ -115,7 +115,8 @@ References:
         </tr>
         <tr>
            <td>N31</td>
-           <td>The user agent must provide notification of a media interruption caused by the OS (e.g. GSM incoming call) (c.f. on hold music).
+           <td>The user agent must provide notification of a media interruption
+            caused by the OS (e.g. GSM incoming call) (c.f. on hold music).
             and support the use of a datachannel to inform the remote peer of the interruption.</td>
         </tr>
         <tr>
@@ -192,7 +193,7 @@ as well as proprietary additions to [[?WEBRTC]].</p>
 </section>
 </section>
 <section id="newusecases*">
-    <h2>New Use Cases</h2>
+<h2>New Use Cases</h2>
 <p>Several new uses cases relate to scenarios that cannot be supported in [[?WEBRTC]] without extensions.</p>
 <section id="filesharing*">
 <h3>File Sharing</h3>
@@ -246,10 +247,12 @@ Supporting this use case adds the following requirements:</p>
 </ol>
 </section>
 <section id="auction">
-   <h3>Low latency broadcast</h3>
-   <p>There are 'broadcast' applications that require low latency realtime media. Distributed
-   auctions or betting as well as churches and company 'Town Hall' meetings for example. The same live video and audio and data is sent (unidirectionally) to thousands of recipients.</p>
-   (P2P indicates that the sender may be behind NAT without a public IP address.)
+   <h3>Low latency streaming</h3>
+   <p>There are 'broadcast' applications that require low latency realtime media. Examples
+   include distributed auctions or betting as well as sporting events, church services
+   and company 'Town Hall' meetings. The same live video and audio and data is sent to
+   thousands of recipients).</p>
+   (P2P indicates that the sender may be behind a NAT without a public IP address.)
     <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
    <table class="simple">
        <thead>
@@ -621,10 +624,10 @@ updates of the global model to the clients.</p>
 </section>
 <section id="urisig">
    <h3>Reduced complexity signalling</h3>
-   <p>Some (simpler) media/data sources/sinks do not require the full array of webRTC's optionalities.</p>
-   <p>In such cases the full SDP O/A could be replaced with a server generated token at runtime.</p>
-   <p>A goal here might be to be able to set the source attribute of a video tag to point at a webRTC video source.</p>
-   <p>Care needs to be taken to avoid breaking webRTC's security properties.</p>
+   <p>Some simpler media/data sources/sinks require only a subset of WebRTC functionality.</p>
+   <p>In such use cases the full SDP O/A could be replaced with a server generated token at runtime.</p>
+   <p>A goal might be to set the source attribute of a video tag to point at a WebRTC video source.</p>
+   <p>Care needs to be taken to avoid introducing security vulnerabilities.</p>
     <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
    <table class="simple">
        <thead>
