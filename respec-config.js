@@ -46,14 +46,14 @@ var respecConfig = {
       "title": "The Messaging Layer Security (MLS) Architecture",
       "href": "https://datatracker.ietf.org/doc/html/draft-ietf-mls-architecture",
       "authors": [
-        "E. Omara",
         "B. Beurdouche",
         "E. Rescorla",
+        "E. Omara",
         "S. Inguva",
         "A. Kwon",
         "A. Duric"
       ],
-      "status": "13 August 2022. Internet Draft (work in progress)",
+      "status": "19 August 2022. Internet Draft (work in progress)",
       "publisher": "IETF"
     },
   }
