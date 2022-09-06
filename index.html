@@ -246,8 +246,10 @@ Supporting this use case adds the following requirements:</p>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0082.html">Mailing list discussion</a></li>
 </ol>
 </section>
+<section id="low-latency-streaming">
+   <h3>Low latency streaming</h3>
 <section id="game-streaming">
-   <h3>Game streaming</h3>
+   <h4>Game streaming</h4>
    <p>Games can be streamed either from a cloud service (client/server), or from a game console (P2P).</p>
    <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
 <table class="simple">
@@ -271,13 +273,13 @@ Supporting this use case adds the following requirements:</p>
 transported using WebRTC A/V or RTCDataChannel.</p>
 </section> 
 <section id="auction">
-   <h3>Low latency streaming</h3>
-   <p>There are applications that require low latency realtime media. Examples include
-   distributed auctions or betting as well as sporting events, church services, webinars
-   and company 'Town Hall' meetings. The same live video and audio and data is sent to
-   thousands of recipients. Limited interactivity may be supported, such as
-   allowing authorized participants to ask questions at a company meeting. Both the
-   media sender as well as the receiver may be behind a NAT.</p>
+   <h3>Low latency Broadcast</h3>
+   <p>There are streaming applications that require large scale as well as low latency.
+   Examples include distributed auctions or betting as well as sporting events,
+   church services, webinars and company 'Town Hall' meetings. The same live
+   audio, video and data is sent to thousands (or even millions) of recipients. Limited
+   interactivity may be supported, such as allowing authorized participants to ask
+   questions at a company meeting. Both the media sender and receiver may be behind a NAT.</p>
     <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
 <table class="simple">
     <thead>
@@ -288,41 +290,11 @@ transported using WebRTC A/V or RTCDataChannel.</p>
     </thead>
     <tbody>
         <tr>
-           <td>N09</td>
-           <td>The user agent must be able to control
-           robustness (RTX, RED, FEC) applied to individual
-           simulcast and spatial SVC layers.</td>
-        </tr>
-        <tr>
-           <td>N12</td>
-           <td>It must be possible for the user agent to transfer
-           data utilizing a congestion control algorithm
-           that does not compete aggressively with
-           audio/video communications.</td>
-        </tr>
-        <tr>
            <td>N15</td>
            <td>The application must be able to control aspects
            of the data transport  (e.g. set the SCTP
            heartbeat interval or turn it off), RTO values,
            etc.</td>
-        </tr>
-        <tr>
-           <td>N16</td>
-           <td>It must be possible to send arbitrary data
-           reliable, unreliable or partially reliable with
-           a specific maximum number of retransmissions
-           or a specific maximum timeout.</td>
-        </tr>
-        <tr>
-           <td>N17</td>
-           <td>It must be possible to send arbitrary data
-           ordered or unordered.</td>
-        </tr>
-        <tr>
-           <td>N23</td>
-           <td>The user agent must be able to send data synchronized
-           with audio and video.</td>
         </tr>
         <tr>
            <td>N36</td>
@@ -332,6 +304,7 @@ transported using WebRTC A/V or RTCDataChannel.</p>
 </table>
 <p>Experience: |pipe|, Peer5 and Dolby are examples of this use case, with media
 transported using WebRTC A/V or RTCDataChannel.</p>
+</section>
 </section>
 <section id="iot*">
 <h3>Internet of Things</h3>
