@@ -266,15 +266,22 @@ Supporting this use case adds the following requirements:</p>
     </thead>
     <tbody>
         <tr>
+           <td>N15</td>
+           <td>The application must be able to control aspects
+           of the data transport  (e.g. set the SCTP
+           heartbeat interval or turn it off), RTO values,
+           etc.</td>
+        </tr>
+        <tr>
            <td>N37</td>
-           <td>It must be possible for the user agent to transfer
-           data with minimal delay.</td>
+           <td>It must be possible for the user agent's receive pipeline to process
+           video at high resolution and framerate (e.g. without copying raw video  
+           frames).</td>  
         </tr>
         <tr>
            <td>N38</td>
-           <td>It must be possible for the user agent's receive pipeline to process
-           video at high resolution and framerate with maximum efficiency (ideally
-           without copying raw video frames).</td>
+           <td>The application must be able to control the jitter buffer and rendering
+           delay.</td>
         </tr>
     </tbody>
 </table>
@@ -909,14 +916,14 @@ the use-cases included in this document.</p>
         </tr>
         <tr id="N37">
            <td>N37</td>
-           <td>It must be possible for the user agent to transfer
-           data with minimal delay.</td>
+           <td>It must be possible for the user agent's receive pipeline to process
+           video at high resolution and framerate (e.g. without copying raw video
+           frames).</td>                   
         </tr>
         <tr id="N38">
            <td>N38</td>
-           <td>It must be possible for the user agent's receive pipeline to process 
-           video at high resolution and framerate with maximum efficiency (ideally 
-           without copying raw video frames).</td> 
+           <td>The application must be able to control the jitter buffer and rendering
+           delay.</td>
         </tr>
     </tbody>
 </table>
