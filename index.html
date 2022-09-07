@@ -250,7 +250,12 @@ Supporting this use case adds the following requirements:</p>
    <h3>Low latency streaming</h3>
 <section id="game-streaming">
    <h4>Game streaming</h4>
-   <p>Games can be streamed either from a cloud service (client/server), or from a game console (P2P).</p>
+   <p>Game streaming involves the sending of audio and video (potentially at high resolution and framerate)
+   to the recipient, along with data being sent in the opposite direction. Games can be streamed either
+   from a cloud service (client/server), or from a peer game console (P2P). It is highly desirable that
+   media flow without interruption, and that game players not reveal their location to each other. Even in
+   the case of games streamed from a cloud service, it can be desirable for players to be able to communicate
+   with each other directly (party chat).</p>
    <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
 <table class="simple">
     <thead>
@@ -261,11 +266,15 @@ Supporting this use case adds the following requirements:</p>
     </thead>
     <tbody>
         <tr>
-           <td>N12</td>
+           <td>N37</td>
            <td>It must be possible for the user agent to transfer
-           data utilizing a congestion control algorithm
-           that does not compete aggressively with
-           audio/video communications.</td>
+           data with minimal delay.</td>
+        </tr>
+        <tr>
+           <td>N38</td>
+           <td>It must be possible for the user agent's receive pipeline to process
+           video at high resolution and framerate with maximum efficiency (ideally
+           without copying raw video frames).</td>
         </tr>
     </tbody>
 </table>
@@ -897,6 +906,17 @@ the use-cases included in this document.</p>
         <tr id="N36">
            <td>N36</td>
            <td>Support for DRM.</td>
+        </tr>
+        <tr id="N37">
+           <td>N37</td>
+           <td>It must be possible for the user agent to transfer
+           data with minimal delay.</td>
+        </tr>
+        <tr id="N38">
+           <td>N38</td>
+           <td>It must be possible for the user agent's receive pipeline to process 
+           video at high resolution and framerate with maximum efficiency (ideally 
+           without copying raw video frames).</td> 
         </tr>
     </tbody>
 </table>
