@@ -246,22 +246,81 @@ Supporting this use case adds the following requirements:</p>
   <li><a href="https://lists.w3.org/Archives/Public/public-webrtc/2018May/0082.html">Mailing list discussion</a></li>
 </ol>
 </section>
+<section id="low-latency-streaming">
+   <h3>Low latency streaming</h3>
+<section id="game-streaming">
+   <h4>Game streaming</h4>
+   <p>Game streaming involves the sending of audio and video (potentially at high resolution and framerate)
+   to the recipient, along with data being sent in the opposite direction. Games can be streamed either
+   from a cloud service (client/server), or from a peer game console (P2P). It is highly desirable that
+   media flow without interruption, and that game players not reveal their location to each other. Even in
+   the case of games streamed from a cloud service, it can be desirable for players to be able to communicate
+   with each other directly (via chat, audio or video).</p>
+   <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr>
+           <td>N15</td>
+           <td>The application must be able to control aspects
+           of the data transport  (e.g. set the SCTP
+           heartbeat interval or turn it off), RTO values,
+           etc.</td>
+        </tr>
+        <tr>
+           <td>N37</td>
+           <td>It must be possible for the user agent's receive pipeline to process
+           video at high resolution and framerate (e.g. without copying raw video  
+           frames).</td>  
+        </tr>
+        <tr>
+           <td>N38</td>
+           <td>The application must be able to control the jitter buffer and rendering
+           delay.</td>
+        </tr>
+    </tbody>
+</table>
+<p>Experience: XCloud, Rainway, GeForce Now and Stadia are examples of this use case, with media
+transported using WebRTC A/V or RTCDataChannel.</p>
+</section> 
 <section id="auction">
-   <h3>Low latency broadcast</h3>
-   <p>There are 'broadcast' applications that require low latency realtime media. Distributed
-   auctions or betting as well as churches and company 'Town Hall' meetings for example. The same live video and audio and data is sent (unidirectionally) to thousands of recipients.</p>
-   (P2P indicates that the sender may be behind NAT without a public IP address.)
+   <h4>Low latency Broadcast</h4>
+   <p>There are streaming applications that require large scale as well as low latency.
+   Examples include distributed auctions or betting as well as sporting events,
+   church services, webinars and company 'Town Hall' meetings. The same live
+   audio, video and data is sent to thousands (or even millions) of recipients. Limited
+   interactivity may be supported, such as allowing authorized participants to ask
+   questions at a company meeting. Both the media sender and receivers may be behind a NAT.</p>
     <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
-       <thead>
-          <tr>
-             <th>Requirement ID</th>
-             <th>Description</th>
-          </tr>
-       </thead>
-       <tbody>
-       <tr><td/><td>TBD</td></tr>
-       </tbody>
-   </table>
+<table class="simple">
+    <thead>
+       <tr>
+          <th>Requirement ID</th>
+          <th>Description</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr>
+           <td>N15</td>
+           <td>The application must be able to control aspects
+           of the data transport  (e.g. set the SCTP
+           heartbeat interval or turn it off), RTO values,
+           etc.</td>
+        </tr>
+        <tr>
+           <td>N36</td>
+           <td>Support for DRM.</td>
+        </tr>
+    </tbody>
+</table>
+<p>Experience: |pipe|, Peer5 and Dolby are examples of this use case, with media
+transported using WebRTC A/V or RTCDataChannel.</p>
+</section>
 </section>
 <section id="iot*">
 <h3>Internet of Things</h3>
@@ -835,7 +894,7 @@ the use-cases included in this document.</p>
            accidental 'browsing away' from dropping a call irretrievably.</td>
         </tr id="N33">
            <td>N33</td>
-        <td>A pre-existing peers must be able to be (re) establish a connection
+        <td>Pre-existing peers must be able to be (re-)establish a connection
             without access to external services in the event of the local
             network becoming isolated from the wider network.  Without
             compromising e2e security but possibly leveraging pre-shared tokens from a previous connection.</td>
@@ -851,9 +910,24 @@ the use-cases included in this document.</p>
         <td>A group member can encrypt and send copies of the realtime encoded media directly
             to multiple group members without re-encoding for each recipient (to reduce resource usage).</td>
         </tr>
+        <tr id="N36">
+           <td>N36</td>
+           <td>Support for DRM.</td>
+        </tr>
+        <tr id="N37">
+           <td>N37</td>
+           <td>It must be possible for the user agent's receive pipeline to process
+           video at high resolution and framerate (e.g. without copying raw video
+           frames).</td>                   
+        </tr>
+        <tr id="N38">
+           <td>N38</td>
+           <td>The application must be able to control the jitter buffer and rendering
+           delay.</td>
+        </tr>
     </tbody>
 </table>
-<p class="note">Requirements N30-N39 have not completed a Call for Consensus (CfC).</p>
+<p class="note">Requirements N30-N38 have not completed a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
