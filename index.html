@@ -292,7 +292,7 @@ transported using WebRTC A/V or RTCDataChannel.</p>
    <h4>Low latency Broadcast with Fanout</h4>
    <p>There are streaming applications that require large scale as well as low latency.
    Examples include sporting events, church services, webinars and company 'Town Hall' meetings.
-   The same live audio, video and data is sent to thousands (or even millions) of recipients.
+   Live audio, video and data is sent to thousands (or even millions) of recipients.
    Limited interactivity may be supported, such as allowing authorized participants to ask
    questions at a company meeting. Both the media sender and receivers may be behind a NAT.
    P2P relays may be used to improve scalability, potentially using different transport than
@@ -321,7 +321,8 @@ transported using WebRTC A/V or RTCDataChannel.</p>
            <td>N39</td>
            <td>A node must be able to forward media received from another node
            to a third node, while supporting timing, media configuration and
-           congestion control.</td>
+           congestion control. This includes a mechanism for a relaying peer
+           to obtain a bandwidth estimate.</td>
         </tr>
     </tbody>
 </table>
@@ -936,7 +937,8 @@ the use-cases included in this document.</p>
            <td>N39</td>
            <td>A node must be able to forward media received from another node
            to a third node, while supporting timing, media configuration and
-           congestion control.</td>
+           congestion control. This includes a mechanism for a relaying peer
+           to obtain a bandwidth estimate.</td>
         </tr>
     </tbody>
 </table>
