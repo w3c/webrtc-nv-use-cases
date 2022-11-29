@@ -289,13 +289,14 @@ Supporting this use case adds the following requirements:</p>
 transported using WebRTC A/V or RTCDataChannel.</p>
 </section> 
 <section id="auction">
-   <h4>Low latency Broadcast</h4>
+   <h4>Low latency Broadcast with Fanout</h4>
    <p>There are streaming applications that require large scale as well as low latency.
-   Examples include distributed auctions or betting as well as sporting events,
-   church services, webinars and company 'Town Hall' meetings. The same live
-   audio, video and data is sent to thousands (or even millions) of recipients. Limited
-   interactivity may be supported, such as allowing authorized participants to ask
-   questions at a company meeting. Both the media sender and receivers may be behind a NAT.</p>
+   Examples include sporting events, church services, webinars and company 'Town Hall' meetings.
+   The same live audio, video and data is sent to thousands (or even millions) of recipients.
+   Limited interactivity may be supported, such as allowing authorized participants to ask
+   questions at a company meeting. Both the media sender and receivers may be behind a NAT.
+   P2P relays may be used to improve scalability, potentially using different transport than
+   the original stream.</p>
     <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
 <table class="simple">
     <thead>
@@ -314,7 +315,13 @@ transported using WebRTC A/V or RTCDataChannel.</p>
         </tr>
         <tr>
            <td>N36</td>
-           <td>Support for DRM.</td>
+           <td>Support for DRM (containerized media) or uncontainerized media.</td>
+        </tr>
+        <tr>
+           <td>N39</td>
+           <td>A node must be able to forward media received from another node
+           to a third node, while supporting timing, media configuration and
+           congestion control.</td>
         </tr>
     </tbody>
 </table>
@@ -912,7 +919,7 @@ the use-cases included in this document.</p>
         </tr>
         <tr id="N36">
            <td>N36</td>
-           <td>Support for DRM.</td>
+           <td>Support for DRM (containerized media) or uncontainerized media.</td>
         </tr>
         <tr id="N37">
            <td>N37</td>
@@ -924,6 +931,12 @@ the use-cases included in this document.</p>
            <td>N38</td>
            <td>The application must be able to control the jitter buffer and rendering
            delay.</td>
+        </tr>
+        <tr id="N39">
+           <td>N39</td>
+           <td>A node must be able to forward media received from another node
+           to a third node, while supporting timing, media configuration and
+           congestion control.</td>
         </tr>
     </tbody>
 </table>
