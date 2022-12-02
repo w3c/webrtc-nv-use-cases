@@ -320,9 +320,10 @@ transported using WebRTC A/V or RTCDataChannel.</p>
         <tr>
            <td>N39</td>
            <td>A node must be able to forward media received from another node
-           to a third node, while supporting timing, media configuration and
-           congestion control. This includes a mechanism for a relaying peer
-           to obtain a bandwidth estimate.</td>
+           to a third node. Applications require access to encoded chunk metadata 
+           as well as information from the RTP header to provide for timing, media
+           configuration and congestion control. This includes a mechanism
+           for a relaying peer to obtain a bandwidth estimate.</td>
         </tr>
     </tbody>
 </table>
@@ -936,13 +937,14 @@ the use-cases included in this document.</p>
         <tr id="N39">
            <td>N39</td>
            <td>A node must be able to forward media received from another node
-           to a third node, while supporting timing, media configuration and
-           congestion control. This includes a mechanism for a relaying peer
-           to obtain a bandwidth estimate.</td>
+           to a third node. Applications require access to encoded chunk metadata 
+           as well as information from the RTP header to provide for timing, media
+           configuration and congestion control. This includes a mechanism
+           for a relaying peer to obtain a bandwidth estimate.</td>
         </tr>
     </tbody>
 </table>
-<p class="note">Requirements N30-N38 have not completed a Call for Consensus (CfC).</p>
+<p class="note">Requirements N30-N39 have not completed a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
