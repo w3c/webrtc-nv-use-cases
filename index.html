@@ -710,6 +710,52 @@ updates of the global model to the clients.</p>
    </table>  
    <p>Experience: Both |pipe| and pion have built systems of this sort.</p>
 </section>
+<section id="live-encoded-media">
+  <h3>Live encoded non-WebRTC media</h3>
+  <p>
+    There are cases where one has sources of live encoded media that one wishes
+    to send over an RTP connection to a WebRTC-compatible endpoint.
+  </p>
+  <p>
+    One
+    possible such case is traffic cameras that serve video over HTTP
+    using "long poll" or similar mechanisms, but do not support WebRTC.
+  </p>
+  <p>
+    The source may permit dynamic reconfiguration of its resolution or frame
+    rate in order to produce an outgoing video stream with desired
+    characteristics.
+  </p>
+  <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+           <tr>
+              <td>N40</td>
+              <td>An application can create an outgoing WebRTC connection without activating
+                an encoder.</td>
+           </tr>
+           <tr>
+             <td>N41</td>
+             <td>An application can create encoded video frames from
+             encoded data + metadata,
+             and enqueue them on an outgoing WebRTC connection</td>
+           </tr>
+           <tr>
+             <td>N42</td>
+             <td>The WebRTC connection can generate signals indicating
+             the desired bandwidth and any demands for keyframes, and
+               surface those to the applciation.
+           </tr>
+       </tbody>
+   </table>  
+  
+</section>
 </section>
 <section id="requirements*">
 <h3>Requirements Summary</h3>
@@ -942,9 +988,28 @@ the use-cases included in this document.</p>
            configuration and congestion control. This includes a mechanism
            for a relaying peer to obtain a bandwidth estimate.</td>
         </tr>
+<tr id="N40">
+  <td>N40</td>
+  <td>
+    An application can create an outgoing WebRTC connection without activating
+    an encoder.</td>
+</tr>
+<tr id="N41">
+  <td>N41</td>
+<td>An application can create encoded video frames from
+             encoded data + metadata,
+  and enqueue them on an outgoing WebRTC connection</td>
+</tr>
+<tr id="N42">
+  <td>N42</td>
+  <td>The WebRTC connection can generate signals indicating
+    the desired bandwidth and any demands for keyframes, and
+    surface those to the applciation.
+  </td>
+</tr>
     </tbody>
 </table>
-<p class="note">Requirements N30-N39 have not completed a Call for Consensus (CfC).</p>
+<p class="note">Requirements N30-N42 have not completed a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
