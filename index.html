@@ -756,7 +756,75 @@ updates of the global model to the clients.</p>
    </table>  
   
 </section>
+<section id="stored-encoded-media">
+  <h3>Transmitting stored encoded media</h3>
+  <p>
+    There are cases where one has pre-encoded media stored, and wishes to transmit this as part of
+    a WebRTC RTP session.
+  </p>
+  <p>
+    Use cases include:
+    <ul>
+      <li>
+        "Wait signals" or "your message is important to us, please stay on the line", inserted
+        prior to switching to a live interactive stream
+      </li>
+      <li>
+        Insertion of announcements or alarm signals in otherwise live streams
+      </li>
+      <li>
+        Insertion of static content (such as profile pictures) when sender temporarily disables a camera
+      </li>
+    </ul>
+  </p>
+  <p>
+    The pre-encoded media may be available in multiple bandwidths, and switching between them may be
+    possible at certain points in the media.
+  </p>
+    <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>N41</td>
+           <td>
+             An application can create encoded video frames from
+             encoded data + metadata,
+             and enqueue them on an outgoing WebRTC connection
+           </td>
+         </tr>
+         <tr>
+           <td>N42</td>
+           <td>The WebRTC connection can generate signals indicating
+             the desired bandwidth and any demands for keyframes, and
+             surface those to the applciation.
+         </tr>
+         <tr>
+           <td>N43</td>
+           <td>
+             The application can modify metadata on outgoing frames so that they fit smoothly within
+             the expected sequence of timestamps and sequence numbers.
+           </td>
+         </tr>
+         <tr>
+           <td>N44</td>
+           <td>
+             The application can signal the WebRTC encoder when resuming live transmission in such a way
+             that generated frames fit smoothly within
+             the expected sequence of timestamps and sequence numbers.
+           </td>
+         </tr>
+         
+       </tbody>
+   </table>
 </section>
+</section>
+      
 <section id="requirements*">
 <h3>Requirements Summary</h3>
 <p>This section summarizes the requirements arising from
@@ -1007,6 +1075,22 @@ the use-cases included in this document.</p>
     surface those to the applciation.
   </td>
 </tr>
+         <tr id="N43">
+           <td>N43</td>
+           <td>
+             The application can modify metadata on outgoing frames so that they fit smoothly within
+             the expected sequence of timestamps and sequence numbers.
+           </td>
+         </tr>
+         <tr id="N44">
+           <td>N44</td>
+           <td>
+             The application can signal the WebRTC encoder when resuming live transmission in such a way
+             that generated frames fit smoothly within
+             the expected sequence of timestamps and sequence numbers.
+           </td>
+         </tr>
+
     </tbody>
 </table>
 <p class="note">Requirements N30-N42 have not completed a Call for Consensus (CfC).</p>
