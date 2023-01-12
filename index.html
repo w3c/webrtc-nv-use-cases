@@ -713,12 +713,11 @@ updates of the global model to the clients.</p>
 <section id="live-encoded-media">
   <h3>Live encoded non-WebRTC media</h3>
   <p>
-    There are cases it is desirable to transmit live encoded media from a
-    non-WebRTC source over an RTP connection to a WebRTC-compatible endpoint.
-  </p>
-  <p>
-    One possible such case is traffic cameras that serve video over HTTP
-    using "long poll" or similar mechanisms, but do not support WebRTC.
+    There are use cases where it is desirable to transmit live
+    encoded media from a non-WebRTC source over an RTP connection
+    to a WebRTC-compatible endpoint. An example is traffic cameras
+    that serve video over HTTP using "long poll" or similar mechanisms,
+    but do not support WebRTC.
   </p>
   <p>
     The source may permit dynamic reconfiguration of its resolution or frame
@@ -742,7 +741,7 @@ updates of the global model to the clients.</p>
         <tr>
            <td>N41</td>
            <td>An application can create encoded video frames from encoded data
-           + metadata, and enqueue them on an outgoing WebRTC connection</td>
+           and metadata, and enqueue them on an outgoing WebRTC connection</td>
         </tr>
         <tr>
            <td>N42</td>
@@ -752,16 +751,12 @@ updates of the global model to the clients.</p>
         </tr>
        </tbody>
    </table>  
-  
 </section>
 <section id="stored-encoded-media">
   <h3>Transmitting stored encoded media</h3>
   <p>
     There are use cases with stored pre-encoded media where transmission as part of a
-    WebRTC RTP session is desirable.
-  </p>
-  <p>
-    Use cases include:
+    WebRTC RTP session is desirable. These include:
     <ul>
       <li>
         "Wait signals" or "your message is important to us, please stay on the line", inserted
@@ -792,7 +787,7 @@ updates of the global model to the clients.</p>
         <tr>
            <td>N41</td>
            <td>An application can create encoded video frames from encoded data
-           + metadata, and enqueue them on an outgoing WebRTC connection</td>
+           and metadata, and enqueue them on an outgoing WebRTC connection</td>
         </tr>
         <tr>
            <td>N42</td>
@@ -995,8 +990,8 @@ the use-cases included in this document.</p>
         </tr>
         </tr id="N30">
            <td>N30</td>
-           <td>The user agent must provide the ability to re-establish media
-           after an interruption.</td>
+           <td>The user agent must provide the ability to re-establish
+           media after an interruption.</td>
         </tr>
         </tr id="N31">
            <td>N31</td>
@@ -1057,7 +1052,7 @@ the use-cases included in this document.</p>
         <tr id="N41">
            <td>N41</td>
            <td>An application can create encoded video frames from encoded data
-           + metadata, and enqueue them on an outgoing WebRTC connection</td>
+           and metadata, and enqueue them on an outgoing WebRTC connection</td>
         </tr>
         <tr id="N42">
            <td>N42</td>
