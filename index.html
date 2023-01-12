@@ -811,6 +811,64 @@ updates of the global model to the clients.</p>
        </tbody>
    </table>
 </section>
+<section id="decode-encoded-media">
+  <h3>Decoding pre-encoded media</h3>
+  <p>
+    There are use cases when we have pre-encoded media (either dynamically generated or stored)
+    that we wish to process in the same way as one processes media coming in over a PeerConnection.
+    This will typically involve decoding with a WebRTC decoder and generating a MediaStreamTrack.
+  </p>
+  <p>
+    Some use cases that need this functionality are:
+    <ul>
+      <li>
+        Integration of media-over-datachannels with media-over-RTP (uniform treatment)
+      </li>
+      <li>
+        Feeding media coming from a DRM enforcement system into a WebRTC media pipeline
+      </li>
+      <li>
+        File playback using the WebRTC media pipeline
+      </li>
+    </ul>
+  </p>
+  <p>
+    Alternative implementations for these use cases may involve decoding data using WebCodecs
+    and generating a MediaStreamTrack using VideoTrackGenerator. However, this means that Javascript
+    will have to handle buffers containing raw media, which may not be optimal for speedy processing.
+  </p>
+    <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>N45</td>
+           <td>
+             An application can create an incoming WebRTC connection to accept
+             frames as if they were coming in over an RTP channel, without
+             instantiating an RTP transprort
+           </td>
+         </tr>
+        <tr>
+           <td>N46</td>
+           <td>An application can create encoded video frames from encoded data
+           and metadata, and enqueue them on an incoming WebRTC connection</td>
+        </tr>
+        <tr>
+           <td>N47</td>
+           <td>The WebRTC connection can generate signals indicating any demands for keyframes,
+             and surface those to the
+             application.
+           </td>
+        </tr>
+       </tbody>
+   </table>
+</section>
 </section>
       
 <section id="requirements*">
@@ -1072,9 +1130,29 @@ the use-cases included in this document.</p>
            transmission in such a way that generated frames fit smoothly within
            the expected sequence of timestamps and sequence numbers.</td>
         </tr>
+        <tr id="N45">
+          <td>N45</td>
+           <td>
+             An application can create an incoming WebRTC connection to accept
+             frames as if they were coming in over an RTP channel, without
+             instantiating an RTP transprort
+           </td>
+        </tr>
+        <tr id="N46">
+           <td>N46</td>
+           <td>An application can create encoded video frames from encoded data
+           and metadata, and enqueue them on an incoming WebRTC connection</td>
+        </tr>
+        <tr id="N47">
+           <td>N47</td>
+           <td>The WebRTC connection can generate signals indicating any demands for keyframes,
+             and surface those to the
+             application.
+           </td>
+        </tr>
     </tbody>
 </table>
-<p class="note">Requirements N30-N44 have not completed a Call for Consensus (CfC).</p>
+<p class="note">Requirements N30-N47 have not completed a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
