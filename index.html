@@ -273,13 +273,13 @@ Supporting this use case adds the following requirements:</p>
            etc.</td>
         </tr>
         <tr>
-           <td>N37</td>
+           <td>N36</td>
            <td>It must be possible for the user agent's receive pipeline to process
            video at high resolution and framerate (e.g. without copying raw video  
            frames).</td>  
         </tr>
         <tr>
-           <td>N38</td>
+           <td>N37</td>
            <td>The application must be able to control the jitter buffer and rendering
            delay.</td>
         </tr>
@@ -307,6 +307,13 @@ transported using WebRTC A/V or RTCDataChannel.</p>
     </thead>
     <tbody>
         <tr>
+           <td>N13</td>
+           <td>It must be possible to support data exchange
+           in a web, service, or shared worker. Support for 
+           service workers allows the page to issue a fetch()
+           which can be resolved in the service worker.</td>
+        </tr>
+        <tr>
            <td>N15</td>
            <td>The application must be able to control aspects
            of the data transport  (e.g. set the SCTP
@@ -314,11 +321,7 @@ transported using WebRTC A/V or RTCDataChannel.</p>
            etc.</td>
         </tr>
         <tr>
-           <td>N36</td>
-           <td>Support for DRM (containerized media) or uncontainerized media.</td>
-        </tr>
-        <tr>
-           <td>N39</td>
+           <td>N38</td>
            <td>A node must be able to forward media received from another node
            to a third node. Applications require access to encoded chunk metadata 
            as well as information from the RTP header to provide for timing, media
@@ -734,17 +737,17 @@ updates of the global model to the clients.</p>
        </thead>
        <tbody>
         <tr>
-           <td>N40</td>
+           <td>N39</td>
            <td>An application can create an outgoing WebRTC connection without
            activating an encoder.</td>
         </tr>
         <tr>
-           <td>N41</td>
+           <td>N40</td>
            <td>An application can create encoded video frames from encoded data
            and metadata, and enqueue them on an outgoing WebRTC connection</td>
         </tr>
         <tr>
-           <td>N42</td>
+           <td>N41</td>
            <td>The WebRTC connection can generate signals indicating the desired
            bandwidth and any demands for keyframes, and surface those to the
            application.</td>
@@ -785,24 +788,24 @@ updates of the global model to the clients.</p>
        <tbody>
          <tr>
         <tr>
-           <td>N41</td>
+           <td>N40</td>
            <td>An application can create encoded video frames from encoded data
            and metadata, and enqueue them on an outgoing WebRTC connection</td>
         </tr>
         <tr>
-           <td>N42</td>
+           <td>N41</td>
            <td>The WebRTC connection can generate signals indicating the desired
            bandwidth and any demands for keyframes, and surface those to the
            application.</td>
         </tr>
         <tr>
-           <td>N43</td>
+           <td>N42</td>
            <td>The application can modify metadata on outgoing frames so that
            they fit smoothly within the expected sequence of timestamps and
            sequence numbers.</td>
         </tr>
         <tr>
-           <td>N44</td>
+           <td>N43</td>
            <td>The application can signal the WebRTC encoder when resuming live
            transmission in such a way that generated frames fit smoothly within
            the expected sequence of timestamps and sequence numbers.
@@ -1023,58 +1026,54 @@ the use-cases included in this document.</p>
         </tr>
         <tr id="N36">
            <td>N36</td>
-           <td>Support for DRM (containerized media) or uncontainerized media.</td>
-        </tr>
-        <tr id="N37">
-           <td>N37</td>
            <td>It must be possible for the user agent's receive pipeline to process
            video at high resolution and framerate (e.g. without copying raw video
            frames).</td>                   
         </tr>
-        <tr id="N38">
-           <td>N38</td>
+        <tr id="N37">
+           <td>N37</td>
            <td>The application must be able to control the jitter buffer and rendering
            delay.</td>
         </tr>
-        <tr id="N39">
-           <td>N39</td>
+        <tr id="N38">
+           <td>N38</td>
            <td>A node must be able to forward media received from another node
            to a third node. Applications require access to encoded chunk metadata 
            as well as information from the RTP header to provide for timing, media
            configuration and congestion control. This includes a mechanism
            for a relaying peer to obtain a bandwidth estimate.</td>
         </tr>
-        <tr id="N40">
-           <td>N40</td>
+        <tr id="N39">
+           <td>N39</td>
            <td>An application can create an outgoing WebRTC connection without
            activating an encoder.</td>
         </tr>
-        <tr id="N41">
-           <td>N41</td>
+        <tr id="N40">
+           <td>N40</td>
            <td>An application can create encoded video frames from encoded data
            and metadata, and enqueue them on an outgoing WebRTC connection.</td>
         </tr>
-        <tr id="N42">
-           <td>N42</td>
+        <tr id="N41">
+           <td>N41</td>
            <td>The WebRTC connection can generate signals indicating the desired
            bandwidth and any demands for keyframes, and surface those to the
            application.</td>
         </tr>
-        <tr id="N43">
-           <td>N43</td>
+        <tr id="N42">
+           <td>N42</td>
            <td>The application can modify metadata on outgoing frames so that
            they fit smoothly within the expected sequence of timestamps and
            sequence numbers.</td>
         </tr>
-        <tr id="N44">
-           <td>N44</td>
+        <tr id="N43">
+           <td>N43</td>
            <td>The application can signal the WebRTC encoder when resuming live
            transmission in such a way that generated frames fit smoothly within
            the expected sequence of timestamps and sequence numbers.</td>
         </tr>
     </tbody>
 </table>
-<p class="note">Requirements N30-N44 have not completed a Call for Consensus (CfC).</p>
+<p class="note">Requirements N30-N43 have not completed a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
