@@ -850,24 +850,20 @@ updates of the global model to the clients.</p>
        <tbody>
          <tr>
            <td>N45</td>
-           <td>
-             An application can create an incoming WebRTC connection to accept
-             frames as if they were coming in over an RTP channel, without
-             instantiating an RTP transprort
-           </td>
+           <td>An application can create an incoming WebRTC connection to accept
+           frames as if they were coming in over RTP, without creating
+           an RTP transprort.</td>
          </tr>
-        <tr>
+         <tr>
            <td>N46</td>
            <td>An application can create encoded video frames from encoded data
-           and metadata, and enqueue them on an incoming WebRTC connection</td>
-        </tr>
-        <tr>
+           and metadata, and enqueue them on an incoming WebRTC connection.</td>
+         </tr>
+         <tr>
            <td>N47</td>
-           <td>The WebRTC connection can generate signals indicating any demands for keyframes,
-             and surface those to the
-             application.
-           </td>
-        </tr>
+           <td>The WebRTC connection can generate signals indicating demands
+           for keyframes, and surface those to the application.</td>
+         </tr>
        </tbody>
    </table>
 </section>
@@ -1055,8 +1051,10 @@ the use-cases included in this document.</p>
         </tr>
         </tr id="N31">
            <td>N31</td>
-        <td>The user agent must provide notification of a media interruption caused by the OS (e.g. GSM incoming call) (c.f. on hold music).
-            and support the use of a datachannel to inform the remote peer of the interruption.</td>
+        <td>The user agent must provide notification of a media interruption
+          caused by the OS (e.g. GSM incoming call) (c.f. on hold music).
+          and support the use of a datachannel to inform the remote peer 
+          of the interruption.</td>
         </tr>
         </tr id="N32">
            <td>N32</td>
@@ -1065,10 +1063,11 @@ the use-cases included in this document.</p>
            accidental 'browsing away' from dropping a call irretrievably.</td>
         </tr id="N33">
            <td>N33</td>
-        <td>Pre-existing peers must be able to be (re-)establish a connection
+           <td>Pre-existing peers must be able to be (re-)establish a connection
             without access to external services in the event of the local
             network becoming isolated from the wider network.  Without
-            compromising e2e security but possibly leveraging pre-shared tokens from a previous connection.</td>
+            compromising e2e security but possibly leveraging pre-shared tokens
+            from a previous connection.</td>
         </tr>
         </tr id="N34">
            <td>N34</td>
@@ -1134,23 +1133,19 @@ the use-cases included in this document.</p>
         </tr>
         <tr id="N45">
           <td>N45</td>
-           <td>
-             An application can create an incoming WebRTC connection to accept
-             frames as if they were coming in over an RTP channel, without
-             instantiating an RTP transprort
-           </td>
+           <td>An application can create an incoming WebRTC connection to accept
+             frames as if they were coming in over RTP, without creating
+             an RTP transprort.</td>
         </tr>
         <tr id="N46">
            <td>N46</td>
            <td>An application can create encoded video frames from encoded data
-           and metadata, and enqueue them on an incoming WebRTC connection</td>
+           and metadata, and enqueue them on an incoming WebRTC connection.</td>
         </tr>
         <tr id="N47">
            <td>N47</td>
-           <td>The WebRTC connection can generate signals indicating any demands for keyframes,
-             and surface those to the
-             application.
-           </td>
+           <td>The WebRTC connection can generate signals indicating demands
+           for keyframes, and surface those to the application.</td>
         </tr>
     </tbody>
 </table>
