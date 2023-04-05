@@ -10,26 +10,30 @@
 </head>
 <body>
   <section id="abstract">
-    <p>This document describes an extended set of use cases motivating the
-    development of additional WebRTC APIs, as well as the requirements derived
-    from those use cases.</p>
+    <p>
+      This document describes an extended set of use cases motivating the
+      development of additional WebRTC APIs, as well as the requirements derived
+      from those use cases.
+    </p>
   </section>
   <section id="sotd"></section>
   <section id="overview*">
     <h2>Scope and Motivation</h2>
-    <p>To motivate the development of WebRTC, the IETF RTCWEB WG developed [[?RFC7478]].
-    This document describes extended use cases motivating the development of additional
-    WebRTC APIs and the requirements deriving from those use cases.
-    The use cases fall into one of two categories:
-    enhancements to use cases already covered in [[?RFC7478]], and
-    new use cases which are not supported in WebRTC [[?WEBRTC]] without extensions.</p>
+    <p>
+      To motivate the development of WebRTC, the IETF RTCWEB WG developed [[?RFC7478]].
+      This document describes extended use cases motivating the development of additional
+      WebRTC APIs and the requirements deriving from those use cases.  The use cases fall
+      into one of two categories: enhancements to use cases already covered in [[?RFC7478]],
+      and new use cases which are not supported in WebRTC [[?WEBRTC]] without extensions.
+    </p>
    </section>
    <section id="existingusecases*">
     <h2>Existing Use Cases</h2>
       <p>The uses cases in this section improve upon use cases described in [[?RFC7478]].</p>
    <section id="multipartygame*">
       <h3>Multiparty online game with voice communications</h3>
-      <p>[[?RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game
+      <p>
+        [[?RFC7478]] Section 2.3.12 describes a use case involving a multiparty online game
         with voice communications. In these scenarios, reducing time to join the game and
         receive media is important. To minimize this, ICE enhancements are desirable, such as
         the ability to control candidate gathering and pruning.  Also, allowing a participant
@@ -37,7 +41,8 @@
         other room participants responding back directly, avoiding a separate discovery step,
         minimizes conference establishment time. Also, managing audio quality and latency in
         a fair manner between multiple connections prevents queue buildup. Supporting this
-        enhancement adds the following requirements:</p>
+        enhancement adds the following requirements:
+     </p>
 <table class="simple">
     <thead>
        <tr>
@@ -78,11 +83,16 @@ References:
 </section>
 <section id="mobility*">
       <h3>Mobile calling service</h3>
-      <p>[[?RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
-      during the session. This use case is enhanced by being able to ring multiple endpoints simultaneously, as
-      well as to re-route media over an alternate path (potentially taking network cost into account) without need for signaling.</p> 
-      <p>An additional enhancement is to provide management of the user experience at both ends of a call during interuptions
-      to the media flow caused by other activities taking higher priority on the smartphone. </p>
+      <p>
+        [[?RFC7478]] Section 2.3.6 describes a simple communications service where the user changes access network
+        during the session. This use case is enhanced by being able to ring multiple endpoints simultaneously, as
+        well as to re-route media over an alternate path (potentially taking network cost into account) without
+        need for signaling.
+      </p> 
+      <p>
+        An additional enhancement is to provide management of the user experience at both ends of a call during
+        interuptions to the media flow caused by other activities taking higher priority on the smartphone.
+      </p>
 <table class="simple">
     <thead>
        <tr>
