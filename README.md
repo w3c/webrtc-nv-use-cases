@@ -1,5 +1,4 @@
-# extended-use-cases
-WebRTC Extended Use Cases
+# WebRTC Extended Use Cases
 
 This document describes a set of use cases motivating the development of
 additional WebRTC APIs. Since there is no single document that constitutes
