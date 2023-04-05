@@ -1,8 +1,10 @@
-# nv-use-cases
-WebRTC Next Version Use Cases
+# extended-use-cases
+WebRTC Extended Use Cases
 
 This document describes a set of use cases motivating the development of
-WebRTC Next Version (WebRTC-NV). 
+additional WebRTC APIs. Since there is no single document that constitutes
+the "Next Version" of WebRTC, the document name has been changed from
+"WebRTC-NV Use Cases" to "Extended Use Cases". 
 
 ### Published Versions
 
