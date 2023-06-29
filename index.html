@@ -393,6 +393,29 @@ following requirements:</p>
 <p>Experience: Building a respiration monitor that works locally during an internet outage
 but is also available remotely when the internet connection returns.</p>
 </section>
+<section id="decent">
+   <h3>Decentralized messaging</h3>
+   <p>New decentralized applications provide P2P services and client-server services for consumption in a browser.</p>
+   <p>The differences in transport layer semantics make it difficult to share code between the two modes.</p>
+   <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
+   <table class="simple">
+       <thead>
+          <tr>
+             <th>Requirement ID</th>
+             <th>Description</th>
+          </tr>
+       </thead>
+       <tbody>
+           <tr>
+              <td>N34</td>
+              <td>Ability to intercept the fetch API and service it over a P2P link.
+              One way to do this would be to support data exchange in service workers 
+              which can already intercept fetch.</td>
+           </tr>
+       </tbody>
+   </table>  
+   <p>Experience: Both |pipe| and [Matrix] have implemented systems of this sort.</p>
+</section>
 <section id="vr*">
 <h3>Virtual Reality Gaming</h3>
 <p>A virtual reality gaming service utilizing a centralized conferencing server wants
@@ -666,29 +689,6 @@ updates of the global model to the clients.</p>
     </tbody>
 </table>
 </section>
-</section>
-<section id="urisig">
-   <h3>Reduced complexity signalling</h3>
-   <p>Some simpler media/data sources/sinks require only a subset of WebRTC functionality.</p>
-   <p>In such use cases the full SDP O/A could be replaced with a server generated token at runtime.</p>
-   <p>A goal might be to set the source attribute of a video tag to point at a WebRTC video source.</p>
-   <p>Care needs to be taken to avoid introducing security vulnerabilities.</p>
-    <p class="note">This use case has not completed a Call for Consensus (CfC).</p>
-   <table class="simple">
-       <thead>
-          <tr>
-             <th>Requirement ID</th>
-             <th>Description</th>
-          </tr>
-       </thead>
-       <tbody>
-           <tr>
-              <td></td>
-              <td>TBD</td>
-           </tr>
-       </tbody>
-   </table>  
-   <p>Experience: Both |pipe| and pion have built systems of this sort.</p>
 </section>
 <section id="one-way-media">
   <h3>One-way media</h3>
