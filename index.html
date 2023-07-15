@@ -315,11 +315,24 @@ transported using WebRTC A/V or RTCDataChannel.</p>
        </tr>
     </thead>
     <tbody>
+        <tr id="N13">
+           <td>N13</td>
+           <td>It must be possible to support data exchange
+           in a web, service, or shared worker. Support for 
+           service workers allows the page to issue a fetch()
+           which can be resolved in the service worker.</td>
+        </tr>
         <tr>
            <td>N15</td>
            <td>The application must be able to take steps to ensure a low and consistent
              latency for audio, video and data under varying network conditions. This may
              include tweaking of transport parameters for both media and data.</td>
+        </tr>
+        <tr>
+           <td>N16</td>
+           <td>It must be possible to send arbitrary data reliable, unreliable or
+           partially reliable with a specific maximum number of retransmissions
+           or a specific maximum timeout.</td>
         </tr>
         <tr>
            <td>N39</td>
