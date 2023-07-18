@@ -298,14 +298,16 @@ Supporting this use case adds the following requirements:</p>
 transported using WebRTC A/V or RTCDataChannel.</p>
 </section> 
 <section id="auction">
-   <h4>Low latency Broadcast with Fanout</h4>
-   <p>There are streaming applications that require large scale as well as glass-glass latencies < 1 second.
-   Examples include sporting events, church services, webinars and company 'Town Hall' meetings.
-   Live audio, video and data is sent to thousands (or even millions) of recipients.
-   Limited interactivity may be supported, such as allowing authorized participants to ask
-   questions at a company meeting. Both the media sender and receivers may be behind a NAT.
-   P2P relays may be used to improve scalability, potentially using different transport than
-   the original stream.</p>
+   <h4>Low latency and ultra-low Latency Broadcast with Fanout</h4>
+   <p>There are streaming applications that require large scale as well as low latency
+     (glass-glass latencies < 1 second) or ultra-low latency (glass-glass latencies < 500 ms). 
+     Low latency examples include sporting events, church services, webinars and company
+     'Town Hall' meetings. Ultra-low latency examples include auctions, betting and financial news.
+     Live audio, video and data is sent to thousands (or even millions) of recipients.
+     Limited interactivity may be supported, such as allowing authorized participants to ask
+     questions at a company meeting. Both the media sender and receivers may be behind a NAT.
+     P2P relays may be used to improve scalability, potentially using different transport than
+     the original stream.</p>
     <p class="note">This use case has completed a Call for Consensus (CfC) but has unresolved issues.</p>
 <table class="simple">
     <thead>
