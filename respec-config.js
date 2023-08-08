@@ -27,6 +27,7 @@ var respecConfig = {
     "CFC-Low-Latency": {
       "title": "Summary of CfC on WebRTC-NV Low Latency Streaming Use Cases (Section 3.2)",
       "href": "https://lists.w3.org/Archives/Public/public-webrtc/2023Jan/0062.html",
+      "status": "20 January 2023",
       "publisher": "W3C"
     },
       "ORTC": {
