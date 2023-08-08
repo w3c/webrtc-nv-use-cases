@@ -24,10 +24,10 @@ var respecConfig = {
     }
   ],
   localBiblio: {
-    "IANA-STUN-6": {
-      "title": "STUN Error Codes",
-      "href": "https://www.iana.org/assignments/stun-parameters/stun-parameters.xhtml#stun-parameters-6",
-      "publisher": "IANA"
+    "CFC-Low-Latency": {
+      "title": "Summary of CfC on WebRTC-NV Low Latency Streaming Use Cases (Section 3.2)",
+      "href": "https://lists.w3.org/Archives/Public/public-webrtc/2023Jan/0062.html",
+      "publisher": "W3C"
     },
       "ORTC": {
       "title": "Object RTC (ORTC) API for WebRTC",
