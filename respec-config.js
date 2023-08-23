@@ -24,6 +24,12 @@ var respecConfig = {
     }
   ],
   localBiblio: {
+    "CFC-One-Way": {
+      "title": "Summary of Call for Consensus on WebRTC-NV One-way media Use Cases (Section 3.10)",
+      "href": "https://lists.w3.org/Archives/Public/public-webrtc/2023Feb/0025.html",
+      "status": "7 February 2023",
+      "publisher": "W3C"
+    },
     "CFC-Low-Latency": {
       "title": "Summary of CfC on WebRTC-NV Low Latency Streaming Use Cases (Section 3.2)",
       "href": "https://lists.w3.org/Archives/Public/public-webrtc/2023Jan/0062.html",
