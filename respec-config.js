@@ -49,6 +49,15 @@ var respecConfig = {
       "status": "15 March 2021 (work in progress)",
       "publisher": "W3C"
     },
+      "WebRTC-Extensions": {
+      "title": "WebRTC Extensions",
+      "href": "https://w3c.github.io/webrtc-extensions",
+      "editors": [
+        "Bernard Aboba"
+      ],
+      "status": "15 October 2023 (work in progress)",
+      "publisher": "W3C"
+    },
       "MLS-ARCH": {
       "title": "The Messaging Layer Security (MLS) Architecture",
       "href": "https://datatracker.ietf.org/doc/html/draft-ietf-mls-architecture",
