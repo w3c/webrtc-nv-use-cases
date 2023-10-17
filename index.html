@@ -304,12 +304,13 @@ transported using RTP or RTCDataChannel.</p>
 </section> 
 <section id="auction">
    <h4>Ultra Low latency Broadcast with Fanout</h4>
-   <p>There are streaming applications that require large scale as well as ultra low latency (glass-glass latency less than 500ms).
-   Examples include auctions and financial news. Live audio, video and data is sent to
-   thousands (or even millions) of recipients. Limited interactivity may be supported, such as
-   capturing video or audio from auction bidders. Both the media sender and receivers may be behind a NAT.
-   Peer-to-peer relays may be used to improve scalability, potentially using different transport than
-   the original stream.</p>
+   <p>There are streaming applications that require large scale as well as ultra low latency
+      (glass-glass latency less than 300ms).  Examples include auctions. Live audio, video
+      and data is sent to thousands (or even millions) of recipients. Limited interactivity
+      may be supported, such as capturing audio/video from auction bidders.  Both the media
+      sender and receivers may be behind a NAT.  Peer-to-peer relays may be used to improve
+      scalability, with ingestion, distribution and fanout utilizing RTP.
+   </p>
    <p class="note">This use case has completed a Call for Consensus (CfC) [[?CFC-Low-Latency]] but has unresolved issues.</p>
 <table class="simple">
     <thead>
