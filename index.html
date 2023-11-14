@@ -313,7 +313,8 @@ transported using RTP or RTCDataChannel.</p>
       retransmission and forward error correction to provide robustness. In this use case,
       low latency is more important than media quality, so that low latency congestion
       control algorithms are required, and latency-enducing effects such as head of line
-      blocking are to be avoided.
+      blocking are to be avoided. Reception of media via events is problematic, due to
+      lack of coupling between the event loop and the receive window.
    </p>
 <table class="simple">
     <thead>
