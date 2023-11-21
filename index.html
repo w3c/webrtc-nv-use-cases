@@ -295,7 +295,8 @@ Supporting this use case adds the following requirements:</p>
         <tr>
            <td>N38</td>
            <td>The application must be able to control the jitter buffer and rendering
-           delay. This requirement is addressed by jitterBufferTarget, defined in
+           delay as well as rendering delay variation speed. NOTE: The "control the jitter
+           buffer" part of this requirement is addressed by jitterBufferTarget, defined in
            [[?WebRTC-Extensions]] Section 6.</td>
         </tr>
         <tr>
@@ -303,7 +304,7 @@ Supporting this use case adds the following requirements:</p>
            <td>The application must be able to control video decoding to continue even
            after a frame-loss without waiting for a key frame. This helps the application recover
            faster from lossy network conditions.</td>
-	</tr>
+        </tr>
         <tr>
            <td>N49</td>
            <td>The application must be able to generate signals that indicate to the encoder
@@ -316,13 +317,7 @@ Supporting this use case adds the following requirements:</p>
            <td>The application must be able to configure RTCP feedback transmission
            interval (e.g., Transport-wide RTCP Feedback Message). This helps the application adapt
            the video quality to the varying network and maintain consistent latency.</td>
-	</tr>
-        <tr>
-           <td>N51</td>
-           <td>The user agent needs to provide the jitter buffer to account for jitter
-           in the pipeline up to the frame render stage. This helps the application adapt
-           the video quality to the varying network and maintain consistent latency.</td>
-	</tr>
+        </tr>
     </tbody>
 </table>
 <p>Experience: Microsoft's Xbox Cloud Gaming and NVIDIA's GeForce NOW are examples of this use case, with media
@@ -1035,9 +1030,10 @@ the use-cases included in this document.</p>
         <tr id="N38">
            <td>N38</td>
            <td>The application must be able to control the jitter buffer and rendering
-           delay. This requirement is addressed by jitterBufferTarget, defined in
-           [[?WebRTC-Extensions]] Section 6.</td>
-        </tr>
+            delay as well as rendering delay variation speed. NOTE: The "control the jitter
+            buffer" part of this requirement is addressed by jitterBufferTarget, defined in
+            [[?WebRTC-Extensions]] Section 6.</td>
+         </tr>
         <tr id="N39">
            <td>N39</td>
            <td>A user-agent must be able to forward media received from a peer
@@ -1109,15 +1105,9 @@ the use-cases included in this document.</p>
            interval (e.g., Transport-wide RTCP Feedback Message). This helps the application adapt
            the video quality to the varying network and maintain consistent latency.</td>
         </tr>
-        <tr id="N51">
-           <td>N51</td>
-           <td>The user agent needs to provide the jitter buffer to account for jitter
-           in the pipeline up to the frame render stage. This helps the application adapt
-           the video quality to the varying network and maintain consistent latency.</td>
-        </tr>
     </tbody>
 </table>
-<p class="note">Requirements N40-N51 have unresolved comments from a Call for Consensus (CfC).</p>
+<p class="note">Requirements N40-N50 have unresolved comments from a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
