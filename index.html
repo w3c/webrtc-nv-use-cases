@@ -305,13 +305,13 @@ transported using RTP or RTCDataChannel.</p>
 <section id="auction">
    <h4>Ultra Low latency Broadcast with Fanout</h4>
    <p>There are streaming applications that require large scale as well as ultra low latency
-      such as auctions. Live audio, video and data is sent to thousands (or even millions)
-      of recipients.  Limited interactivity may be supported, such as capturing audio/video
-      from auction bidders. Both the media senders and receivers may be behind a NAT.
-      Peer-to-peer relays are used to improve scalability, with ingestion, distribution and
-      fanout requiring unreliable/unordered transport to reduce latency, and support for
-      retransmission and forward error correction to provide robustness. In this use case,
-      low latency is more important than media quality, so that low latency congestion
+      such as auctions. Live audio, video and data is sent to thousands of recipients.
+      Limited interactivity may be supported, such as capturing audio/video from
+      auction bidders. Both the media senders and receivers may be behind a NAT.
+      Peer-to-peer relays are used to improve scalability, with ingestion, distribution
+      and fanout requiring unreliable/unordered transport to reduce latency, and support
+      for retransmission and forward error correction to provide robustness. In this use
+      case, low latency is more important than media quality, so that low latency congestion
       control algorithms are required, and latency-enducing effects such as head of line
       blocking are to be avoided. Reception of media via events is problematic, due to
       lack of coupling between the event loop and the receive window.
