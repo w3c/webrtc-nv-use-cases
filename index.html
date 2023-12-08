@@ -304,15 +304,19 @@ Supporting this use case adds the following requirements:</p>
 transported using RTP or RTCDataChannel.</p>
 </section> 
 <section id="auction">
-   <h4>Low latency Broadcast with Fanout</h4>
-   <p>There are streaming applications that require large scale as well as low latency.
-   Examples include sporting events, church services, webinars and company 'Town Hall' meetings.
-   Live audio, video and data is sent to thousands (or even millions) of recipients.
-   Limited interactivity may be supported, such as allowing authorized participants to ask
-   questions at a company meeting. Both the media sender and receivers may be behind a NAT.
-   P2P relays may be used to improve scalability, potentially using different transport than
-   the original stream.</p>
-   <p class="note">This use case has completed a Call for Consensus (CfC) [[?CFC-Low-Latency]] but has unresolved issues.</p>
+   <h4>Ultra Low latency Broadcast with Fanout</h4>
+   <p>There are streaming applications that require large scale as well as ultra low latency
+      such as auctions. Live audio, video and data is sent to thousands of recipients.
+      Limited interactivity may be supported, such as capturing audio/video from
+      auction bidders. Both the media senders and receivers may be behind a NAT.
+      Peer-to-peer relays are used to improve scalability, with ingestion, distribution
+      and fanout requiring unreliable/unordered transport to reduce latency, and support
+      for retransmission and forward error correction to provide robustness. In this use
+      case, low latency is more important than media quality, so that low latency congestion
+      control algorithms are required, and latency-enducing effects such as head of line
+      blocking are to be avoided. Reception of media via events is problematic, due to
+      lack of coupling between the event loop and the receive window.
+   </p>
 <table class="simple">
     <thead>
        <tr>
@@ -337,8 +341,8 @@ transported using RTP or RTCDataChannel.</p>
         </tr>
     </tbody>
 </table>
-<p>Experience: |pipe|, Peer5 and Dolby are examples of this use case, with media
-transported via RTP or RTCDataChannel.</p>
+<p>Experience: |pipe| and Dolby are examples of this use case, with media
+transported via RTP.</p>
 </section>
 </section>
 <section id="iot*">
