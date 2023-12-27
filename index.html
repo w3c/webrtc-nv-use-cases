@@ -299,6 +299,11 @@ Supporting this use case adds the following requirements:</p>
            delay. This requirement is addressed by jitterBufferTarget, defined in
            [[?WebRTC-Extensions]] Section 6.</td>
         </tr>
+	<tr>
+           <td>N48</td>
+           <td>The application must be able to control the timing of the signaling that
+           has information on packet loss and packet reception timing.</td>
+	</tr>
     </tbody>
 </table>
 <p>Experience: Microsoft's Xbox Cloud Gaming and NVIDIA's GeForce NOW are examples of this use case, with media
@@ -1068,9 +1073,14 @@ the use-cases included in this document.</p>
            <td>The WebRTC connection can generate signals indicating demands
            for keyframes, and surface those to the application.</td>
         </tr>
+        <tr id="N48">
+           <td>N48</td>
+           <td>The application must be able to control the timing of the signaling that
+           has information on packet loss and packet reception timing.</td>
+        </tr>
     </tbody>
 </table>
-<p class="note">Requirements N40-N47 have unresolved comments from a Call for Consensus (CfC).</p>
+<p class="note">Requirements N40-N48 have unresolved comments from a Call for Consensus (CfC).</p>
 </section>
 </body>
 </html>
